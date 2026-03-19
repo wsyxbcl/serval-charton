@@ -1,0 +1,5812 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300
+    }
+  },
+  "data": {
+    "name": "data-24bda82582c5e15232235e5c34c839b1"
+  },
+  "datasets": {
+    "data-24bda82582c5e15232235e5c34c839b1": [
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 0,
+        "hour_of_day": 15.12888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-03-03T15:07:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 1,
+        "hour_of_day": 11.819166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-04T11:49:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 2,
+        "hour_of_day": 11.819444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-04T11:49:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 3,
+        "hour_of_day": 11.828333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-04T11:49:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 4,
+        "hour_of_day": 11.82861111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-04T11:49:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 5,
+        "hour_of_day": 11.834444444444445,
+        "media_type": "mp4",
+        "timestamp": "2025-03-04T11:50:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 6,
+        "hour_of_day": 11.836944444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-04T11:50:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 7,
+        "hour_of_day": 11.837222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-04T11:50:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 8,
+        "hour_of_day": 11.843333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-03-04T11:50:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 9,
+        "hour_of_day": 21.308611111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-08T21:18:31"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 10,
+        "hour_of_day": 12.136111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-14T12:08:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 11,
+        "hour_of_day": 12.136388888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-14T12:08:11"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 12,
+        "hour_of_day": 12.142777777777777,
+        "media_type": "mp4",
+        "timestamp": "2025-03-14T12:08:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 13,
+        "hour_of_day": 12.145277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-14T12:08:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 14,
+        "hour_of_day": 12.145555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-14T12:08:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 15,
+        "hour_of_day": 12.151666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-03-14T12:09:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 16,
+        "hour_of_day": 12.154722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-14T12:09:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 17,
+        "hour_of_day": 12.155000000000001,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-14T12:09:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 18,
+        "hour_of_day": 12.160555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-03-14T12:09:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 19,
+        "hour_of_day": 12.163333333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-14T12:09:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 20,
+        "hour_of_day": 12.163611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-14T12:09:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 21,
+        "hour_of_day": 12.168888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-03-14T12:10:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 22,
+        "hour_of_day": 10.244444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-15T10:14:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 23,
+        "hour_of_day": 10.24472222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-15T10:14:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 24,
+        "hour_of_day": 10.25,
+        "media_type": "mp4",
+        "timestamp": "2025-03-15T10:15:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 25,
+        "hour_of_day": 10.4125,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-15T10:24:45"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 26,
+        "hour_of_day": 10.412777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-15T10:24:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 27,
+        "hour_of_day": 10.418333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-03-15T10:25:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 28,
+        "hour_of_day": 10.519444444444446,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-15T10:31:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 29,
+        "hour_of_day": 10.519722222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-15T10:31:11"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 30,
+        "hour_of_day": 10.525,
+        "media_type": "mp4",
+        "timestamp": "2025-03-15T10:31:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 31,
+        "hour_of_day": 12.959999999999999,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-19T12:57:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 32,
+        "hour_of_day": 12.965555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-03-19T12:57:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 33,
+        "hour_of_day": 14.19138888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-19T14:11:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 34,
+        "hour_of_day": 4.698888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-21T04:41:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 35,
+        "hour_of_day": 4.699166666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-21T04:41:57"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 36,
+        "hour_of_day": 4.705,
+        "media_type": "mp4",
+        "timestamp": "2025-03-21T04:42:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 37,
+        "hour_of_day": 9.820277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T09:49:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 38,
+        "hour_of_day": 9.820555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T09:49:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 39,
+        "hour_of_day": 11.685555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:41:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 40,
+        "hour_of_day": 11.830833333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:49:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 41,
+        "hour_of_day": 11.831111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:49:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 42,
+        "hour_of_day": 11.837222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:50:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 43,
+        "hour_of_day": 11.842500000000001,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:50:33"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 44,
+        "hour_of_day": 11.851388888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:51:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 45,
+        "hour_of_day": 11.851666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:51:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 46,
+        "hour_of_day": 11.857777777777777,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:51:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 47,
+        "hour_of_day": 11.860555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:51:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 48,
+        "hour_of_day": 11.860833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:51:39"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 49,
+        "hour_of_day": 11.866666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:52:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 50,
+        "hour_of_day": 11.869444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:52:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 51,
+        "hour_of_day": 11.869722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:52:11"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 52,
+        "hour_of_day": 11.876111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:52:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 53,
+        "hour_of_day": 11.87888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:52:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 54,
+        "hour_of_day": 11.879166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:52:45"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 55,
+        "hour_of_day": 11.885,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:53:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 56,
+        "hour_of_day": 11.887777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:53:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 57,
+        "hour_of_day": 11.888055555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:53:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 58,
+        "hour_of_day": 11.893888888888888,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:53:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 59,
+        "hour_of_day": 11.897222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:53:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 60,
+        "hour_of_day": 11.897499999999999,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:53:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 61,
+        "hour_of_day": 11.903333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:54:12"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 62,
+        "hour_of_day": 11.906666666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:54:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 63,
+        "hour_of_day": 11.906944444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T11:54:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 64,
+        "hour_of_day": 11.913333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T11:54:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 65,
+        "hour_of_day": 12.123333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T12:07:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 66,
+        "hour_of_day": 12.123611111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-03-22T12:07:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 67,
+        "hour_of_day": 12.13,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T12:07:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 68,
+        "hour_of_day": 12.197222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-03-22T12:11:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 69,
+        "hour_of_day": 11.695,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:41:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 70,
+        "hour_of_day": 11.695277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:41:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 71,
+        "hour_of_day": 11.701666666666666,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:42:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 72,
+        "hour_of_day": 11.704444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:42:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 73,
+        "hour_of_day": 11.704722222222221,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:42:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 74,
+        "hour_of_day": 11.71111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:42:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 75,
+        "hour_of_day": 11.71361111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:42:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 76,
+        "hour_of_day": 11.713888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:42:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 77,
+        "hour_of_day": 11.72,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:43:12"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 78,
+        "hour_of_day": 11.723055555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:43:23"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 79,
+        "hour_of_day": 11.723333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:43:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 80,
+        "hour_of_day": 11.729444444444445,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:43:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 81,
+        "hour_of_day": 11.731944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:43:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 82,
+        "hour_of_day": 11.732222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:43:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 83,
+        "hour_of_day": 11.738333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:44:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 84,
+        "hour_of_day": 11.744444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:44:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 85,
+        "hour_of_day": 11.74472222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:44:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 86,
+        "hour_of_day": 11.751111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:45:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 87,
+        "hour_of_day": 11.756388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:45:23"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 88,
+        "hour_of_day": 11.756666666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:45:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 89,
+        "hour_of_day": 11.762777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:45:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 90,
+        "hour_of_day": 11.765277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:45:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 91,
+        "hour_of_day": 11.765555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:45:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 92,
+        "hour_of_day": 11.771666666666668,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:46:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 93,
+        "hour_of_day": 11.771666666666668,
+        "media_type": "mp4",
+        "timestamp": "2025-04-02T11:46:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 94,
+        "hour_of_day": 11.960277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:57:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 95,
+        "hour_of_day": 11.960555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-02T11:57:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 96,
+        "hour_of_day": 12.405277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-05T12:24:19"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 97,
+        "hour_of_day": 12.405555555555557,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-05T12:24:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 98,
+        "hour_of_day": 12.411666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-04-05T12:24:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 99,
+        "hour_of_day": 11.121111111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-06T11:07:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 100,
+        "hour_of_day": 11.12138888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-06T11:07:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 101,
+        "hour_of_day": 19.732777777777777,
+        "media_type": "mp4",
+        "timestamp": "2025-04-06T19:43:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 102,
+        "hour_of_day": 20.01361111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-08T20:00:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 103,
+        "hour_of_day": 10.783888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-09T10:47:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 104,
+        "hour_of_day": 10.784166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-09T10:47:03"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 105,
+        "hour_of_day": 7.9,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-10T07:54:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 106,
+        "hour_of_day": 7.914722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-10T07:54:53"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 107,
+        "hour_of_day": 7.915,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-10T07:54:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 108,
+        "hour_of_day": 7.921111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-04-10T07:55:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 109,
+        "hour_of_day": 7.932222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-04-10T07:55:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 110,
+        "hour_of_day": 10.319722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-13T10:19:11"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 111,
+        "hour_of_day": 10.319722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-13T10:19:11"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 112,
+        "hour_of_day": 9.771666666666668,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-15T09:46:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 113,
+        "hour_of_day": 9.771944444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-15T09:46:19"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 114,
+        "hour_of_day": 9.777777777777779,
+        "media_type": "mp4",
+        "timestamp": "2025-04-15T09:46:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 115,
+        "hour_of_day": 9.004166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-16T09:00:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 116,
+        "hour_of_day": 9.004444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-16T09:00:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 117,
+        "hour_of_day": 10.665277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-16T10:39:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 118,
+        "hour_of_day": 10.665555555555557,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-16T10:39:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 119,
+        "hour_of_day": 9.720277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-17T09:43:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 120,
+        "hour_of_day": 9.726111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-04-17T09:43:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 121,
+        "hour_of_day": 14.777222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-04-17T14:46:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 122,
+        "hour_of_day": 17.883333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-04-17T17:53:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 123,
+        "hour_of_day": 19.8275,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-17T19:49:39"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 124,
+        "hour_of_day": 19.82777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-17T19:49:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 125,
+        "hour_of_day": 19.833333333333332,
+        "media_type": "mp4",
+        "timestamp": "2025-04-17T19:50:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 126,
+        "hour_of_day": 8.389722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-21T08:23:23"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 127,
+        "hour_of_day": 8.589166666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-26T08:35:21"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 128,
+        "hour_of_day": 8.589444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-26T08:35:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 129,
+        "hour_of_day": 8.595,
+        "media_type": "mp4",
+        "timestamp": "2025-04-26T08:35:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 130,
+        "hour_of_day": 17.654444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-26T17:39:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 131,
+        "hour_of_day": 9.424722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-27T09:25:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 132,
+        "hour_of_day": 9.424999999999999,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-27T09:25:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 133,
+        "hour_of_day": 9.430555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-04-27T09:25:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 134,
+        "hour_of_day": 11.020000000000001,
+        "media_type": "mp4",
+        "timestamp": "2025-04-29T11:01:12"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 135,
+        "hour_of_day": 11.031111111111112,
+        "media_type": "mp4",
+        "timestamp": "2025-04-29T11:01:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 136,
+        "hour_of_day": 11.04,
+        "media_type": "mp4",
+        "timestamp": "2025-04-29T11:02:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 137,
+        "hour_of_day": 18.90611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-29T18:54:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 138,
+        "hour_of_day": 18.906388888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-29T18:54:23"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 139,
+        "hour_of_day": 18.91222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-04-29T18:54:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 140,
+        "hour_of_day": 18.915555555555553,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-29T18:54:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 141,
+        "hour_of_day": 18.921111111111113,
+        "media_type": "mp4",
+        "timestamp": "2025-04-29T18:55:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 142,
+        "hour_of_day": 10.749166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-30T10:44:57"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 143,
+        "hour_of_day": 10.749444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-30T10:44:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 144,
+        "hour_of_day": 10.755555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-04-30T10:45:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 145,
+        "hour_of_day": 11.20361111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-30T11:12:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 146,
+        "hour_of_day": 11.203888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-30T11:12:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 147,
+        "hour_of_day": 11.209444444444443,
+        "media_type": "mp4",
+        "timestamp": "2025-04-30T11:12:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 148,
+        "hour_of_day": 12.751388888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-30T12:45:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 149,
+        "hour_of_day": 12.751666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-30T12:45:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 150,
+        "hour_of_day": 12.757222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-04-30T12:45:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 151,
+        "hour_of_day": 3.4202777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-01T03:25:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 152,
+        "hour_of_day": 3.4205555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-01T03:25:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 153,
+        "hour_of_day": 3.4266666666666663,
+        "media_type": "mp4",
+        "timestamp": "2025-05-01T03:25:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 154,
+        "hour_of_day": 3.4330555555555553,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-01T03:25:59"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 155,
+        "hour_of_day": 3.4333333333333336,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-01T03:26:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 156,
+        "hour_of_day": 8.75388888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-05-01T08:45:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 157,
+        "hour_of_day": 23.35666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-01T23:21:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 158,
+        "hour_of_day": 23.356944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-01T23:21:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 159,
+        "hour_of_day": 23.36277777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-05-01T23:21:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 160,
+        "hour_of_day": 20.883333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-05T20:53:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 161,
+        "hour_of_day": 20.89,
+        "media_type": "mp4",
+        "timestamp": "2025-05-05T20:53:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 162,
+        "hour_of_day": 22.13111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-05T22:07:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 163,
+        "hour_of_day": 22.13138888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-05T22:07:53"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 164,
+        "hour_of_day": 22.137777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-05-05T22:08:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 165,
+        "hour_of_day": 13.022222222222224,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-06T13:01:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 166,
+        "hour_of_day": 13.0225,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-06T13:01:21"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 167,
+        "hour_of_day": 8.751666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-07T08:45:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 168,
+        "hour_of_day": 8.751944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-07T08:45:07"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 169,
+        "hour_of_day": 8.757777777777777,
+        "media_type": "mp4",
+        "timestamp": "2025-05-07T08:45:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 170,
+        "hour_of_day": 16.76722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-07T16:46:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 171,
+        "hour_of_day": 19.494722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-07T19:29:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 172,
+        "hour_of_day": 19.495,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-07T19:29:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 173,
+        "hour_of_day": 19.500555555555554,
+        "media_type": "mp4",
+        "timestamp": "2025-05-07T19:30:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 174,
+        "hour_of_day": 19.981111111111108,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-08T19:58:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 175,
+        "hour_of_day": 14.929722222222221,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-09T14:55:47"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 176,
+        "hour_of_day": 14.93,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-09T14:55:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 177,
+        "hour_of_day": 14.935555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-05-09T14:56:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 178,
+        "hour_of_day": 13.355,
+        "media_type": "mp4",
+        "timestamp": "2025-07-13T13:21:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 179,
+        "hour_of_day": 13.358055555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-13T13:21:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 180,
+        "hour_of_day": 13.358333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-13T13:21:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 181,
+        "hour_of_day": 17.310277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-13T17:18:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 182,
+        "hour_of_day": 17.310555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-13T17:18:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 183,
+        "hour_of_day": 17.316111111111113,
+        "media_type": "mp4",
+        "timestamp": "2025-07-13T17:18:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 184,
+        "hour_of_day": 18.435,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-13T18:26:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 185,
+        "hour_of_day": 18.435277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-13T18:26:07"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 186,
+        "hour_of_day": 18.441111111111113,
+        "media_type": "mp4",
+        "timestamp": "2025-07-13T18:26:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 187,
+        "hour_of_day": 8.667222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T08:40:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 188,
+        "hour_of_day": 9.594722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T09:35:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 189,
+        "hour_of_day": 9.595,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T09:35:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 190,
+        "hour_of_day": 9.601111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-07-14T09:36:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 191,
+        "hour_of_day": 10.497777777777777,
+        "media_type": "mp4",
+        "timestamp": "2025-07-14T10:29:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 192,
+        "hour_of_day": 10.523888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T10:31:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 193,
+        "hour_of_day": 10.524166666666668,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T10:31:27"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 194,
+        "hour_of_day": 10.530555555555557,
+        "media_type": "mp4",
+        "timestamp": "2025-07-14T10:31:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 195,
+        "hour_of_day": 14.965555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-07-14T14:57:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 196,
+        "hour_of_day": 14.998333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-07-14T14:59:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 197,
+        "hour_of_day": 15.047777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-07-14T15:02:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 198,
+        "hour_of_day": 18.224444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T18:13:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 199,
+        "hour_of_day": 18.22472222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T18:13:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 200,
+        "hour_of_day": 18.230555555555554,
+        "media_type": "mp4",
+        "timestamp": "2025-07-14T18:13:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 201,
+        "hour_of_day": 18.233611111111113,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T18:14:01"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 202,
+        "hour_of_day": 18.233888888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-14T18:14:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 203,
+        "hour_of_day": 18.240000000000002,
+        "media_type": "mp4",
+        "timestamp": "2025-07-14T18:14:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 204,
+        "hour_of_day": 8.46888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T08:28:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 205,
+        "hour_of_day": 8.469166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T08:28:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 206,
+        "hour_of_day": 8.475,
+        "media_type": "mp4",
+        "timestamp": "2025-07-15T08:28:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 207,
+        "hour_of_day": 8.48,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T08:28:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 208,
+        "hour_of_day": 8.480277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T08:28:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 209,
+        "hour_of_day": 8.48611111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-07-15T08:29:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 210,
+        "hour_of_day": 8.625833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T08:37:33"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 211,
+        "hour_of_day": 12.6,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T12:36:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 212,
+        "hour_of_day": 12.600277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T12:36:01"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 213,
+        "hour_of_day": 12.60611111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-07-15T12:36:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 214,
+        "hour_of_day": 13.511944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T13:30:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 215,
+        "hour_of_day": 13.512222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T13:30:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 216,
+        "hour_of_day": 13.518333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-07-15T13:31:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 217,
+        "hour_of_day": 13.530000000000001,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T13:31:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 218,
+        "hour_of_day": 13.530277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T13:31:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 219,
+        "hour_of_day": 16.915,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T16:54:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 220,
+        "hour_of_day": 16.915277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T16:54:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 221,
+        "hour_of_day": 16.921666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-07-15T16:55:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 222,
+        "hour_of_day": 16.93,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T16:55:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 223,
+        "hour_of_day": 16.93027777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-15T16:55:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 224,
+        "hour_of_day": 17.645555555555553,
+        "media_type": "mp4",
+        "timestamp": "2025-07-15T17:38:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 225,
+        "hour_of_day": 8.188611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-16T08:11:19"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 226,
+        "hour_of_day": 8.18888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-16T08:11:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 227,
+        "hour_of_day": 8.194444444444445,
+        "media_type": "mp4",
+        "timestamp": "2025-07-16T08:11:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 228,
+        "hour_of_day": 13.102222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-16T13:06:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 229,
+        "hour_of_day": 13.1025,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-16T13:06:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 230,
+        "hour_of_day": 13.108888888888888,
+        "media_type": "mp4",
+        "timestamp": "2025-07-16T13:06:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 231,
+        "hour_of_day": 7.440833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T07:26:27"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 232,
+        "hour_of_day": 7.441111111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T07:26:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 233,
+        "hour_of_day": 7.446666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-07-17T07:26:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 234,
+        "hour_of_day": 7.452222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T07:27:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 235,
+        "hour_of_day": 7.457777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-07-17T07:27:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 236,
+        "hour_of_day": 13.327777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T13:19:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 237,
+        "hour_of_day": 13.328055555555554,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T13:19:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 238,
+        "hour_of_day": 13.334444444444445,
+        "media_type": "mp4",
+        "timestamp": "2025-07-17T13:20:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 239,
+        "hour_of_day": 14.286111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-07-17T14:17:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 240,
+        "hour_of_day": 14.471944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T14:28:19"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 241,
+        "hour_of_day": 14.472222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T14:28:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 242,
+        "hour_of_day": 14.478333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-07-17T14:28:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 243,
+        "hour_of_day": 14.863888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T14:51:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 244,
+        "hour_of_day": 14.864166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T14:51:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 245,
+        "hour_of_day": 14.870555555555557,
+        "media_type": "mp4",
+        "timestamp": "2025-07-17T14:52:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 246,
+        "hour_of_day": 16.61388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T16:36:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 247,
+        "hour_of_day": 16.61416666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-17T16:36:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 248,
+        "hour_of_day": 1.3377777777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-18T01:20:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 249,
+        "hour_of_day": 1.3380555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-18T01:20:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 250,
+        "hour_of_day": 11.4225,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-18T11:25:21"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 251,
+        "hour_of_day": 14.922222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-18T14:55:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 252,
+        "hour_of_day": 14.9225,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-18T14:55:21"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 253,
+        "hour_of_day": 14.928333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-07-18T14:55:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 254,
+        "hour_of_day": 23.18027777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-18T23:10:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 255,
+        "hour_of_day": 23.180555555555557,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-18T23:10:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 256,
+        "hour_of_day": 23.186666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-07-18T23:11:12"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 257,
+        "hour_of_day": 0.12555555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T00:07:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 258,
+        "hour_of_day": 0.12583333333333332,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T00:07:33"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 259,
+        "hour_of_day": 10.408055555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T10:24:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 260,
+        "hour_of_day": 10.408333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T10:24:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 261,
+        "hour_of_day": 10.414444444444445,
+        "media_type": "mp4",
+        "timestamp": "2025-07-19T10:24:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 262,
+        "hour_of_day": 10.426388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T10:25:35"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 263,
+        "hour_of_day": 10.426666666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T10:25:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 264,
+        "hour_of_day": 10.432777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-07-19T10:25:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 265,
+        "hour_of_day": 12.290277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T12:17:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 266,
+        "hour_of_day": 12.290555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T12:17:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 267,
+        "hour_of_day": 12.296111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-07-19T12:17:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 268,
+        "hour_of_day": 12.5225,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-19T12:31:21"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 269,
+        "hour_of_day": 12.52888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-07-19T12:31:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 270,
+        "hour_of_day": 10.131944444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-22T10:07:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 271,
+        "hour_of_day": 10.132222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-22T10:07:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 272,
+        "hour_of_day": 11.843611111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-22T11:50:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 273,
+        "hour_of_day": 12.158888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-07-22T12:09:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 274,
+        "hour_of_day": 16.547500000000003,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-22T16:32:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 275,
+        "hour_of_day": 16.55666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-22T16:33:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 276,
+        "hour_of_day": 16.556944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-22T16:33:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 277,
+        "hour_of_day": 16.563333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-07-22T16:33:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 278,
+        "hour_of_day": 22.772222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-22T22:46:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 279,
+        "hour_of_day": 22.772499999999997,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-22T22:46:21"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 280,
+        "hour_of_day": 22.778333333333332,
+        "media_type": "mp4",
+        "timestamp": "2025-07-22T22:46:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 281,
+        "hour_of_day": 0.37666666666666665,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-23T00:22:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 282,
+        "hour_of_day": 0.3769444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-23T00:22:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 283,
+        "hour_of_day": 0.3827777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-07-23T00:22:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 284,
+        "hour_of_day": 0.41000000000000003,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-23T00:24:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 285,
+        "hour_of_day": 0.4102777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-23T00:24:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 286,
+        "hour_of_day": 5.661666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-23T05:39:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 287,
+        "hour_of_day": 5.661944444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-23T05:39:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 288,
+        "hour_of_day": 5.668333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-07-23T05:40:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 289,
+        "hour_of_day": 6.760833333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-23T06:45:39"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 290,
+        "hour_of_day": 6.761111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-23T06:45:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 291,
+        "hour_of_day": 6.766666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-07-23T06:46:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 292,
+        "hour_of_day": 10.347222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-24T10:20:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 293,
+        "hour_of_day": 10.3475,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-24T10:20:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 294,
+        "hour_of_day": 10.353333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-07-24T10:21:12"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 295,
+        "hour_of_day": 11.172222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-24T11:10:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 296,
+        "hour_of_day": 11.1725,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-24T11:10:21"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 297,
+        "hour_of_day": 11.178333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-07-24T11:10:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 298,
+        "hour_of_day": 12.34138888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-24T12:20:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 299,
+        "hour_of_day": 12.341666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-24T12:20:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 300,
+        "hour_of_day": 12.347222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-07-24T12:20:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 301,
+        "hour_of_day": 14.221666666666668,
+        "media_type": "mp4",
+        "timestamp": "2025-07-24T14:13:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 302,
+        "hour_of_day": 23.980833333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-24T23:58:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 303,
+        "hour_of_day": 23.981111111111108,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-24T23:58:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 304,
+        "hour_of_day": 23.987222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-07-24T23:59:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 305,
+        "hour_of_day": 7.5525,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T07:33:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 306,
+        "hour_of_day": 11.770555555555557,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T11:46:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 307,
+        "hour_of_day": 11.770833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T11:46:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 308,
+        "hour_of_day": 12.51388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T12:30:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 309,
+        "hour_of_day": 12.551388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T12:33:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 310,
+        "hour_of_day": 12.551666666666668,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T12:33:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 311,
+        "hour_of_day": 12.557222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-07-25T12:33:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 312,
+        "hour_of_day": 13.228055555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T13:13:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 313,
+        "hour_of_day": 13.228333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T13:13:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 314,
+        "hour_of_day": 13.234444444444444,
+        "media_type": "mp4",
+        "timestamp": "2025-07-25T13:14:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 315,
+        "hour_of_day": 13.498888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T13:29:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 316,
+        "hour_of_day": 13.499166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T13:29:57"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 317,
+        "hour_of_day": 13.505,
+        "media_type": "mp4",
+        "timestamp": "2025-07-25T13:30:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 318,
+        "hour_of_day": 14.062777777777779,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T14:03:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 319,
+        "hour_of_day": 14.068333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-07-25T14:04:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 320,
+        "hour_of_day": 15.075,
+        "media_type": "mp4",
+        "timestamp": "2025-07-25T15:04:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 321,
+        "hour_of_day": 18.046666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T18:02:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 322,
+        "hour_of_day": 18.046944444444446,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-25T18:02:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 323,
+        "hour_of_day": 18.052222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-07-25T18:03:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 324,
+        "hour_of_day": 1.0702777777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T01:04:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 325,
+        "hour_of_day": 9.645555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T09:38:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 326,
+        "hour_of_day": 9.930555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-07-26T09:55:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 327,
+        "hour_of_day": 11.306111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T11:18:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 328,
+        "hour_of_day": 11.30638888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T11:18:23"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 329,
+        "hour_of_day": 11.312777777777779,
+        "media_type": "mp4",
+        "timestamp": "2025-07-26T11:18:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 330,
+        "hour_of_day": 13.389444444444443,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T13:23:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 331,
+        "hour_of_day": 13.389722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T13:23:23"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 332,
+        "hour_of_day": 13.395555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-07-26T13:23:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 333,
+        "hour_of_day": 13.690833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T13:41:27"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 334,
+        "hour_of_day": 13.69111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T13:41:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 335,
+        "hour_of_day": 13.700833333333332,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T13:42:03"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 336,
+        "hour_of_day": 13.70111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T13:42:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 337,
+        "hour_of_day": 14.252222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T14:15:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 338,
+        "hour_of_day": 14.2525,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T14:15:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 339,
+        "hour_of_day": 14.258333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-07-26T14:15:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 340,
+        "hour_of_day": 16.2875,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T16:17:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 341,
+        "hour_of_day": 16.28777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T16:17:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 342,
+        "hour_of_day": 16.29388888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-07-26T16:17:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 343,
+        "hour_of_day": 16.304722222222225,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T16:18:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 344,
+        "hour_of_day": 16.305,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T16:18:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 345,
+        "hour_of_day": 16.311111111111114,
+        "media_type": "mp4",
+        "timestamp": "2025-07-26T16:18:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 346,
+        "hour_of_day": 16.32111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T16:19:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 347,
+        "hour_of_day": 16.32138888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T16:19:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 348,
+        "hour_of_day": 16.327222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-07-26T16:19:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 349,
+        "hour_of_day": 21.581666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T21:34:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 350,
+        "hour_of_day": 21.581944444444446,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-26T21:34:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 351,
+        "hour_of_day": 21.587777777777777,
+        "media_type": "mp4",
+        "timestamp": "2025-07-26T21:35:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 352,
+        "hour_of_day": 9.047777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T09:02:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 353,
+        "hour_of_day": 9.048055555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T09:02:53"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 354,
+        "hour_of_day": 9.05388888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-07-27T09:03:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 355,
+        "hour_of_day": 12.803611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T12:48:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 356,
+        "hour_of_day": 12.80388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T12:48:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 357,
+        "hour_of_day": 12.81,
+        "media_type": "mp4",
+        "timestamp": "2025-07-27T12:48:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 358,
+        "hour_of_day": 13.146388888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:08:47"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 359,
+        "hour_of_day": 13.146666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:08:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 360,
+        "hour_of_day": 13.152777777777779,
+        "media_type": "mp4",
+        "timestamp": "2025-07-27T13:09:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 361,
+        "hour_of_day": 13.158333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:09:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 362,
+        "hour_of_day": 13.158611111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:09:31"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 363,
+        "hour_of_day": 13.164444444444445,
+        "media_type": "mp4",
+        "timestamp": "2025-07-27T13:09:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 364,
+        "hour_of_day": 13.202499999999999,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:12:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 365,
+        "hour_of_day": 13.202777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:12:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 366,
+        "hour_of_day": 13.208888888888888,
+        "media_type": "mp4",
+        "timestamp": "2025-07-27T13:12:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 367,
+        "hour_of_day": 13.747777777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:44:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 368,
+        "hour_of_day": 13.748055555555554,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:44:53"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 369,
+        "hour_of_day": 13.75388888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-07-27T13:45:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 370,
+        "hour_of_day": 13.762777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:45:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 371,
+        "hour_of_day": 13.763055555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T13:45:47"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 372,
+        "hour_of_day": 13.76888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-07-27T13:46:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 373,
+        "hour_of_day": 15.731111111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T15:43:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 374,
+        "hour_of_day": 15.731388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-27T15:43:53"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 375,
+        "hour_of_day": 15.737777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-07-27T15:44:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 376,
+        "hour_of_day": 1.0847222222222221,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T01:05:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 377,
+        "hour_of_day": 1.085,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T01:05:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 378,
+        "hour_of_day": 1.0911111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-07-28T01:05:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 379,
+        "hour_of_day": 1.0994444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T01:05:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 380,
+        "hour_of_day": 1.099722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T01:05:59"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 381,
+        "hour_of_day": 1.1055555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-07-28T01:06:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 382,
+        "hour_of_day": 5.064166666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T05:03:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 383,
+        "hour_of_day": 5.064444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T05:03:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 384,
+        "hour_of_day": 5.070555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-07-28T05:04:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 385,
+        "hour_of_day": 9.99611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T09:59:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 386,
+        "hour_of_day": 16.092777777777776,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T16:05:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 387,
+        "hour_of_day": 16.093055555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-28T16:05:35"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 388,
+        "hour_of_day": 16.099444444444444,
+        "media_type": "mp4",
+        "timestamp": "2025-07-28T16:05:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 389,
+        "hour_of_day": 4.619722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-29T04:37:11"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 390,
+        "hour_of_day": 4.62,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-29T04:37:12"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 391,
+        "hour_of_day": 4.626111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-07-29T04:37:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 392,
+        "hour_of_day": 7.925277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-29T07:55:31"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 393,
+        "hour_of_day": 7.931666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-07-29T07:55:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 394,
+        "hour_of_day": 7.940555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-29T07:56:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 395,
+        "hour_of_day": 8.715,
+        "media_type": "mp4",
+        "timestamp": "2025-07-29T08:42:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 396,
+        "hour_of_day": 3.795,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-30T03:47:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 397,
+        "hour_of_day": 3.7952777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-30T03:47:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 398,
+        "hour_of_day": 3.801111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-07-30T03:48:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 399,
+        "hour_of_day": 8.28277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-30T08:16:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 400,
+        "hour_of_day": 8.283055555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-30T08:16:59"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 401,
+        "hour_of_day": 8.28888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-07-30T08:17:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 402,
+        "hour_of_day": 8.295277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-30T08:17:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 403,
+        "hour_of_day": 8.295555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-30T08:17:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 404,
+        "hour_of_day": 8.301666666666668,
+        "media_type": "mp4",
+        "timestamp": "2025-07-30T08:18:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 405,
+        "hour_of_day": 16.008333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-31T16:00:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 406,
+        "hour_of_day": 2.0372222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-08-01T02:02:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 407,
+        "hour_of_day": 3.641388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-01T03:38:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 408,
+        "hour_of_day": 3.6416666666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-01T03:38:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 409,
+        "hour_of_day": 3.647777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-08-01T03:38:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 410,
+        "hour_of_day": 10.252777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-01T10:15:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 411,
+        "hour_of_day": 10.258333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-08-01T10:15:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 412,
+        "hour_of_day": 10.384722222222221,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-01T10:23:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 413,
+        "hour_of_day": 10.385,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-01T10:23:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 414,
+        "hour_of_day": 10.39111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-08-01T10:23:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 415,
+        "hour_of_day": 0.37166666666666665,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-02T00:22:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 416,
+        "hour_of_day": 11.407777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-02T11:24:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 417,
+        "hour_of_day": 11.408055555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-02T11:24:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 418,
+        "hour_of_day": 11.41388888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-08-02T11:24:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 419,
+        "hour_of_day": 12.335555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-02T12:20:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 420,
+        "hour_of_day": 12.335833333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-02T12:20:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 421,
+        "hour_of_day": 21.653888888888886,
+        "media_type": "mp4",
+        "timestamp": "2025-08-02T21:39:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 422,
+        "hour_of_day": 1.3933333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T01:23:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 423,
+        "hour_of_day": 1.4,
+        "media_type": "mp4",
+        "timestamp": "2025-08-03T01:24:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 424,
+        "hour_of_day": 4.120833333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T04:07:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 425,
+        "hour_of_day": 4.1211111111111105,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T04:07:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 426,
+        "hour_of_day": 10.251666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T10:15:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 427,
+        "hour_of_day": 10.257777777777777,
+        "media_type": "mp4",
+        "timestamp": "2025-08-03T10:15:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 428,
+        "hour_of_day": 10.283333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T10:17:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 429,
+        "hour_of_day": 11.073333333333332,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T11:04:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 430,
+        "hour_of_day": 11.073611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T11:04:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 431,
+        "hour_of_day": 12.315555555555557,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T12:18:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 432,
+        "hour_of_day": 12.315833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T12:18:57"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 433,
+        "hour_of_day": 12.322222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-08-03T12:19:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 434,
+        "hour_of_day": 18.88277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T18:52:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 435,
+        "hour_of_day": 22.25777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T22:15:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 436,
+        "hour_of_day": 22.258055555555554,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-03T22:15:29"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 437,
+        "hour_of_day": 5.218888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-04T05:13:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 438,
+        "hour_of_day": 5.219166666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-04T05:13:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 439,
+        "hour_of_day": 5.225555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-08-04T05:13:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 440,
+        "hour_of_day": 9.44,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-04T09:26:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 441,
+        "hour_of_day": 9.440277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-04T09:26:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 442,
+        "hour_of_day": 9.709999999999999,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-04T09:42:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 443,
+        "hour_of_day": 9.710277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-04T09:42:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 444,
+        "hour_of_day": 9.716111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-08-04T09:42:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 445,
+        "hour_of_day": 9.748888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-08-04T09:44:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 446,
+        "hour_of_day": 17.183888888888887,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-04T17:11:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 447,
+        "hour_of_day": 17.184166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-04T17:11:03"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 448,
+        "hour_of_day": 17.190555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-08-04T17:11:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 449,
+        "hour_of_day": 20.24277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-05T20:14:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 450,
+        "hour_of_day": 20.243055555555557,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-05T20:14:35"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 451,
+        "hour_of_day": 20.24888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-08-05T20:14:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 452,
+        "hour_of_day": 5.3005555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-06T05:18:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 453,
+        "hour_of_day": 10.050277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-06T10:03:01"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 454,
+        "hour_of_day": 10.050555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-06T10:03:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 455,
+        "hour_of_day": 10.056666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-08-06T10:03:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 456,
+        "hour_of_day": 10.93888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-08-06T10:56:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 457,
+        "hour_of_day": 14.701666666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-06T14:42:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 458,
+        "hour_of_day": 14.701944444444443,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-06T14:42:07"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 459,
+        "hour_of_day": 14.707777777777777,
+        "media_type": "mp4",
+        "timestamp": "2025-08-06T14:42:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 460,
+        "hour_of_day": 1.7155555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-07T01:42:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 461,
+        "hour_of_day": 10.459166666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-07T10:27:33"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 462,
+        "hour_of_day": 10.459444444444443,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-07T10:27:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 463,
+        "hour_of_day": 10.465555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-08-07T10:27:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 464,
+        "hour_of_day": 18.122222222222224,
+        "media_type": "mp4",
+        "timestamp": "2025-08-07T18:07:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 465,
+        "hour_of_day": 6.2,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-08T06:12:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 466,
+        "hour_of_day": 6.200277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-08T06:12:01"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 467,
+        "hour_of_day": 6.206666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-08-08T06:12:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 468,
+        "hour_of_day": 9.403611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-08T09:24:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 469,
+        "hour_of_day": 9.40388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-08T09:24:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 470,
+        "hour_of_day": 9.409444444444444,
+        "media_type": "mp4",
+        "timestamp": "2025-08-08T09:24:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 471,
+        "hour_of_day": 10.075555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-08-08T10:04:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 472,
+        "hour_of_day": 16.690277777777776,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-08T16:41:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 473,
+        "hour_of_day": 16.690555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-08T16:41:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 474,
+        "hour_of_day": 16.696666666666665,
+        "media_type": "mp4",
+        "timestamp": "2025-08-08T16:41:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 475,
+        "hour_of_day": 2.7841666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T02:47:03"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 476,
+        "hour_of_day": 2.7844444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T02:47:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 477,
+        "hour_of_day": 2.7905555555555552,
+        "media_type": "mp4",
+        "timestamp": "2025-08-09T02:47:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 478,
+        "hour_of_day": 2.792777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T02:47:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 479,
+        "hour_of_day": 2.7930555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T02:47:35"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 480,
+        "hour_of_day": 2.798888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-08-09T02:47:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 481,
+        "hour_of_day": 2.803611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T02:48:13"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 482,
+        "hour_of_day": 2.803888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T02:48:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 483,
+        "hour_of_day": 2.8099999999999996,
+        "media_type": "mp4",
+        "timestamp": "2025-08-09T02:48:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 484,
+        "hour_of_day": 9.608611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T09:36:31"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 485,
+        "hour_of_day": 9.608888888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T09:36:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 486,
+        "hour_of_day": 9.615,
+        "media_type": "mp4",
+        "timestamp": "2025-08-09T09:36:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 487,
+        "hour_of_day": 13.280000000000001,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T13:16:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 488,
+        "hour_of_day": 13.280277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T13:16:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 489,
+        "hour_of_day": 16.647222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T16:38:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 490,
+        "hour_of_day": 16.6475,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T16:38:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 491,
+        "hour_of_day": 16.653888888888886,
+        "media_type": "mp4",
+        "timestamp": "2025-08-09T16:39:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 492,
+        "hour_of_day": 16.858333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-08-09T16:51:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 493,
+        "hour_of_day": 18.866111111111113,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T18:51:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 494,
+        "hour_of_day": 18.866388888888892,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T18:51:59"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 495,
+        "hour_of_day": 19.364444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T19:21:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 496,
+        "hour_of_day": 19.364722222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T19:21:53"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 497,
+        "hour_of_day": 19.370555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-08-09T19:22:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 498,
+        "hour_of_day": 19.373333333333335,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T19:22:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 499,
+        "hour_of_day": 19.37361111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-09T19:22:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 500,
+        "hour_of_day": 12.016388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-10T12:00:59"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 501,
+        "hour_of_day": 12.016666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-10T12:01:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 502,
+        "hour_of_day": 12.022777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-08-10T12:01:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 503,
+        "hour_of_day": 23.111944444444447,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-10T23:06:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 504,
+        "hour_of_day": 23.118333333333332,
+        "media_type": "mp4",
+        "timestamp": "2025-08-10T23:07:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 505,
+        "hour_of_day": 13.527222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-11T13:31:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 506,
+        "hour_of_day": 13.527500000000002,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-11T13:31:39"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 507,
+        "hour_of_day": 13.533888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-08-11T13:32:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 508,
+        "hour_of_day": 13.538611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-11T13:32:19"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 509,
+        "hour_of_day": 13.53888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-11T13:32:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 510,
+        "hour_of_day": 13.545,
+        "media_type": "mp4",
+        "timestamp": "2025-08-11T13:32:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 511,
+        "hour_of_day": 16.137777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-11T16:08:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 512,
+        "hour_of_day": 16.138055555555557,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-11T16:08:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 513,
+        "hour_of_day": 1.26,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T01:15:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 514,
+        "hour_of_day": 1.2602777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T01:15:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 515,
+        "hour_of_day": 1.2666666666666666,
+        "media_type": "mp4",
+        "timestamp": "2025-08-12T01:16:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 516,
+        "hour_of_day": 9.546666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T09:32:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 517,
+        "hour_of_day": 9.546944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T09:32:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 518,
+        "hour_of_day": 9.785,
+        "media_type": "mp4",
+        "timestamp": "2025-08-12T09:47:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 519,
+        "hour_of_day": 9.87138888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T09:52:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 520,
+        "hour_of_day": 12.352222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-08-12T12:21:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 521,
+        "hour_of_day": 18.110000000000003,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T18:06:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 522,
+        "hour_of_day": 18.110277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T18:06:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 523,
+        "hour_of_day": 21.372222222222224,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T21:22:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 524,
+        "hour_of_day": 21.378333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-08-12T21:22:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 525,
+        "hour_of_day": 21.381666666666668,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T21:22:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 526,
+        "hour_of_day": 21.381944444444446,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T21:22:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 527,
+        "hour_of_day": 21.387777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-08-12T21:23:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 528,
+        "hour_of_day": 21.761666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T21:45:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 529,
+        "hour_of_day": 21.761944444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T21:45:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 530,
+        "hour_of_day": 21.76833333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-08-12T21:46:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 531,
+        "hour_of_day": 21.94472222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T21:56:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 532,
+        "hour_of_day": 21.945,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-12T21:56:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 533,
+        "hour_of_day": 21.95111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-08-12T21:57:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 534,
+        "hour_of_day": 4.6925,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T04:41:33"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 535,
+        "hour_of_day": 4.692777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T04:41:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 536,
+        "hour_of_day": 4.698888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-08-13T04:41:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 537,
+        "hour_of_day": 19.942222222222224,
+        "media_type": "mp4",
+        "timestamp": "2025-08-13T19:56:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 538,
+        "hour_of_day": 20.129722222222224,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T20:07:47"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 539,
+        "hour_of_day": 20.13,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T20:07:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 540,
+        "hour_of_day": 20.13611111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-08-13T20:08:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 541,
+        "hour_of_day": 20.145,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T20:08:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 542,
+        "hour_of_day": 22.004166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T22:00:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 543,
+        "hour_of_day": 22.004444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T22:00:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 544,
+        "hour_of_day": 22.010555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-08-13T22:00:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 545,
+        "hour_of_day": 23.45611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T23:27:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 546,
+        "hour_of_day": 23.45638888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-13T23:27:23"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 547,
+        "hour_of_day": 3.2333333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-08-14T03:14:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 548,
+        "hour_of_day": 8.392777777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-14T08:23:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 549,
+        "hour_of_day": 8.393055555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-14T08:23:35"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 550,
+        "hour_of_day": 8.398888888888889,
+        "media_type": "mp4",
+        "timestamp": "2025-08-14T08:23:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 551,
+        "hour_of_day": 14.56,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-14T14:33:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 552,
+        "hour_of_day": 14.56027777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-14T14:33:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 553,
+        "hour_of_day": 22.195,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-14T22:11:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 554,
+        "hour_of_day": 22.20111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-08-14T22:12:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 555,
+        "hour_of_day": 23.648888888888887,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-14T23:38:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 556,
+        "hour_of_day": 16.32111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-15T16:19:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 557,
+        "hour_of_day": 16.32777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-08-15T16:19:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 558,
+        "hour_of_day": 21.735,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-15T21:44:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 559,
+        "hour_of_day": 21.735277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-15T21:44:07"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 560,
+        "hour_of_day": 21.741666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-08-15T21:44:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 561,
+        "hour_of_day": 21.748333333333335,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-15T21:44:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 562,
+        "hour_of_day": 21.748611111111114,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-15T21:44:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 563,
+        "hour_of_day": 21.755,
+        "media_type": "mp4",
+        "timestamp": "2025-08-15T21:45:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 564,
+        "hour_of_day": 2.9972222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T02:59:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 565,
+        "hour_of_day": 2.9975,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T02:59:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 566,
+        "hour_of_day": 8.304166666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T08:18:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 567,
+        "hour_of_day": 8.734166666666665,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T08:44:03"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 568,
+        "hour_of_day": 8.734444444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T08:44:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 569,
+        "hour_of_day": 8.740555555555554,
+        "media_type": "mp4",
+        "timestamp": "2025-08-16T08:44:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 570,
+        "hour_of_day": 8.756666666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T08:45:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 571,
+        "hour_of_day": 8.756944444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T08:45:25"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 572,
+        "hour_of_day": 8.941666666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T08:56:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 573,
+        "hour_of_day": 9.318333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T09:19:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 574,
+        "hour_of_day": 9.31861111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-16T09:19:07"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 575,
+        "hour_of_day": 9.325,
+        "media_type": "mp4",
+        "timestamp": "2025-08-16T09:19:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 576,
+        "hour_of_day": 3.4205555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-08-17T03:25:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 577,
+        "hour_of_day": 5.76,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-17T05:45:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 578,
+        "hour_of_day": 1.6186111111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-18T01:37:07"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 579,
+        "hour_of_day": 1.6188888888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-18T01:37:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 580,
+        "hour_of_day": 2.698055555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-18T02:41:53"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 581,
+        "hour_of_day": 4.545555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-18T04:32:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 582,
+        "hour_of_day": 10.475555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-20T10:28:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 583,
+        "hour_of_day": 10.475833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-20T10:28:33"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 584,
+        "hour_of_day": 10.481111111111112,
+        "media_type": "mp4",
+        "timestamp": "2025-08-20T10:28:52"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 585,
+        "hour_of_day": 0.15638888888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-21T00:09:23"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 586,
+        "hour_of_day": 0.15666666666666665,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-21T00:09:24"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 587,
+        "hour_of_day": 0.16166666666666665,
+        "media_type": "mp4",
+        "timestamp": "2025-08-21T00:09:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 588,
+        "hour_of_day": 0.5047222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-21T00:30:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 589,
+        "hour_of_day": 0.36277777777777775,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-22T00:21:46"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 590,
+        "hour_of_day": 0.6663888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-22T00:39:59"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 591,
+        "hour_of_day": 1.076111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-23T01:04:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 592,
+        "hour_of_day": 1.0816666666666666,
+        "media_type": "mp4",
+        "timestamp": "2025-08-23T01:04:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 593,
+        "hour_of_day": 23.90138888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-23T23:54:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 594,
+        "hour_of_day": 10.036111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-08-24T10:02:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 595,
+        "hour_of_day": 0.3938888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-26T00:23:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 596,
+        "hour_of_day": 1.1894444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-26T01:11:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 597,
+        "hour_of_day": 1.659722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-26T01:39:35"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 598,
+        "hour_of_day": 3.2408333333333332,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-28T03:14:27"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 599,
+        "hour_of_day": 3.241111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-28T03:14:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 600,
+        "hour_of_day": 1.31,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-31T01:18:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 601,
+        "hour_of_day": 4.0008333333333335,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-31T04:00:03"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 602,
+        "hour_of_day": 4.001111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-31T04:00:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 603,
+        "hour_of_day": 6.76,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-31T06:45:36"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 604,
+        "hour_of_day": 6.760277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-31T06:45:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 605,
+        "hour_of_day": 9.844166666666668,
+        "media_type": "jpeg",
+        "timestamp": "2025-08-31T09:50:39"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 606,
+        "hour_of_day": 3.8713888888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-02T03:52:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 607,
+        "hour_of_day": 10.65388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-02T10:39:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 608,
+        "hour_of_day": 10.654166666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-02T10:39:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 609,
+        "hour_of_day": 0.62,
+        "media_type": "mp4",
+        "timestamp": "2025-09-03T00:37:12"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 610,
+        "hour_of_day": 5.230833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-03T05:13:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 611,
+        "hour_of_day": 22.670555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-03T22:40:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 612,
+        "hour_of_day": 23.380833333333335,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-03T23:22:51"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 613,
+        "hour_of_day": 23.954166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-03T23:57:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 614,
+        "hour_of_day": 0.1761111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-04T00:10:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 615,
+        "hour_of_day": 0.9624999999999999,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-04T00:57:45"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 616,
+        "hour_of_day": 3.8938888888888887,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-04T03:53:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 617,
+        "hour_of_day": 3.8994444444444443,
+        "media_type": "mp4",
+        "timestamp": "2025-09-04T03:53:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 618,
+        "hour_of_day": 4.198055555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-04T04:11:53"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 619,
+        "hour_of_day": 4.395555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-04T04:23:44"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 620,
+        "hour_of_day": 4.417222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-04T04:25:02"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 621,
+        "hour_of_day": 4.428333333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-04T04:25:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 622,
+        "hour_of_day": 8.697222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-09-04T08:41:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 623,
+        "hour_of_day": 3.2822222222222224,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T03:16:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 624,
+        "hour_of_day": 3.2824999999999998,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T03:16:57"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 625,
+        "hour_of_day": 3.2888888888888888,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T03:17:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 626,
+        "hour_of_day": 7.525277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:31:31"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 627,
+        "hour_of_day": 7.525555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:31:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 628,
+        "hour_of_day": 7.531666666666666,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:31:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 629,
+        "hour_of_day": 7.5344444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:32:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 630,
+        "hour_of_day": 7.534722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:32:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 631,
+        "hour_of_day": 7.541111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:32:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 632,
+        "hour_of_day": 7.543611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:32:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 633,
+        "hour_of_day": 7.543888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:32:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 634,
+        "hour_of_day": 7.549444444444444,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:32:58"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 635,
+        "hour_of_day": 7.552222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:33:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 636,
+        "hour_of_day": 7.5525,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:33:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 637,
+        "hour_of_day": 7.558888888888888,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:33:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 638,
+        "hour_of_day": 7.5616666666666665,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:33:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 639,
+        "hour_of_day": 7.561944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:33:43"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 640,
+        "hour_of_day": 7.567777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:34:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 641,
+        "hour_of_day": 7.5713888888888885,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:34:17"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 642,
+        "hour_of_day": 7.571666666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:34:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 643,
+        "hour_of_day": 7.5777777777777775,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:34:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 644,
+        "hour_of_day": 7.581944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:34:55"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 645,
+        "hour_of_day": 7.582222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:34:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 646,
+        "hour_of_day": 7.588333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:35:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 647,
+        "hour_of_day": 7.590833333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:35:27"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 648,
+        "hour_of_day": 7.591111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:35:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 649,
+        "hour_of_day": 7.597222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:35:50"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 650,
+        "hour_of_day": 7.601111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:36:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 651,
+        "hour_of_day": 7.601388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:36:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 652,
+        "hour_of_day": 7.607777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:36:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 653,
+        "hour_of_day": 7.610277777777777,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:36:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 654,
+        "hour_of_day": 7.610555555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:36:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 655,
+        "hour_of_day": 7.616666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:37:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 656,
+        "hour_of_day": 7.6191666666666675,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:37:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 657,
+        "hour_of_day": 7.619444444444445,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:37:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 658,
+        "hour_of_day": 7.625555555555556,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:37:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 659,
+        "hour_of_day": 7.668333333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:40:06"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 660,
+        "hour_of_day": 7.668611111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:40:07"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 661,
+        "hour_of_day": 7.675000000000001,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:40:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 662,
+        "hour_of_day": 7.699722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:41:59"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 663,
+        "hour_of_day": 7.7,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:42:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 664,
+        "hour_of_day": 7.706111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:42:22"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 665,
+        "hour_of_day": 7.717777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:43:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 666,
+        "hour_of_day": 7.718055555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:43:05"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 667,
+        "hour_of_day": 7.724444444444445,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:43:28"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 668,
+        "hour_of_day": 7.726944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:43:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 669,
+        "hour_of_day": 7.727222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:43:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 670,
+        "hour_of_day": 7.733333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:44:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 671,
+        "hour_of_day": 7.735833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:44:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 672,
+        "hour_of_day": 7.736111111111112,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:44:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 673,
+        "hour_of_day": 7.791666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:47:30"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 674,
+        "hour_of_day": 7.791944444444444,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:47:31"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 675,
+        "hour_of_day": 7.798333333333333,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:47:54"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 676,
+        "hour_of_day": 7.888333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:53:18"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 677,
+        "hour_of_day": 7.894444444444444,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:53:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 678,
+        "hour_of_day": 7.943611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:56:37"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 679,
+        "hour_of_day": 7.943888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:56:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 680,
+        "hour_of_day": 7.95,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:57:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 681,
+        "hour_of_day": 7.985555555555556,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:59:08"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 682,
+        "hour_of_day": 7.985833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:59:09"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 683,
+        "hour_of_day": 7.992222222222222,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T07:59:32"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 684,
+        "hour_of_day": 7.994722222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:59:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 685,
+        "hour_of_day": 7.995,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T07:59:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 686,
+        "hour_of_day": 8.001111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T08:00:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 687,
+        "hour_of_day": 8.011111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T08:00:40"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 688,
+        "hour_of_day": 8.011388888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T08:00:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 689,
+        "hour_of_day": 8.017777777777779,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T08:01:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 690,
+        "hour_of_day": 8.020833333333334,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T08:01:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 691,
+        "hour_of_day": 8.021111111111113,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T08:01:16"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 692,
+        "hour_of_day": 8.027222222222223,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T08:01:38"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 693,
+        "hour_of_day": 8.030000000000001,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T08:01:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 694,
+        "hour_of_day": 8.030277777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T08:01:49"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 695,
+        "hour_of_day": 8.036666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-09-05T08:02:12"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 696,
+        "hour_of_day": 8.087222222222223,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T08:05:14"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 697,
+        "hour_of_day": 8.0875,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-05T08:05:15"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 698,
+        "hour_of_day": 11.79888888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-06T11:47:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 699,
+        "hour_of_day": 11.799166666666666,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-06T11:47:57"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 700,
+        "hour_of_day": 11.805555555555557,
+        "media_type": "mp4",
+        "timestamp": "2025-09-06T11:48:20"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 701,
+        "hour_of_day": 11.811388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-06T11:48:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 702,
+        "hour_of_day": 11.811666666666667,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-06T11:48:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 703,
+        "hour_of_day": 11.817777777777778,
+        "media_type": "mp4",
+        "timestamp": "2025-09-06T11:49:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 704,
+        "hour_of_day": 16.807222222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-06T16:48:26"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 705,
+        "hour_of_day": 2.063055555555555,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-07T02:03:47"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 706,
+        "hour_of_day": 2.063333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-07T02:03:48"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 707,
+        "hour_of_day": 2.0694444444444446,
+        "media_type": "mp4",
+        "timestamp": "2025-09-07T02:04:10"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 708,
+        "hour_of_day": 19.64472222222222,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-07T19:38:41"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 709,
+        "hour_of_day": 19.645,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-07T19:38:42"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 710,
+        "hour_of_day": 19.65111111111111,
+        "media_type": "mp4",
+        "timestamp": "2025-09-07T19:39:04"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 711,
+        "hour_of_day": 4.876111111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-10T04:52:34"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 712,
+        "hour_of_day": 4.876388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-09-10T04:52:35"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 713,
+        "hour_of_day": 4.8822222222222225,
+        "media_type": "mp4",
+        "timestamp": "2025-09-10T04:52:56"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_index": 714,
+        "hour_of_day": 23.511666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-09-10T23:30:42"
+      }
+    ]
+  },
+  "encoding": {
+    "color": {
+      "field": "media_type",
+      "scale": {
+        "scheme": "tableau10"
+      },
+      "title": "Media type",
+      "type": "nominal"
+    },
+    "shape": {
+      "field": "media_type",
+      "title": "Media type",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "deployment",
+        "title": "Deployment",
+        "type": "nominal"
+      },
+      {
+        "field": "timestamp",
+        "format": "%Y-%m-%d %H:%M:%S",
+        "title": "Timestamp",
+        "type": "temporal"
+      },
+      {
+        "field": "hour_of_day",
+        "format": ".2f",
+        "title": "Hour of day",
+        "type": "quantitative"
+      },
+      {
+        "field": "media_type",
+        "title": "Media type",
+        "type": "nominal"
+      }
+    ],
+    "x": {
+      "field": "timestamp",
+      "title": "Timestamp",
+      "type": "temporal"
+    },
+    "y": {
+      "field": "hour_of_day",
+      "scale": {
+        "domain": [
+          0,
+          24
+        ]
+      },
+      "title": "Hour of day",
+      "type": "quantitative"
+    }
+  },
+  "height": 460,
+  "mark": {
+    "opacity": 0.78,
+    "size": 46,
+    "type": "circle"
+  },
+  "params": [
+    {
+      "bind": "scales",
+      "name": "param_1e9efca18e7a2868",
+      "select": {
+        "encodings": [
+          "x",
+          "y"
+        ],
+        "type": "interval"
+      }
+    }
+  ],
+  "title": "Deployment detail: 6076_diq202504-202509",
+  "width": 1180
+}

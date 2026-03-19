@@ -1,0 +1,7469 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300
+    }
+  },
+  "data": {
+    "name": "data-a7a8fdb83ba646d3d82efcab6b429237"
+  },
+  "datasets": {
+    "data-a7a8fdb83ba646d3d82efcab6b429237": [
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 3,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 1,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 8,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 104,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 155,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 217,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 150,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 125,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 86,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 67,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 145,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 576,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 362,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 185,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 414,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 139,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 184,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 91,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 6,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 122,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 145,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 61,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 45,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6089_gps1_diq202504-202509",
+        "deployment_order": 0,
+        "event_count": 27,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 73,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 45,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 21,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 33,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 49,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 26,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 15,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 15,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 13,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 15,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 18,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 32,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 40,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 33,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 35,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 39,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 49,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 19,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 18,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 16,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 25,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 39,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 79,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "601702_diq202504-202509",
+        "deployment_order": 1,
+        "event_count": 102,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 9,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 13,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 4,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 15,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 8,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 19,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 38,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 62,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 45,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 63,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 42,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 56,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 56,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 70,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 41,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 42,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 57,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 59,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 39,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 39,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 3,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 5,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6069_gps2_diq202504-202509",
+        "deployment_order": 2,
+        "event_count": 8,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 8,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 23,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 20,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 10,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 15,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 7,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 6,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 25,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 15,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 30,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 59,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 96,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 62,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 124,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 108,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 29,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 27,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 22,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 17,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 11,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 2,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 7,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6009_gps2_diq202504-202509",
+        "deployment_order": 3,
+        "event_count": 4,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 18,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 22,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 16,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 21,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 21,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 12,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 8,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 74,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 49,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 41,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 55,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 90,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 52,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 52,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 28,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 6,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 37,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 9,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 23,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 17,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 10,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 22,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 14,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6076_diq202504-202509",
+        "deployment_order": 4,
+        "event_count": 18,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 12,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 23,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 32,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 43,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 16,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 22,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 11,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 2,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 5,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 3,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 17,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 12,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 37,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 89,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 40,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 103,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 24,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 14,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 8,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 7,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 33,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 13,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6020_old_diq202504-202509",
+        "deployment_order": 5,
+        "event_count": 40,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 9,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 4,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 3,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 3,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 1,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 10,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 16,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 20,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 28,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 6,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 24,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 24,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 90,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 194,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 62,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 27,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 17,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 6,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 6,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6080_diq202504-202509",
+        "deployment_order": 6,
+        "event_count": 2,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 2,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 3,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 3,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 1,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 1,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 5,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 8,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 27,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 50,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 14,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 21,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 68,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 50,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 34,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 10,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 47,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 64,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 3,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 15,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 13,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 9,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 2,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 4,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6031_gps3_diq202504-202509",
+        "deployment_order": 7,
+        "event_count": 15,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 1,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 6,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 5,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 10,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 7,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 11,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 15,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 28,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 24,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 84,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 51,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 33,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 77,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 84,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 4,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 8,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6051_gps2_diq202504-202509",
+        "deployment_order": 8,
+        "event_count": 5,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 6,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 6,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 2,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 10,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 63,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 130,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 90,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 15,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 16,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 13,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 26,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 28,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 13,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 29,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 4,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6104_diq202504-202509",
+        "deployment_order": 9,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 3,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 13,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 3,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 15,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 36,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 25,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 34,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 25,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 26,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 35,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 80,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 19,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 6,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 6,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 52,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 17,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 11,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 16,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6047_gps2_diq202504-202509",
+        "deployment_order": 10,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 1,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 6,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 4,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 16,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 16,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 225,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 46,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 11,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 13,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 4,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 18,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 11,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6071_diq202504-202509",
+        "deployment_order": 11,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 13,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 5,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 7,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 3,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 10,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 1,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 8,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 2,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 34,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 9,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 22,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 43,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 71,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 15,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 24,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 4,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 8,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 4,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 10,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 8,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 20,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6087_diq202504-202509",
+        "deployment_order": 12,
+        "event_count": 6,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 4,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 2,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 2,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 30,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 1,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 4,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 31,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 12,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 18,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 38,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 31,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 28,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 24,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 11,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 4,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 10,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 3,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 28,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 10,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6043_gps2_diq202504-202509",
+        "deployment_order": 13,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 29,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 12,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 28,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 10,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 18,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 10,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 13,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 5,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 2,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 9,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 9,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 9,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 7,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 9,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 3,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 1,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 5,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 5,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 6,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 6,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 12,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6091_gps2_diq202504-202509",
+        "deployment_order": 14,
+        "event_count": 41,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 21,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 8,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 12,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 6,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 6,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 2,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 4,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 2,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 4,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 12,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 3,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 6,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 1,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 1,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 3,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 3,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 45,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 56,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 3,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 3,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6057_diq202504-202509",
+        "deployment_order": 15,
+        "event_count": 2,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 1,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 6,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 1,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 3,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 3,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 6,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 14,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 36,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 38,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 38,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 23,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 8,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 11,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 3,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 8,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6103_diq202504-202509",
+        "deployment_order": 16,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 30,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 32,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 7,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 3,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 6,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 2,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 7,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 4,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 2,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 29,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 18,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 33,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 9,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 3,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6053_diq202504-202509",
+        "deployment_order": 17,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 6,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 5,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 10,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 4,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 28,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 28,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 8,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 5,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 6,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 16,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 4,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 6,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 6,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 4,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 9,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 4,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6089_old_gps2_diq202504-202509",
+        "deployment_order": 18,
+        "event_count": 7,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 3,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 6,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 7,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 3,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 1,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 3,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 6,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 5,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 3,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 58,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 10,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 5,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 7,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 5,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "603602_gps2_diq202504-202509",
+        "deployment_order": 19,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 2,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 2,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 12,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 7,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 1,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 4,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 35,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 10,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 15,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 5,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 8,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 14,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 1,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 1,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "601202_diq202504-202509",
+        "deployment_order": 20,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 12,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 9,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 1,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 5,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 5,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 6,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 5,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 20,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 3,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 3,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 4,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 3,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 7,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 7,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 22,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 3,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 1,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6031_gps1_diq202504-202509",
+        "deployment_order": 21,
+        "event_count": 1,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 41,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 24,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 2,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 5,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 2,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 8,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 13,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 5,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 2,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 6,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 1,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6058_diq202504-202509",
+        "deployment_order": 22,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 3,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 2,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 2,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 6,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 10,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 18,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 3,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 10,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 25,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 21,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 1,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 3,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 2,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6100_diq202504-202509",
+        "deployment_order": 23,
+        "event_count": 2,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 3,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 1,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 20,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 10,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 7,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 3,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 3,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 16,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 8,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 9,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 13,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 8,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 1,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 2,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6089_gps2_diq202504-202509",
+        "deployment_order": 24,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 7,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 6,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 1,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 1,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 1,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 9,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 2,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 1,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 3,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 9,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 3,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 21,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 8,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 6,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 7,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6091_gps1_diq202504-202509",
+        "deployment_order": 25,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 3,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 3,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 2,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 9,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 3,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 10,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 3,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 3,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 2,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 7,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 16,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 12,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 2,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 4,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 2,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 1,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6031_gps2_diq202504-202509",
+        "deployment_order": 26,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 2,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 2,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 7,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 20,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 10,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 17,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 16,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 7,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6089_old_gps1_diq202504-202509",
+        "deployment_order": 27,
+        "event_count": 1,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 7,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 3,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 3,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 6,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 4,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 7,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 3,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 32,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 9,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 3,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6009_gps1_diq202504-202509",
+        "deployment_order": 28,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 9,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 9,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 2,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 9,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 7,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 5,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 2,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 10,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 13,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 2,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 3,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6086_diq202504-202509",
+        "deployment_order": 29,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 1,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 10,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 2,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 38,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 4,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6101_diq202504-202509",
+        "deployment_order": 30,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 2,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 2,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 16,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 19,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 12,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6043_gps3_diq202504-202509",
+        "deployment_order": 31,
+        "event_count": 2,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 23,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 18,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 7,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 3,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 1,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 1,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6056_diq202504-202509",
+        "deployment_order": 32,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 3,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 6,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 4,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 3,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 20,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 5,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 3,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 3,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 1,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6069_gps1_diq202504-202509",
+        "deployment_order": 33,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 3,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 4,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 6,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 3,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 13,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 7,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 1,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 1,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 3,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6051_diq202504-202509",
+        "deployment_order": 34,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 6,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 1,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 13,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 3,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6089_old_gps3_diq202504-202509",
+        "deployment_order": 35,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 4,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 3,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 2,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 1,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 2,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 3,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 9,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6085_diq202504-202509",
+        "deployment_order": 37,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 1,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 1,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 1,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 1,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 2,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 1,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6043_gps1_diq202504-202509",
+        "deployment_order": 38,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 4,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6047_gps1_diq202504-202509",
+        "deployment_order": 39,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 1,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 3,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6047_gps3_diq202504-202509",
+        "deployment_order": 40,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 3,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 1,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 1,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6084_diq202504-202509",
+        "deployment_order": 42,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 0,
+        "hour_label": "00:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 1,
+        "hour_label": "01:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 2,
+        "hour_label": "02:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 3,
+        "hour_label": "03:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 4,
+        "hour_label": "04:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 5,
+        "hour_label": "05:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 6,
+        "hour_label": "06:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 7,
+        "hour_label": "07:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 8,
+        "hour_label": "08:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 9,
+        "hour_label": "09:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 10,
+        "hour_label": "10:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 11,
+        "hour_label": "11:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 1,
+        "hour": 12,
+        "hour_label": "12:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 13,
+        "hour_label": "13:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 14,
+        "hour_label": "14:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 15,
+        "hour_label": "15:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 16,
+        "hour_label": "16:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 17,
+        "hour_label": "17:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 18,
+        "hour_label": "18:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 19,
+        "hour_label": "19:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 20,
+        "hour_label": "20:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 21,
+        "hour_label": "21:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 22,
+        "hour_label": "22:00"
+      },
+      {
+        "deployment": "6102_diq202504-202509",
+        "deployment_order": 43,
+        "event_count": 0,
+        "hour": 23,
+        "hour_label": "23:00"
+      }
+    ]
+  },
+  "encoding": {
+    "color": {
+      "condition": {
+        "test": "datum.event_count == 0",
+        "value": "#ffffff"
+      },
+      "field": "event_count",
+      "scale": {
+        "scheme": "teals"
+      },
+      "title": "Events",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "deployment",
+        "title": "Deployment",
+        "type": "nominal"
+      },
+      {
+        "field": "hour_label",
+        "title": "Hour",
+        "type": "nominal"
+      },
+      {
+        "field": "event_count",
+        "format": ",",
+        "title": "Events",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "hour_label",
+      "sort": {
+        "field": "hour",
+        "order": "ascending"
+      },
+      "title": "Hour of day",
+      "type": "nominal"
+    },
+    "y": {
+      "axis": {
+        "labelLimit": 260
+      },
+      "field": "deployment",
+      "sort": {
+        "field": "deployment_order",
+        "order": "ascending"
+      },
+      "title": "Deployment",
+      "type": "nominal"
+    }
+  },
+  "height": 880,
+  "mark": {
+    "stroke": "white",
+    "strokeWidth": 0.35,
+    "type": "rect"
+  },
+  "title": "Hour-of-day activity by deployment",
+  "width": 980
+}

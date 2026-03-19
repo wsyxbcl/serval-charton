@@ -1,0 +1,116 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300
+    }
+  },
+  "data": {
+    "name": "data-b5ff42015fcc23e70c76af8b36977216"
+  },
+  "datasets": {
+    "data-b5ff42015fcc23e70c76af8b36977216": [
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_index": 0,
+        "hour_of_day": 15.26361111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-13T15:15:49"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_index": 1,
+        "hour_of_day": 15.26388888888889,
+        "media_type": "jpeg",
+        "timestamp": "2025-07-13T15:15:50"
+      },
+      {
+        "deployment": "6088_diq202504-202509",
+        "deployment_order": 41,
+        "event_index": 2,
+        "hour_of_day": 15.269444444444446,
+        "media_type": "mp4",
+        "timestamp": "2025-07-13T15:16:10"
+      }
+    ]
+  },
+  "encoding": {
+    "color": {
+      "field": "media_type",
+      "scale": {
+        "scheme": "tableau10"
+      },
+      "title": "Media type",
+      "type": "nominal"
+    },
+    "shape": {
+      "field": "media_type",
+      "title": "Media type",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "deployment",
+        "title": "Deployment",
+        "type": "nominal"
+      },
+      {
+        "field": "timestamp",
+        "format": "%Y-%m-%d %H:%M:%S",
+        "title": "Timestamp",
+        "type": "temporal"
+      },
+      {
+        "field": "hour_of_day",
+        "format": ".2f",
+        "title": "Hour of day",
+        "type": "quantitative"
+      },
+      {
+        "field": "media_type",
+        "title": "Media type",
+        "type": "nominal"
+      }
+    ],
+    "x": {
+      "field": "timestamp",
+      "title": "Timestamp",
+      "type": "temporal"
+    },
+    "y": {
+      "field": "hour_of_day",
+      "scale": {
+        "domain": [
+          0,
+          24
+        ]
+      },
+      "title": "Hour of day",
+      "type": "quantitative"
+    }
+  },
+  "height": 460,
+  "mark": {
+    "opacity": 0.78,
+    "size": 46,
+    "type": "circle"
+  },
+  "params": [
+    {
+      "bind": "scales",
+      "name": "param_1e9efca18e7a2868",
+      "select": {
+        "encodings": [
+          "x",
+          "y"
+        ],
+        "type": "interval"
+      }
+    }
+  ],
+  "title": "Deployment detail: 6088_diq202504-202509",
+  "width": 1180
+}

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Charton WASM Timestamp Explorer</title>
+    <style>
+        :root {
+            --bg: #f5efe5;
+            --bg-deep: #e7ddcc;
+            --card: rgba(255, 250, 242, 0.9);
+            --card-strong: rgba(255, 248, 239, 0.98);
+            --line: rgba(28, 36, 33, 0.12);
+            --ink: #18211f;
+            --muted: #5a6662;
+            --accent: #0f766e;
+            --accent-2: #9a3412;
+            --accent-3: #1d4ed8;
+            --shadow: 0 18px 46px rgba(29, 28, 22, 0.09);
+            --radius: 22px;
+            --font-sans: "IBM Plex Sans", "Avenir Next", "Segoe UI Variable", "Segoe UI", "Noto Sans", sans-serif;
+            --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            font-family: var(--font-sans);
+            background:
+                radial-gradient(circle at top right, rgba(15, 118, 110, 0.18), transparent 28%),
+                radial-gradient(circle at left 18%, rgba(154, 52, 18, 0.12), transparent 22%),
+                linear-gradient(180deg, #faf5ed 0%, var(--bg) 42%, var(--bg-deep) 100%);
+        }
+
+        main {
+            width: min(1480px, calc(100% - 32px));
+            margin: 28px auto 56px;
+        }
+
+        .hero,
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            padding: 28px 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto -84px -90px auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 118, 110, 0.16), transparent 68%);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2 {
+            font-family: var(--font-display);
+        }
+
+        .hero h1 {
+            margin: 12px 0 10px;
+            font-size: clamp(2rem, 3.2vw, 3.3rem);
+            line-height: 1.02;
+        }
+
+        .hero p,
+        .panel p,
+        .status {
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .metric {
+            padding: 14px 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.58);
+            border: 1px solid rgba(31, 41, 36, 0.08);
+        }
+
+        .metric .label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 7px;
+        }
+
+        .metric .value {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .stack {
+            display: grid;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        .grid.two {
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+        }
+
+        .panel {
+            padding: 18px;
+        }
+
+        .panel h2 {
+            margin: 0 0 8px;
+            font-size: 1.5rem;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: end;
+        }
+
+        .control {
+            min-width: 190px;
+            display: grid;
+            gap: 7px;
+        }
+
+        label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+
+        select,
+        input[type="file"],
+        button {
+            font: inherit;
+        }
+
+        select,
+        input[type="file"] {
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(31, 41, 36, 0.12);
+            background: rgba(255, 255, 255, 0.84);
+            color: var(--ink);
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 999px;
+            padding: 11px 16px;
+            background: var(--accent);
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 12px 26px rgba(15, 118, 110, 0.18);
+        }
+
+        button.secondary {
+            background: rgba(29, 78, 216, 0.12);
+            color: #123260;
+            box-shadow: none;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .chip {
+            cursor: pointer;
+            padding: 9px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(15, 118, 110, 0.18);
+            background: rgba(15, 118, 110, 0.08);
+            color: var(--ink);
+            font-size: 0.94rem;
+        }
+
+        .chip.is-active {
+            border-color: rgba(29, 78, 216, 0.28);
+            background: rgba(29, 78, 216, 0.12);
+        }
+
+        .chart-frame {
+            background: var(--card-strong);
+            border: 1px solid rgba(31, 41, 36, 0.08);
+            border-radius: 18px;
+            padding: 10px;
+            overflow: auto;
+            min-height: 200px;
+        }
+
+        .frame-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .tool-button {
+            border: 1px solid rgba(31, 41, 36, 0.12);
+            background: rgba(255, 255, 255, 0.84);
+            color: var(--ink);
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            box-shadow: none;
+        }
+
+        .tool-label {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .svg-stage {
+            min-width: 100%;
+        }
+
+        .chart-frame svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .chart-frame.is-zoomable {
+            cursor: default;
+        }
+
+        .chart-frame.is-zoomable .svg-stage {
+            touch-action: none;
+            transform-origin: top left;
+        }
+
+        .chart-frame.is-zoomed .svg-stage {
+            cursor: grab;
+        }
+
+        .chart-frame.is-panning .svg-stage {
+            cursor: grabbing;
+        }
+
+        .placeholder {
+            min-height: 180px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: var(--muted);
+            padding: 28px;
+        }
+
+        .caption {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .status,
+        .error {
+            margin-top: 12px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid rgba(31, 41, 36, 0.08);
+            background: rgba(255, 255, 255, 0.58);
+        }
+
+        .error {
+            display: none;
+            color: #7f1d1d;
+            border-color: rgba(185, 28, 28, 0.16);
+            background: rgba(254, 226, 226, 0.88);
+            white-space: pre-wrap;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div class="eyebrow">Charton + Polars + WASM</div>
+            <h1>Interactive timestamp explorer</h1>
+            <p>This demo keeps the timestamp aggregation and Charton SVG generation inside Rust/WASM. Upload a CSV, then switch overview bucket or deployment focus to trigger browser-side rerendering without a Python runtime.</p>
+            <div class="metrics" id="metrics">
+                <div class="metric">
+                    <span class="label">Rows</span>
+                    <span class="value" id="metric-rows">-</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Deployments</span>
+                    <span class="value" id="metric-deployments">-</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Range</span>
+                    <span class="value" id="metric-range">-</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Runtime</span>
+                    <span class="value">Rust/WASM</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="stack">
+            <section class="panel">
+                <h2>Upload CSV</h2>
+                <p>The CSV must include `deployment` and `datetime` columns in `yyyy-mm-dd hh:mm:ss` format. If `path` is present, media type styling will match the native static export.</p>
+                <div class="toolbar">
+                    <div class="control" style="min-width: 320px;">
+                        <label for="csv-upload">CSV file</label>
+                        <input type="file" id="csv-upload" accept=".csv,text/csv" />
+                    </div>
+                    <button id="render-demo" class="secondary" type="button">Load bundled demo CSV</button>
+                </div>
+                <div class="status" id="status">Initialize WASM runtime, then upload a CSV to render the explorer.</div>
+                <div class="error" id="error"></div>
+            </section>
+
+            <section class="panel hidden" id="controls-panel">
+                <h2>Controls</h2>
+                <p>These controls rerun the Rust aggregation and Charton rendering inside the WASM module, then swap in fresh SVG output.</p>
+                <div class="toolbar">
+                    <div class="control">
+                        <label for="bucket-select">Overview bucket</label>
+                        <select id="bucket-select">
+                            <option value="day">day</option>
+                            <option value="week">week</option>
+                            <option value="month" selected>month</option>
+                        </select>
+                    </div>
+                    <div class="control" style="min-width: 360px;">
+                        <label for="deployment-select">Detail deployment</label>
+                        <select id="deployment-select"></select>
+                    </div>
+                </div>
+                <div class="chips" id="deployment-chips"></div>
+            </section>
+
+            <section class="panel">
+                <h2>Overview heatmap</h2>
+                <p>Deployment × time overview. Empty cells are forced to white, and the crowded date axis is thinned after SVG generation.</p>
+                <div class="chart-frame" id="overview-frame">
+                    <div class="placeholder">Upload a CSV to render the overview heatmap.</div>
+                </div>
+            </section>
+
+            <div class="grid two">
+                <section class="panel">
+                    <h2>Deployment detail</h2>
+                    <p id="detail-copy">Exact timestamps for the selected deployment with hour-of-day on the vertical axis. Hover marks for details, then zoom and drag inside the chart.</p>
+                    <div class="chart-frame" id="detail-frame">
+                        <div class="placeholder">Upload a CSV to render the detail event plot.</div>
+                    </div>
+                    <div class="caption" id="detail-caption"></div>
+                </section>
+
+                <section class="panel">
+                    <h2>Hour-of-day heatmap</h2>
+                    <p>Compact activity fingerprint across all deployments.</p>
+                    <div class="chart-frame" id="hour-frame">
+                        <div class="placeholder">Upload a CSV to render the hour-of-day heatmap.</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import init, { WasmExplorer } from "./pkg/datetime_plot_demo_web.js";
+
+        let wasmReady = false;
+        let explorer = null;
+        let metadata = null;
+
+        const statusEl = document.getElementById("status");
+        const errorEl = document.getElementById("error");
+        const controlsPanel = document.getElementById("controls-panel");
+        const bucketSelect = document.getElementById("bucket-select");
+        const deploymentSelect = document.getElementById("deployment-select");
+        const chipsEl = document.getElementById("deployment-chips");
+        const overviewFrame = document.getElementById("overview-frame");
+        const detailFrame = document.getElementById("detail-frame");
+        const hourFrame = document.getElementById("hour-frame");
+        const detailCaption = document.getElementById("detail-caption");
+        const detailCopy = document.getElementById("detail-copy");
+        const MIN_ZOOM = 1;
+        const MAX_ZOOM = 8;
+
+        function deploymentNames() {
+            return new Set((metadata?.deployment_options || []).map((option) => option.deployment));
+        }
+
+        function setStatus(message) {
+            statusEl.textContent = message;
+        }
+
+        function clearError() {
+            errorEl.style.display = "none";
+            errorEl.textContent = "";
+        }
+
+        function showError(message) {
+            errorEl.style.display = "block";
+            errorEl.textContent = message;
+        }
+
+        function setMetric(id, value) {
+            document.getElementById(id).textContent = value;
+        }
+
+        function renderChips() {
+            chipsEl.innerHTML = "";
+            for (const option of metadata.deployment_options.slice(0, 16)) {
+                const chip = document.createElement("button");
+                chip.type = "button";
+                chip.className = "chip";
+                chip.textContent = `${option.deployment} · ${option.event_count_display}`;
+                chip.dataset.deployment = option.deployment;
+                chip.addEventListener("click", () => {
+                    deploymentSelect.value = option.deployment;
+                    syncChipState();
+                    renderDetail();
+                });
+                chipsEl.appendChild(chip);
+            }
+            syncChipState();
+        }
+
+        function syncChipState() {
+            for (const chip of chipsEl.querySelectorAll(".chip")) {
+                chip.classList.toggle("is-active", chip.dataset.deployment === deploymentSelect.value);
+            }
+        }
+
+        function populateControls() {
+            deploymentSelect.innerHTML = "";
+            for (const option of metadata.deployment_options) {
+                const node = document.createElement("option");
+                node.value = option.deployment;
+                node.textContent = `${option.deployment} (${option.event_count_display})`;
+                deploymentSelect.appendChild(node);
+            }
+
+            bucketSelect.value = metadata.default_bucket;
+            deploymentSelect.value = metadata.default_deployment;
+            renderChips();
+            controlsPanel.classList.remove("hidden");
+        }
+
+        function svgBaseWidth(svg) {
+            if (svg?.viewBox?.baseVal?.width) {
+                return svg.viewBox.baseVal.width;
+            }
+            const width = Number.parseFloat(svg?.getAttribute("width") || "");
+            return Number.isFinite(width) && width > 0 ? width : 1200;
+        }
+
+        function cleanupPanState(frame) {
+            frame.classList.remove("is-panning");
+            delete frame._panState;
+        }
+
+        function applyZoom(frame, scale) {
+            const stage = frame.querySelector(".svg-stage");
+            const svg = stage?.querySelector("svg");
+            if (!stage || !svg) {
+                return;
+            }
+
+            const clamped = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
+            const baseWidth = Number(stage.dataset.baseWidth || svgBaseWidth(svg));
+            stage.dataset.scale = String(clamped);
+            stage.style.width = `${baseWidth * clamped}px`;
+            frame.classList.toggle("is-zoomed", clamped > 1.01);
+
+            const label = frame.querySelector("[data-role='zoom-label']");
+            if (label) {
+                label.textContent = `${Math.round(clamped * 100)}%`;
+            }
+
+            if (clamped <= 1.01) {
+                frame.scrollLeft = 0;
+                frame.scrollTop = 0;
+                cleanupPanState(frame);
+            }
+        }
+
+        function decorateDeploymentAxis(frame) {
+            const names = deploymentNames();
+            if (!names.size) {
+                return;
+            }
+
+            for (const node of frame.querySelectorAll("svg text")) {
+                const label = node.textContent?.trim();
+                if (!label || !names.has(label)) {
+                    continue;
+                }
+
+                node.style.cursor = "pointer";
+                node.style.textDecoration = "underline";
+                node.style.textDecorationColor = "rgba(29, 78, 216, 0.35)";
+                node.addEventListener("mouseenter", () => {
+                    node.dataset.prevFill = node.getAttribute("fill") || "";
+                    node.setAttribute("fill", "#1d4ed8");
+                });
+                node.addEventListener("mouseleave", () => {
+                    node.setAttribute("fill", node.dataset.prevFill || "#26403d");
+                });
+                node.addEventListener("click", async () => {
+                    deploymentSelect.value = label;
+                    syncChipState();
+                    try {
+                        setStatus(`Focusing deployment ${label} from chart interaction...`);
+                        await renderDetail();
+                        setStatus(`Detail focused on ${label}.`);
+                    } catch (error) {
+                        showError(error && error.message ? error.message : String(error));
+                    }
+                });
+            }
+        }
+
+        function addZoomControls(frame) {
+            const toolbar = document.createElement("div");
+            toolbar.className = "frame-tools";
+            toolbar.innerHTML = `
+                <button type="button" class="tool-button" data-role="zoom-out">-</button>
+                <button type="button" class="tool-button" data-role="zoom-in">+</button>
+                <button type="button" class="tool-button" data-role="zoom-reset">Reset</button>
+                <span class="tool-label">Zoom <strong data-role="zoom-label">100%</strong>. Use Shift + wheel or drag to pan.</span>
+            `;
+
+            toolbar.querySelector("[data-role='zoom-out']").addEventListener("click", () => {
+                const current = Number(frame.querySelector(".svg-stage")?.dataset.scale || 1);
+                applyZoom(frame, current / 1.25);
+            });
+
+            toolbar.querySelector("[data-role='zoom-in']").addEventListener("click", () => {
+                const current = Number(frame.querySelector(".svg-stage")?.dataset.scale || 1);
+                applyZoom(frame, current * 1.25);
+            });
+
+            toolbar.querySelector("[data-role='zoom-reset']").addEventListener("click", () => {
+                applyZoom(frame, 1);
+            });
+
+            frame.prepend(toolbar);
+        }
+
+        function enableZoomPan(frame) {
+            const stage = frame.querySelector(".svg-stage");
+            const svg = stage?.querySelector("svg");
+            if (!stage || !svg) {
+                return;
+            }
+
+            frame.classList.add("is-zoomable");
+            stage.dataset.baseWidth = String(svgBaseWidth(svg));
+            svg.style.width = "100%";
+            svg.style.maxWidth = "none";
+            svg.removeAttribute("height");
+            addZoomControls(frame);
+            applyZoom(frame, 1);
+
+            stage.addEventListener("wheel", (event) => {
+                if (!event.shiftKey) {
+                    return;
+                }
+
+                event.preventDefault();
+                const current = Number(stage.dataset.scale || 1);
+                const factor = event.deltaY < 0 ? 1.12 : 1 / 1.12;
+                applyZoom(frame, current * factor);
+            }, { passive: false });
+
+            stage.addEventListener("pointerdown", (event) => {
+                if (Number(stage.dataset.scale || 1) <= 1.01) {
+                    return;
+                }
+
+                frame._panState = {
+                    pointerId: event.pointerId,
+                    startX: event.clientX,
+                    startY: event.clientY,
+                    scrollLeft: frame.scrollLeft,
+                    scrollTop: frame.scrollTop,
+                };
+                frame.classList.add("is-panning");
+                stage.setPointerCapture(event.pointerId);
+            });
+
+            stage.addEventListener("pointermove", (event) => {
+                if (!frame._panState || frame._panState.pointerId !== event.pointerId) {
+                    return;
+                }
+
+                frame.scrollLeft = frame._panState.scrollLeft - (event.clientX - frame._panState.startX);
+                frame.scrollTop = frame._panState.scrollTop - (event.clientY - frame._panState.startY);
+            });
+
+            const releasePan = (event) => {
+                if (frame._panState?.pointerId === event.pointerId) {
+                    cleanupPanState(frame);
+                }
+            };
+
+            stage.addEventListener("pointerup", releasePan);
+            stage.addEventListener("pointercancel", releasePan);
+            stage.addEventListener("lostpointercapture", () => cleanupPanState(frame));
+        }
+
+        function mountSvg(frame, svgMarkup, options = {}) {
+            frame.classList.remove("is-zoomable", "is-zoomed", "is-panning");
+            frame.innerHTML = "";
+
+            const stage = document.createElement("div");
+            stage.className = "svg-stage";
+            stage.innerHTML = svgMarkup;
+            frame.appendChild(stage);
+
+            const svg = stage.querySelector("svg");
+            if (!svg) {
+                frame.innerHTML = `<div class="placeholder">Chart rendering returned no SVG.</div>`;
+                return;
+            }
+
+            if (options.deploymentAxis) {
+                decorateDeploymentAxis(frame);
+            }
+
+            if (options.zoomable) {
+                enableZoomPan(frame);
+            }
+        }
+
+        async function renderOverview() {
+            mountSvg(overviewFrame, explorer.render_overview(bucketSelect.value), { deploymentAxis: true });
+        }
+
+        async function renderDetail() {
+            const deployment = deploymentSelect.value;
+            mountSvg(detailFrame, explorer.render_detail(deployment), { zoomable: true });
+            detailCaption.textContent = explorer.detail_caption(deployment);
+            detailCopy.textContent = `Exact timestamps for ${deployment} with hour-of-day on the vertical axis. Hover marks for details, then use Shift + wheel or the zoom buttons to inspect dense periods.`;
+            syncChipState();
+        }
+
+        async function renderHour() {
+            mountSvg(hourFrame, explorer.render_hour_heatmap(), { deploymentAxis: true });
+        }
+
+        async function renderAll() {
+            await renderOverview();
+            await renderDetail();
+            await renderHour();
+        }
+
+        async function loadExplorer(csvText, sourceLabel) {
+            if (!wasmReady) {
+                throw new Error("WASM runtime is not ready yet.");
+            }
+
+            clearError();
+            setStatus(`Parsing ${sourceLabel} and building prepared tables...`);
+
+            explorer = new WasmExplorer(csvText);
+            metadata = JSON.parse(explorer.metadata_json());
+
+            setMetric("metric-rows", metadata.rows_display);
+            setMetric("metric-deployments", metadata.deployments_display);
+            setMetric("metric-range", `${metadata.range_start} to ${metadata.range_end}`);
+
+            populateControls();
+            setStatus(`Loaded ${metadata.rows_display} rows from ${sourceLabel}. Rendering charts...`);
+            await renderAll();
+            setStatus(`Rendered overview, detail, and hour heatmap from ${sourceLabel}.`);
+        }
+
+        async function loadBundledDemo() {
+            const response = await fetch("./demo.csv");
+            if (!response.ok) {
+                throw new Error(`Failed to load bundled demo CSV: ${response.status}`);
+            }
+            const csvText = await response.text();
+            await loadExplorer(csvText, "bundled demo.csv");
+        }
+
+        document.getElementById("csv-upload").addEventListener("change", async (event) => {
+            const file = event.target.files?.[0];
+            if (!file) {
+                return;
+            }
+
+            try {
+                const csvText = await file.text();
+                await loadExplorer(csvText, file.name);
+            } catch (error) {
+                showError(error && error.message ? error.message : String(error));
+                setStatus("Upload failed.");
+            }
+        });
+
+        document.getElementById("render-demo").addEventListener("click", async () => {
+            try {
+                await loadBundledDemo();
+            } catch (error) {
+                showError(error && error.message ? error.message : String(error));
+                setStatus("Bundled demo failed to load.");
+            }
+        });
+
+        bucketSelect.addEventListener("change", async () => {
+            if (!explorer) {
+                return;
+            }
+            try {
+                setStatus("Re-rendering overview in WASM...");
+                await renderOverview();
+                setStatus("Overview updated.");
+            } catch (error) {
+                showError(error && error.message ? error.message : String(error));
+            }
+        });
+
+        deploymentSelect.addEventListener("change", async () => {
+            if (!explorer) {
+                return;
+            }
+            try {
+                setStatus("Re-rendering deployment detail in WASM...");
+                await renderDetail();
+                setStatus("Detail updated.");
+            } catch (error) {
+                showError(error && error.message ? error.message : String(error));
+            }
+        });
+
+        try {
+            setStatus("Initializing WebAssembly module...");
+            await init();
+            wasmReady = true;
+            setStatus("WASM runtime ready. Upload a CSV or load the bundled demo file.");
+        } catch (error) {
+            showError(error && error.message ? error.message : String(error));
+            setStatus("WASM initialization failed.");
+        }
+    </script>
+</body>
+</html>

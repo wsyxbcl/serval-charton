@@ -1,0 +1,188 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300
+    }
+  },
+  "data": {
+    "name": "data-14f466fa6cf7ae2ccfebb4a2d079debe"
+  },
+  "datasets": {
+    "data-14f466fa6cf7ae2ccfebb4a2d079debe": [
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 0,
+        "hour_of_day": 6.2347222222222225,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-03T06:14:05"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 1,
+        "hour_of_day": 6.235,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-03T06:14:06"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 2,
+        "hour_of_day": 6.2427777777777775,
+        "media_type": "mp4",
+        "timestamp": "2025-04-03T06:14:34"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 3,
+        "hour_of_day": 13.696666666666667,
+        "media_type": "mp4",
+        "timestamp": "2025-04-06T13:41:48"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 4,
+        "hour_of_day": 6.437777777777778,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-07T06:26:16"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 5,
+        "hour_of_day": 7.753333333333333,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-11T07:45:12"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 6,
+        "hour_of_day": 7.753611111111111,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-11T07:45:13"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 7,
+        "hour_of_day": 7.760555555555555,
+        "media_type": "mp4",
+        "timestamp": "2025-04-11T07:45:38"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 8,
+        "hour_of_day": 12.635,
+        "media_type": "jpeg",
+        "timestamp": "2025-04-17T12:38:06"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 9,
+        "hour_of_day": 12.642222222222221,
+        "media_type": "mp4",
+        "timestamp": "2025-04-17T12:38:32"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 10,
+        "hour_of_day": 16.976388888888888,
+        "media_type": "jpeg",
+        "timestamp": "2025-05-03T16:58:35"
+      },
+      {
+        "deployment": "603602_gps1_diq202504-202509",
+        "deployment_order": 36,
+        "event_index": 11,
+        "hour_of_day": 16.983333333333334,
+        "media_type": "mp4",
+        "timestamp": "2025-05-03T16:59:00"
+      }
+    ]
+  },
+  "encoding": {
+    "color": {
+      "field": "media_type",
+      "scale": {
+        "scheme": "tableau10"
+      },
+      "title": "Media type",
+      "type": "nominal"
+    },
+    "shape": {
+      "field": "media_type",
+      "title": "Media type",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "deployment",
+        "title": "Deployment",
+        "type": "nominal"
+      },
+      {
+        "field": "timestamp",
+        "format": "%Y-%m-%d %H:%M:%S",
+        "title": "Timestamp",
+        "type": "temporal"
+      },
+      {
+        "field": "hour_of_day",
+        "format": ".2f",
+        "title": "Hour of day",
+        "type": "quantitative"
+      },
+      {
+        "field": "media_type",
+        "title": "Media type",
+        "type": "nominal"
+      }
+    ],
+    "x": {
+      "field": "timestamp",
+      "title": "Timestamp",
+      "type": "temporal"
+    },
+    "y": {
+      "field": "hour_of_day",
+      "scale": {
+        "domain": [
+          0,
+          24
+        ]
+      },
+      "title": "Hour of day",
+      "type": "quantitative"
+    }
+  },
+  "height": 460,
+  "mark": {
+    "opacity": 0.78,
+    "size": 46,
+    "type": "circle"
+  },
+  "params": [
+    {
+      "bind": "scales",
+      "name": "param_1e9efca18e7a2868",
+      "select": {
+        "encodings": [
+          "x",
+          "y"
+        ],
+        "type": "interval"
+      }
+    }
+  ],
+  "title": "Deployment detail: 603602_gps1_diq202504-202509",
+  "width": 1180
+}
