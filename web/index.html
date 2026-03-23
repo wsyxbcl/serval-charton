@@ -309,6 +309,44 @@
             font-size: 0.92rem;
         }
 
+        .table-wrap {
+            overflow: auto;
+            border: 1px solid rgba(31, 41, 36, 0.08);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.56);
+        }
+
+        table {
+            width: 100%;
+            min-width: 860px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 11px 12px;
+            border-bottom: 1px solid rgba(31, 41, 36, 0.08);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: rgba(255, 248, 239, 0.92);
+        }
+
+        tbody tr:hover {
+            background: rgba(29, 78, 216, 0.05);
+        }
+
+        .mono {
+            font-family: ui-monospace, "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+            word-break: break-word;
+        }
+
         .status,
         .error {
             margin-top: 12px;
@@ -454,6 +492,14 @@
                     </div>
                 </section>
             </div>
+
+            <section class="panel">
+                <h2>Deployment inventory</h2>
+                <p>The same prepared deployment summaries used by the report export are also available here for quick review.</p>
+                <div class="table-wrap" id="inventory-frame">
+                    <div class="placeholder">Upload a CSV to populate the deployment inventory.</div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -478,6 +524,7 @@
         const overviewFrame = document.getElementById("overview-frame");
         const detailFrame = document.getElementById("detail-frame");
         const hourFrame = document.getElementById("hour-frame");
+        const inventoryFrame = document.getElementById("inventory-frame");
         const detailCaption = document.getElementById("detail-caption");
         const detailCopy = document.getElementById("detail-copy");
         const fullscreenShell = document.getElementById("fullscreen-shell");
@@ -506,6 +553,55 @@
 
         function setMetric(id, value) {
             document.getElementById(id).textContent = value;
+        }
+
+        function renderInventory() {
+            if (!metadata?.deployment_options?.length) {
+                inventoryFrame.innerHTML = `<div class="placeholder">No deployment summaries available.</div>`;
+                return;
+            }
+
+            const table = document.createElement("table");
+            const thead = document.createElement("thead");
+            const headerRow = document.createElement("tr");
+            for (const title of ["Deployment", "Events", "First seen", "Last seen", "Media types"]) {
+                const th = document.createElement("th");
+                th.textContent = title;
+                headerRow.appendChild(th);
+            }
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            const tbody = document.createElement("tbody");
+            for (const option of metadata.deployment_options) {
+                const row = document.createElement("tr");
+
+                const deployment = document.createElement("td");
+                deployment.className = "mono";
+                deployment.textContent = option.deployment;
+                row.appendChild(deployment);
+
+                const events = document.createElement("td");
+                events.textContent = option.event_count_display;
+                row.appendChild(events);
+
+                const firstSeen = document.createElement("td");
+                firstSeen.textContent = option.first_seen;
+                row.appendChild(firstSeen);
+
+                const lastSeen = document.createElement("td");
+                lastSeen.textContent = option.last_seen;
+                row.appendChild(lastSeen);
+
+                const media = document.createElement("td");
+                media.textContent = option.media_breakdown;
+                row.appendChild(media);
+
+                tbody.appendChild(row);
+            }
+
+            table.appendChild(tbody);
+            inventoryFrame.replaceChildren(table);
         }
 
         function populateControls() {
@@ -1042,6 +1138,7 @@
             await renderOverview();
             await renderDetail();
             await renderHour();
+            renderInventory();
         }
 
         async function loadExplorer(csvText, sourceLabel) {

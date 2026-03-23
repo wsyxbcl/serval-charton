@@ -9,7 +9,7 @@ use serde::Serialize;
 use wasm_bindgen::prelude::*;
 
 use crate::data::{OverviewBucket, PreparedData};
-use crate::util::{format_count, format_date};
+use crate::util::{format_count, format_date, format_timestamp};
 
 #[wasm_bindgen(start)]
 pub fn init_runtime() {
@@ -39,6 +39,9 @@ struct DeploymentOption {
     deployment: String,
     event_count: usize,
     event_count_display: String,
+    first_seen: String,
+    last_seen: String,
+    media_breakdown: String,
 }
 
 #[wasm_bindgen]
@@ -67,6 +70,9 @@ impl WasmExplorer {
                     deployment: summary.deployment.clone(),
                     event_count: summary.event_count,
                     event_count_display: format_count(summary.event_count),
+                    first_seen: format_timestamp(summary.first_seen),
+                    last_seen: format_timestamp(summary.last_seen),
+                    media_breakdown: summary.media_breakdown(),
                 })
                 .collect(),
         };
