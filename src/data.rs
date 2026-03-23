@@ -98,7 +98,10 @@ impl PreparedData {
 
     #[cfg_attr(not(target_arch = "wasm32"), allow(dead_code))]
     pub fn from_csv_text(csv_content: &str) -> Result<Self> {
-        Self::from_reader(Cursor::new(csv_content.as_bytes()), PathBuf::from("uploaded.csv"))
+        Self::from_reader(
+            Cursor::new(csv_content.as_bytes()),
+            PathBuf::from("uploaded.csv"),
+        )
     }
 
     fn from_reader<R>(reader: R, csv_path: PathBuf) -> Result<Self>

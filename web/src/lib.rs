@@ -99,7 +99,9 @@ fn parse_bucket(value: &str) -> Result<OverviewBucket, JsValue> {
         "day" => Ok(OverviewBucket::Day),
         "week" => Ok(OverviewBucket::Week),
         "month" => Ok(OverviewBucket::Month),
-        other => Err(JsValue::from_str(&format!("unknown overview bucket: {other}"))),
+        other => Err(JsValue::from_str(&format!(
+            "unknown overview bucket: {other}"
+        ))),
     }
 }
 

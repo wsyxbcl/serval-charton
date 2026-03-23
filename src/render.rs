@@ -127,19 +127,13 @@ pub fn hour_heatmap_chart_from_table(table: &DataFrame, title: &str) -> Result<L
 pub fn overview_svg(data: &PreparedData, bucket: OverviewBucket) -> Result<String> {
     let svg = overview_chart(data, bucket)?.to_svg()?;
     let svg = replace_zero_fill_with_white(&svg, HEATMAP_ZERO_FILL_YL_OR_RD);
-    let svg = thin_rotated_bottom_axis_labels(
-        &svg,
-        target_overview_label_count(bucket),
-    );
+    let svg = thin_rotated_bottom_axis_labels(&svg, target_overview_label_count(bucket));
     annotate_overview_svg(&svg, data.overview_table(bucket)?)
 }
 
 pub fn detail_svg(data: &PreparedData, deployment: &str) -> Result<String> {
     let svg = detail_chart(data, deployment)?.to_svg()?;
-    let svg = thin_rotated_bottom_axis_labels(
-        &svg,
-        target_detail_label_count(),
-    );
+    let svg = thin_rotated_bottom_axis_labels(&svg, target_detail_label_count());
     annotate_detail_svg(&svg, data.detail_table(deployment)?)
 }
 

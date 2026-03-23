@@ -132,6 +132,7 @@
         .grid {
             display: grid;
             gap: 18px;
+            min-width: 0;
         }
 
         .grid.two {
@@ -140,6 +141,7 @@
 
         .panel {
             padding: 18px;
+            min-width: 0;
         }
 
         .panel h2 {
@@ -229,6 +231,9 @@
             padding: 10px;
             overflow: auto;
             min-height: 200px;
+            position: relative;
+            min-width: 0;
+            max-width: 100%;
         }
 
         .frame-tools {
@@ -237,6 +242,24 @@
             gap: 8px;
             align-items: center;
             margin-bottom: 10px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 6;
+            padding: 8px 10px;
+            margin: -2px -2px 10px;
+            background: linear-gradient(180deg, rgba(255, 248, 239, 0.96), rgba(255, 248, 239, 0.84));
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(31, 41, 36, 0.08);
+            border-top-left-radius: 14px;
+            border-top-right-radius: 14px;
+        }
+
+        .frame-tools.is-fullscreen {
+            top: 0;
+            margin: -2px -2px 6px;
+            padding: 8px 10px;
+            gap: 10px;
         }
 
         .tool-button {
@@ -255,8 +278,18 @@
             font-size: 0.9rem;
         }
 
+        .tool-heading {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-right: 2px;
+        }
+
         .svg-stage {
             min-width: 100%;
+            position: relative;
+            width: 100%;
         }
 
         .chart-frame svg {
@@ -272,6 +305,9 @@
         .chart-frame.is-zoomable .svg-stage {
             touch-action: none;
             transform-origin: top left;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
         }
 
         .chart-frame.is-zoomed .svg-stage {
@@ -320,6 +356,39 @@
 
         .hidden {
             display: none;
+        }
+
+        .fullscreen-shell {
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+            display: none;
+            align-items: stretch;
+            justify-content: center;
+            background: rgba(20, 24, 22, 0.72);
+            backdrop-filter: blur(10px);
+            padding: 18px;
+        }
+
+        .fullscreen-shell.is-open {
+            display: flex;
+        }
+
+        .fullscreen-panel {
+            width: min(96vw, 1800px);
+            height: min(94vh, 1200px);
+            background: rgba(255, 249, 241, 0.98);
+            border: 1px solid rgba(31, 41, 36, 0.12);
+            border-radius: 28px;
+            box-shadow: 0 30px 80px rgba(17, 22, 20, 0.28);
+            display: block;
+            overflow: hidden;
+        }
+
+        .fullscreen-frame {
+            margin: 10px;
+            height: calc(94vh - 20px);
+            min-width: 0;
         }
     </style>
 </head>
@@ -413,6 +482,12 @@
         </div>
     </main>
 
+    <div class="fullscreen-shell" id="fullscreen-shell" aria-hidden="true">
+        <div class="fullscreen-panel">
+            <div class="chart-frame fullscreen-frame" id="fullscreen-frame"></div>
+        </div>
+    </div>
+
     <script type="module">
         import init, { WasmExplorer } from "./pkg/datetime_plot_demo_web.js";
 
@@ -431,6 +506,8 @@
         const hourFrame = document.getElementById("hour-frame");
         const detailCaption = document.getElementById("detail-caption");
         const detailCopy = document.getElementById("detail-copy");
+        const fullscreenShell = document.getElementById("fullscreen-shell");
+        const fullscreenFrame = document.getElementById("fullscreen-frame");
         const MIN_ZOOM = 1;
         const MAX_ZOOM = 8;
 
@@ -464,10 +541,10 @@
                 chip.className = "chip";
                 chip.textContent = `${option.deployment} · ${option.event_count_display}`;
                 chip.dataset.deployment = option.deployment;
-                chip.addEventListener("click", () => {
+                chip.addEventListener("click", async () => {
                     deploymentSelect.value = option.deployment;
                     syncChipState();
-                    renderDetail();
+                    await renderDetail();
                 });
                 chipsEl.appendChild(chip);
             }
@@ -503,9 +580,62 @@
             return Number.isFinite(width) && width > 0 ? width : 1200;
         }
 
+        function svgBaseHeight(svg) {
+            if (svg?.viewBox?.baseVal?.height) {
+                return svg.viewBox.baseVal.height;
+            }
+            const height = Number.parseFloat(svg?.getAttribute("height") || "");
+            return Number.isFinite(height) && height > 0 ? height : 800;
+        }
+
+        function computeBaseScale(frame, svg, options = {}) {
+            const baseWidth = svgBaseWidth(svg);
+            const baseHeight = svgBaseHeight(svg);
+            const toolsHeight = frame.querySelector(".frame-tools")?.offsetHeight || 0;
+            const availableWidth = Math.max(160, frame.clientWidth - 4);
+            const availableHeight = Math.max(160, frame.clientHeight - toolsHeight - 8);
+            const fitWidth = availableWidth / baseWidth;
+
+            if (options.fitMode === "contain") {
+                const fitHeight = availableHeight / baseHeight;
+                return Math.min(fitWidth, fitHeight, 1);
+            }
+
+            return Math.min(fitWidth, 1);
+        }
+
         function cleanupPanState(frame) {
             frame.classList.remove("is-panning");
             delete frame._panState;
+        }
+
+        function attachPanListeners(frame) {
+            if (frame._panListenersAttached) {
+                return;
+            }
+
+            const moveHandler = (event) => {
+                if (!frame._panState) {
+                    return;
+                }
+
+                frame.scrollLeft =
+                    frame._panState.scrollLeft -
+                    (event.clientX - frame._panState.startX);
+                frame.scrollTop =
+                    frame._panState.scrollTop -
+                    (event.clientY - frame._panState.startY);
+            };
+
+            const upHandler = () => {
+                if (frame._panState) {
+                    cleanupPanState(frame);
+                }
+            };
+
+            window.addEventListener("mousemove", moveHandler);
+            window.addEventListener("mouseup", upHandler);
+            frame._panListenersAttached = true;
         }
 
         function applyZoom(frame, scale) {
@@ -517,8 +647,9 @@
 
             const clamped = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
             const baseWidth = Number(stage.dataset.baseWidth || svgBaseWidth(svg));
+            const baseScale = Number(stage.dataset.baseScale || 1);
             stage.dataset.scale = String(clamped);
-            stage.style.width = `${baseWidth * clamped}px`;
+            stage.style.width = `${baseWidth * baseScale * clamped}px`;
             frame.classList.toggle("is-zoomed", clamped > 1.01);
 
             const label = frame.querySelector("[data-role='zoom-label']");
@@ -533,7 +664,125 @@
             }
         }
 
-        function decorateDeploymentAxis(frame) {
+        function buildHeatmapRowCache(frame) {
+            if (frame._heatmapRowCache) {
+                return frame._heatmapRowCache;
+            }
+
+            const svg = frame.querySelector("svg");
+            const plotRect = svg?.querySelector("clipPath rect");
+            const plotX = Number(plotRect?.getAttribute("x") || "0");
+            const plotWidth = Number(plotRect?.getAttribute("width") || "0");
+            const rows = new Map();
+            for (const rect of frame.querySelectorAll("svg rect")) {
+                const title = rect.querySelector("title")?.textContent || "";
+                const match = title.match(/^Deployment: (.+)$/m);
+                if (!match) {
+                    continue;
+                }
+
+                const deployment = match[1];
+                if (!rows.has(deployment)) {
+                    rows.set(deployment, {
+                        rects: [],
+                        minY: Number.POSITIVE_INFINITY,
+                        maxY: Number.NEGATIVE_INFINITY,
+                    });
+                }
+                const row = rows.get(deployment);
+                const y = Number(rect.getAttribute("y") || "0");
+                const height = Number(rect.getAttribute("height") || "0");
+                row.rects.push(rect);
+                row.minY = Math.min(row.minY, y);
+                row.maxY = Math.max(row.maxY, y + height);
+            }
+
+            frame._heatmapRowCache = { rows, plotX, plotWidth };
+            return frame._heatmapRowCache;
+        }
+
+        function deploymentFromHeatmapCell(cell) {
+            const title = cell?.querySelector("title")?.textContent || "";
+            const match = title.match(/^Deployment: (.+)$/m);
+            return match ? match[1] : null;
+        }
+
+        function ensureRowHighlightRect(frame) {
+            if (frame._rowHighlightRect) {
+                return frame._rowHighlightRect;
+            }
+
+            const svg = frame.querySelector("svg");
+            if (!svg) {
+                return null;
+            }
+
+            const highlightRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            highlightRect.setAttribute("fill", "rgba(29,78,216,0.18)");
+            highlightRect.setAttribute("rx", "4");
+            highlightRect.setAttribute("ry", "4");
+            highlightRect.setAttribute("pointer-events", "none");
+            highlightRect.style.display = "none";
+
+            svg.appendChild(highlightRect);
+            frame._rowHighlightRect = highlightRect;
+            return highlightRect;
+        }
+
+        function clearDeploymentRowHighlight(frame) {
+            for (const node of frame.querySelectorAll("[data-deployment-axis='true']")) {
+                node.style.fill = "";
+                node.style.fontWeight = "";
+                node.style.textDecorationColor = "";
+            }
+
+            if (frame._rowHighlightRect) {
+                frame._rowHighlightRect.style.display = "none";
+            }
+
+            delete frame._activeDeploymentHighlight;
+        }
+
+        function highlightDeploymentRow(frame, deployment) {
+            if (frame._activeDeploymentHighlight === deployment) {
+                return;
+            }
+
+            const cache = buildHeatmapRowCache(frame);
+            const row = cache.rows.get(deployment);
+            const highlightRect = ensureRowHighlightRect(frame);
+            clearDeploymentRowHighlight(frame);
+
+            if (row && highlightRect) {
+                highlightRect.setAttribute("x", String(cache.plotX));
+                highlightRect.setAttribute("y", String(row.minY));
+                highlightRect.setAttribute("width", String(cache.plotWidth));
+                highlightRect.setAttribute("height", String(Math.max(1, row.maxY - row.minY)));
+                highlightRect.style.display = "";
+            }
+
+            for (const node of frame.querySelectorAll("[data-deployment-axis='true']")) {
+                if (node.dataset.deploymentLabel === deployment) {
+                    node.style.fill = "#1d4ed8";
+                    node.style.fontWeight = "700";
+                    node.style.textDecorationColor = "rgba(29, 78, 216, 0.55)";
+                }
+            }
+
+            frame._activeDeploymentHighlight = deployment;
+        }
+
+        function toggleDeploymentRowHighlight(frame, deployment) {
+            if (frame._activeDeploymentHighlight === deployment) {
+                clearDeploymentRowHighlight(frame);
+                return false;
+            }
+
+            highlightDeploymentRow(frame, deployment);
+            return true;
+        }
+
+        function decorateDeploymentAxis(frame, options = {}) {
             const names = deploymentNames();
             if (!names.size) {
                 return;
@@ -545,17 +794,16 @@
                     continue;
                 }
 
+                node.dataset.deploymentAxis = "true";
+                node.dataset.deploymentLabel = label;
                 node.style.cursor = "pointer";
                 node.style.textDecoration = "underline";
                 node.style.textDecorationColor = "rgba(29, 78, 216, 0.35)";
-                node.addEventListener("mouseenter", () => {
-                    node.dataset.prevFill = node.getAttribute("fill") || "";
-                    node.setAttribute("fill", "#1d4ed8");
-                });
-                node.addEventListener("mouseleave", () => {
-                    node.setAttribute("fill", node.dataset.prevFill || "#26403d");
-                });
                 node.addEventListener("click", async () => {
+                    if (options.rowHighlight) {
+                        toggleDeploymentRowHighlight(frame, label);
+                    }
+
                     deploymentSelect.value = label;
                     syncChipState();
                     try {
@@ -567,16 +815,51 @@
                     }
                 });
             }
+
+            if (options.rowHighlight) {
+                const cache = buildHeatmapRowCache(frame);
+                for (const row of cache.rows.values()) {
+                    for (const rect of row.rects) {
+                        rect.style.cursor = "pointer";
+                        rect.addEventListener("click", async () => {
+                            const deployment = deploymentFromHeatmapCell(rect);
+                            if (!deployment) {
+                                return;
+                            }
+
+                            toggleDeploymentRowHighlight(frame, deployment);
+                            deploymentSelect.value = deployment;
+                            syncChipState();
+                            try {
+                                setStatus(`Focusing deployment ${deployment} from chart interaction...`);
+                                await renderDetail();
+                                setStatus(`Detail focused on ${deployment}.`);
+                            } catch (error) {
+                                showError(error && error.message ? error.message : String(error));
+                            }
+                        });
+                    }
+                }
+            }
         }
 
-        function addZoomControls(frame) {
+        function addZoomControls(frame, options = {}) {
             const toolbar = document.createElement("div");
-            toolbar.className = "frame-tools";
-            toolbar.innerHTML = `
+            toolbar.className = `frame-tools${options.fullscreenMode ? " is-fullscreen" : ""}`;
+            toolbar.innerHTML = options.fullscreenMode ? `
+                <span class="tool-heading">${options.title || "Chart"}</span>
                 <button type="button" class="tool-button" data-role="zoom-out">-</button>
                 <button type="button" class="tool-button" data-role="zoom-in">+</button>
                 <button type="button" class="tool-button" data-role="zoom-reset">Reset</button>
-                <span class="tool-label">Zoom <strong data-role="zoom-label">100%</strong>. Use Shift + wheel or drag to pan.</span>
+                <button type="button" class="tool-button" data-role="close">Close</button>
+                <span class="tool-label">${options.subtitle || "Zoom and pan in a larger workspace."}</span>
+                <span class="tool-label">Zoom <strong data-role="zoom-label">100%</strong>.</span>
+            ` : `
+                <button type="button" class="tool-button" data-role="zoom-out">-</button>
+                <button type="button" class="tool-button" data-role="zoom-in">+</button>
+                <button type="button" class="tool-button" data-role="zoom-reset">Reset</button>
+                ${options.fullscreenable ? '<button type="button" class="tool-button" data-role="fullscreen">Full screen</button>' : ""}
+                <span class="tool-label">Zoom <strong data-role="zoom-label">100%</strong>. Use Shift + wheel to zoom, then Shift + drag or middle-drag to pan.</span>
             `;
 
             toolbar.querySelector("[data-role='zoom-out']").addEventListener("click", () => {
@@ -593,22 +876,36 @@
                 applyZoom(frame, 1);
             });
 
+            if (options.fullscreenable) {
+                toolbar.querySelector("[data-role='fullscreen']").addEventListener("click", () => {
+                    if (options.onFullscreen) {
+                        options.onFullscreen();
+                    }
+                });
+            }
+
+            if (options.fullscreenMode) {
+                toolbar.querySelector("[data-role='close']").addEventListener("click", closeFullscreen);
+            }
+
             frame.prepend(toolbar);
         }
 
-        function enableZoomPan(frame) {
+        function enableZoomPan(frame, options = {}) {
             const stage = frame.querySelector(".svg-stage");
             const svg = stage?.querySelector("svg");
             if (!stage || !svg) {
                 return;
             }
 
+            attachPanListeners(frame);
             frame.classList.add("is-zoomable");
             stage.dataset.baseWidth = String(svgBaseWidth(svg));
             svg.style.width = "100%";
             svg.style.maxWidth = "none";
             svg.removeAttribute("height");
-            addZoomControls(frame);
+            addZoomControls(frame, options);
+            stage.dataset.baseScale = String(computeBaseScale(frame, svg, options));
             applyZoom(frame, 1);
 
             stage.addEventListener("wheel", (event) => {
@@ -622,44 +919,64 @@
                 applyZoom(frame, current * factor);
             }, { passive: false });
 
-            stage.addEventListener("pointerdown", (event) => {
+            stage.addEventListener("mousedown", (event) => {
                 if (Number(stage.dataset.scale || 1) <= 1.01) {
                     return;
                 }
 
+                const canPan = (event.button === 0 && event.shiftKey) || event.button === 1;
+                if (!canPan) {
+                    return;
+                }
+
+                const target = event.target;
+                if (target instanceof Element && target.matches("[data-deployment-axis='true']")) {
+                    return;
+                }
+
+                event.preventDefault();
                 frame._panState = {
-                    pointerId: event.pointerId,
                     startX: event.clientX,
                     startY: event.clientY,
                     scrollLeft: frame.scrollLeft,
                     scrollTop: frame.scrollTop,
                 };
                 frame.classList.add("is-panning");
-                stage.setPointerCapture(event.pointerId);
             });
 
-            stage.addEventListener("pointermove", (event) => {
-                if (!frame._panState || frame._panState.pointerId !== event.pointerId) {
-                    return;
+            stage.addEventListener("auxclick", (event) => {
+                if (event.button === 1) {
+                    event.preventDefault();
                 }
-
-                frame.scrollLeft = frame._panState.scrollLeft - (event.clientX - frame._panState.startX);
-                frame.scrollTop = frame._panState.scrollTop - (event.clientY - frame._panState.startY);
             });
+        }
 
-            const releasePan = (event) => {
-                if (frame._panState?.pointerId === event.pointerId) {
-                    cleanupPanState(frame);
-                }
-            };
+        function closeFullscreen() {
+            fullscreenShell.classList.remove("is-open");
+            fullscreenShell.setAttribute("aria-hidden", "true");
+            fullscreenFrame.innerHTML = "";
+        }
 
-            stage.addEventListener("pointerup", releasePan);
-            stage.addEventListener("pointercancel", releasePan);
-            stage.addEventListener("lostpointercapture", () => cleanupPanState(frame));
+        function openFullscreen(config) {
+            fullscreenShell.classList.add("is-open");
+            fullscreenShell.setAttribute("aria-hidden", "false");
+            mountSvg(fullscreenFrame, config.svgMarkup, {
+                zoomable: true,
+                deploymentAxis: config.deploymentAxis,
+                rowHighlight: config.rowHighlight,
+                fullscreenMode: true,
+                fitMode: "contain",
+                title: config.title,
+                subtitle: config.subtitle,
+            });
         }
 
         function mountSvg(frame, svgMarkup, options = {}) {
             frame.classList.remove("is-zoomable", "is-zoomed", "is-panning");
+            delete frame._heatmapRowCache;
+            delete frame._rowHighlightRect;
+            delete frame._activeDeploymentHighlight;
+            delete frame._panState;
             frame.innerHTML = "";
 
             const stage = document.createElement("div");
@@ -674,28 +991,64 @@
             }
 
             if (options.deploymentAxis) {
-                decorateDeploymentAxis(frame);
+                decorateDeploymentAxis(frame, options);
             }
 
             if (options.zoomable) {
-                enableZoomPan(frame);
+                enableZoomPan(frame, options);
             }
         }
 
         async function renderOverview() {
-            mountSvg(overviewFrame, explorer.render_overview(bucketSelect.value), { deploymentAxis: true });
+            const svgMarkup = explorer.render_overview(bucketSelect.value);
+            mountSvg(overviewFrame, svgMarkup, {
+                zoomable: true,
+                deploymentAxis: true,
+                rowHighlight: true,
+                fullscreenable: true,
+                onFullscreen: () => openFullscreen({
+                    title: "Overview heatmap",
+                    subtitle: `Deployment × ${bucketSelect.value} overview with click-to-select row highlighting.`,
+                    svgMarkup,
+                    deploymentAxis: true,
+                    rowHighlight: true,
+                }),
+            });
         }
 
         async function renderDetail() {
             const deployment = deploymentSelect.value;
-            mountSvg(detailFrame, explorer.render_detail(deployment), { zoomable: true });
+            const svgMarkup = explorer.render_detail(deployment);
+            mountSvg(detailFrame, svgMarkup, {
+                zoomable: true,
+                fullscreenable: true,
+                onFullscreen: () => openFullscreen({
+                    title: `Deployment detail: ${deployment}`,
+                    subtitle: "Exact timestamps on X and hour-of-day on Y in a larger workspace.",
+                    svgMarkup,
+                    deploymentAxis: false,
+                    rowHighlight: false,
+                }),
+            });
             detailCaption.textContent = explorer.detail_caption(deployment);
-            detailCopy.textContent = `Exact timestamps for ${deployment} with hour-of-day on the vertical axis. Hover marks for details, then use Shift + wheel or the zoom buttons to inspect dense periods.`;
+            detailCopy.textContent = `Exact timestamps for ${deployment} with hour-of-day on the vertical axis. Use Shift + wheel or drag to inspect dense periods, or open the chart full screen.`;
             syncChipState();
         }
 
         async function renderHour() {
-            mountSvg(hourFrame, explorer.render_hour_heatmap(), { deploymentAxis: true });
+            const svgMarkup = explorer.render_hour_heatmap();
+            mountSvg(hourFrame, svgMarkup, {
+                zoomable: true,
+                deploymentAxis: true,
+                fullscreenable: true,
+                onFullscreen: () => openFullscreen({
+                    title: "Hour-of-day heatmap",
+                    subtitle: "Compact activity fingerprint with the same deployment-axis interactions.",
+                    svgMarkup,
+                    deploymentAxis: true,
+                    rowHighlight: false,
+                }),
+            });
         }
 
         async function renderAll() {
@@ -793,6 +1146,17 @@
             showError(error && error.message ? error.message : String(error));
             setStatus("WASM initialization failed.");
         }
+
+        fullscreenShell.addEventListener("click", (event) => {
+            if (event.target === fullscreenShell) {
+                closeFullscreen();
+            }
+        });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && fullscreenShell.classList.contains("is-open")) {
+                closeFullscreen();
+            }
+        });
     </script>
 </body>
 </html>

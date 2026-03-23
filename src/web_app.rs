@@ -73,9 +73,7 @@ fn route(path: &str) -> Response<'_> {
         "/" | "/index.html" => Response::ok("text/html; charset=utf-8", INDEX_HTML),
         "/demo.csv" => Response::ok("text/csv; charset=utf-8", DEMO_CSV),
         "/pkg/datetime_plot_demo_web_bg.wasm" => Response::ok("application/wasm", PKG_WASM),
-        "/pkg/datetime_plot_demo_web.js" => {
-            Response::ok("text/javascript; charset=utf-8", PKG_JS)
-        }
+        "/pkg/datetime_plot_demo_web.js" => Response::ok("text/javascript; charset=utf-8", PKG_JS),
         "/pkg/datetime_plot_demo_web_bg.wasm.d.ts" => {
             Response::ok("text/plain; charset=utf-8", PKG_WASM_D_TS)
         }
