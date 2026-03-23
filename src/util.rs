@@ -9,6 +9,7 @@ pub fn escape_html(value: &str) -> String {
         .replace('\'', "&#39;")
 }
 
+#[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 pub fn format_timestamp(value: NaiveDateTime) -> String {
     value.format("%Y-%m-%d %H:%M:%S").to_string()
 }
@@ -31,6 +32,7 @@ pub fn format_count(value: usize) -> String {
     out.chars().rev().collect()
 }
 
+#[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 pub fn slugify(value: &str) -> String {
     let mut slug = String::with_capacity(value.len());
 
@@ -45,6 +47,7 @@ pub fn slugify(value: &str) -> String {
     slug.trim_matches('_').to_string()
 }
 
+#[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 pub fn page_styles() -> &'static str {
     r#"
         :root {

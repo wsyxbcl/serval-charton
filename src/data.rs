@@ -13,6 +13,7 @@ use clap::ValueEnum;
 use csv::StringRecord;
 use polars::prelude::*;
 
+#[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 pub const DEFAULT_CSV_PATH: &str =
     "/home/wsyxbcl/scripts/datetime_plot_demo/data/tags_mazev11_xmp-s-m_20260312103320.csv";
 
@@ -39,6 +40,7 @@ impl OverviewBucket {
         }
     }
 
+    #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
     pub fn axis_label(self) -> &'static str {
         match self {
             OverviewBucket::Day => "Day",
@@ -47,6 +49,7 @@ impl OverviewBucket {
         }
     }
 
+    #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
     pub fn display_name(self) -> &'static str {
         match self {
             OverviewBucket::Day => "daily",
@@ -78,6 +81,7 @@ impl DeploymentSummary {
 
 #[derive(Clone)]
 pub struct PreparedData {
+    #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
     pub csv_path: PathBuf,
     pub min_timestamp: NaiveDateTime,
     pub max_timestamp: NaiveDateTime,
@@ -214,7 +218,9 @@ impl PreparedData {
 struct EventRow {
     deployment: String,
     timestamp: NaiveDateTime,
+    path: String,
     media_type: String,
+    media_family: String,
 }
 
 impl EventRow {
@@ -239,15 +245,26 @@ impl EventRow {
         let timestamp = NaiveDateTime::parse_from_str(timestamp_str, "%Y-%m-%d %H:%M:%S")
             .with_context(|| format!("invalid datetime '{timestamp_str}' at row {row_number}"))?;
 
-        let media_type = record
+        let path = record
             .get(indices.path)
-            .map(extract_media_type)
-            .unwrap_or_else(|| "unknown".to_string());
+            .map(str::trim)
+            .unwrap_or_default()
+            .to_string();
+        let media_type = indices
+            .media_type
+            .and_then(|index| record.get(index))
+            .map(str::trim)
+            .filter(|value| !value.is_empty())
+            .map(normalize_media_type)
+            .unwrap_or_else(|| infer_media_type_from_path(&path));
+        let media_family = media_family(&media_type, &path).to_string();
 
         Ok(Self {
             deployment,
             timestamp,
+            path,
             media_type,
+            media_family,
         })
     }
 }
@@ -258,7 +275,7 @@ fn summarize_rows(rows: &[EventRow]) -> Vec<DeploymentSummary> {
         let entry = stats
             .entry(row.deployment.clone())
             .or_insert_with(|| DeploymentAccumulator::new(row.timestamp));
-        entry.record(row.timestamp, &row.media_type);
+        entry.record(row.timestamp, &row.media_family);
     }
 
     let mut deployments = stats
@@ -292,6 +309,7 @@ struct ColumnIndices {
     path: usize,
     deployment: usize,
     datetime: usize,
+    media_type: Option<usize>,
 }
 
 impl ColumnIndices {
@@ -308,11 +326,13 @@ impl ColumnIndices {
             .iter()
             .position(|header| header == "datetime")
             .context("missing required column 'datetime'")?;
+        let media_type = headers.iter().position(|header| header == "media_type");
 
         Ok(Self {
             path,
             deployment,
             datetime,
+            media_type,
         })
     }
 }
@@ -347,9 +367,13 @@ fn build_events_table(rows: &[EventRow], order_map: &HashMap<String, usize>) -> 
     let mut deployments = Vec::with_capacity(rows.len());
     let mut deployment_order = Vec::with_capacity(rows.len());
     let mut timestamps = Vec::with_capacity(rows.len());
+    let mut day_labels = Vec::with_capacity(rows.len());
     let mut hours = Vec::with_capacity(rows.len());
+    let mut minutes = Vec::with_capacity(rows.len());
     let mut event_index = Vec::with_capacity(rows.len());
+    let mut paths = Vec::with_capacity(rows.len());
     let mut media_types = Vec::with_capacity(rows.len());
+    let mut media_families = Vec::with_capacity(rows.len());
 
     let mut current_deployment = None::<&str>;
     let mut index_within = 0_i32;
@@ -363,9 +387,13 @@ fn build_events_table(rows: &[EventRow], order_map: &HashMap<String, usize>) -> 
         deployments.push(row.deployment.clone());
         deployment_order.push(order_map[&row.deployment] as i32);
         timestamps.push(timestamp_to_ns(row.timestamp)?);
+        day_labels.push(day_label(row.timestamp));
         hours.push(hour_of_day(row.timestamp));
+        minutes.push(minute_of_day(row.timestamp));
         event_index.push(index_within);
+        paths.push(row.path.clone());
         media_types.push(row.media_type.clone());
+        media_families.push(row.media_family.clone());
         index_within += 1;
     }
 
@@ -373,9 +401,13 @@ fn build_events_table(rows: &[EventRow], order_map: &HashMap<String, usize>) -> 
         deployments,
         deployment_order,
         timestamps,
+        day_labels,
         hours,
+        minutes,
         event_index,
+        paths,
         media_types,
+        media_families,
     )
 }
 
@@ -400,17 +432,25 @@ fn build_detail_tables(
         let mut deployments_col = Vec::with_capacity(group.len());
         let mut deployment_order = Vec::with_capacity(group.len());
         let mut timestamps = Vec::with_capacity(group.len());
+        let mut day_labels = Vec::with_capacity(group.len());
         let mut hours = Vec::with_capacity(group.len());
+        let mut minutes = Vec::with_capacity(group.len());
         let mut event_index = Vec::with_capacity(group.len());
+        let mut paths = Vec::with_capacity(group.len());
         let mut media_types = Vec::with_capacity(group.len());
+        let mut media_families = Vec::with_capacity(group.len());
 
         for (index, row) in group.iter().enumerate() {
             deployments_col.push(row.deployment.clone());
             deployment_order.push(deployment.order as i32);
             timestamps.push(timestamp_to_ns(row.timestamp)?);
+            day_labels.push(day_label(row.timestamp));
             hours.push(hour_of_day(row.timestamp));
+            minutes.push(minute_of_day(row.timestamp));
             event_index.push(index as i32);
+            paths.push(row.path.clone());
             media_types.push(row.media_type.clone());
+            media_families.push(row.media_family.clone());
         }
 
         tables.insert(
@@ -419,9 +459,13 @@ fn build_detail_tables(
                 deployments_col,
                 deployment_order,
                 timestamps,
+                day_labels,
                 hours,
+                minutes,
                 event_index,
+                paths,
                 media_types,
+                media_families,
             )?,
         );
     }
@@ -433,9 +477,13 @@ fn build_event_dataframe(
     deployments: Vec<String>,
     deployment_order: Vec<i32>,
     timestamps: Vec<i64>,
+    day_labels: Vec<String>,
     hours: Vec<f64>,
+    minutes: Vec<f64>,
     event_index: Vec<i32>,
+    paths: Vec<String>,
     media_types: Vec<String>,
+    media_families: Vec<String>,
 ) -> Result<DataFrame> {
     let timestamp_series = Series::new("timestamp".into(), timestamps)
         .cast(&DataType::Datetime(TimeUnit::Nanoseconds, None))
@@ -445,9 +493,13 @@ fn build_event_dataframe(
         Series::new("deployment".into(), deployments).into(),
         Series::new("deployment_order".into(), deployment_order).into(),
         timestamp_series.into(),
+        Series::new("day_label".into(), day_labels).into(),
         Series::new("hour_of_day".into(), hours).into(),
+        Series::new("minute_of_day".into(), minutes).into(),
         Series::new("event_index".into(), event_index).into(),
+        Series::new("path".into(), paths).into(),
         Series::new("media_type".into(), media_types).into(),
+        Series::new("media_family".into(), media_families).into(),
     ])
     .context("failed to build events dataframe")
 }
@@ -542,7 +594,7 @@ fn build_hour_heatmap(
     .context("failed to build hour heatmap dataframe")
 }
 
-fn extract_media_type(path: &str) -> String {
+fn infer_media_type_from_path(path: &str) -> String {
     let trimmed = path.strip_suffix(".xmp").unwrap_or(path);
     let extension = trimmed
         .rsplit_once('.')
@@ -550,11 +602,28 @@ fn extract_media_type(path: &str) -> String {
         .unwrap_or("unknown");
 
     match extension.to_ascii_lowercase().as_str() {
-        "jpg" | "jpeg" => "jpeg".to_string(),
-        "mp4" => "mp4".to_string(),
-        "png" => "png".to_string(),
-        "mov" => "mov".to_string(),
+        "jpg" | "jpeg" => "image/jpeg".to_string(),
+        "png" => "image/png".to_string(),
+        "mp4" => "video/mp4".to_string(),
+        "mov" => "video/quicktime".to_string(),
         other => other.to_string(),
+    }
+}
+
+fn normalize_media_type(value: &str) -> String {
+    value.trim().to_ascii_lowercase()
+}
+
+fn media_family(media_type: &str, path: &str) -> &'static str {
+    if media_type.starts_with("image/") {
+        "image"
+    } else if media_type.starts_with("video/") {
+        "video"
+    } else {
+        match infer_media_type_from_path(path).as_str() {
+            value if value.starts_with("video/") => "video",
+            _ => "image",
+        }
     }
 }
 
@@ -630,4 +699,14 @@ fn timestamp_to_ns(timestamp: NaiveDateTime) -> Result<i64> {
 
 fn hour_of_day(timestamp: NaiveDateTime) -> f64 {
     timestamp.hour() as f64 + timestamp.minute() as f64 / 60.0 + timestamp.second() as f64 / 3600.0
+}
+
+fn minute_of_day(timestamp: NaiveDateTime) -> f64 {
+    timestamp.hour() as f64 * 60.0
+        + timestamp.minute() as f64
+        + timestamp.second() as f64 / 60.0
+}
+
+fn day_label(timestamp: NaiveDateTime) -> String {
+    timestamp.format("%Y-%m-%d").to_string()
 }

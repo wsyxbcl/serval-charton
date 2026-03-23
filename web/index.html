@@ -202,33 +202,11 @@
             box-shadow: none;
         }
 
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .chip {
-            cursor: pointer;
-            padding: 9px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(15, 118, 110, 0.18);
-            background: rgba(15, 118, 110, 0.08);
-            color: var(--ink);
-            font-size: 0.94rem;
-        }
-
-        .chip.is-active {
-            border-color: rgba(29, 78, 216, 0.28);
-            background: rgba(29, 78, 216, 0.12);
-        }
-
         .chart-frame {
-            background: var(--card-strong);
-            border: 1px solid rgba(31, 41, 36, 0.08);
-            border-radius: 18px;
-            padding: 10px;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
             overflow: auto;
             min-height: 200px;
             position: relative;
@@ -247,17 +225,15 @@
             left: 0;
             z-index: 6;
             padding: 8px 10px;
-            margin: -2px -2px 10px;
+            margin: 0 0 10px;
             background: linear-gradient(180deg, rgba(255, 248, 239, 0.96), rgba(255, 248, 239, 0.84));
             backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(31, 41, 36, 0.08);
-            border-top-left-radius: 14px;
-            border-top-right-radius: 14px;
         }
 
         .frame-tools.is-fullscreen {
             top: 0;
-            margin: -2px -2px 6px;
+            margin: 0 0 6px;
             padding: 8px 10px;
             gap: 10px;
         }
@@ -450,7 +426,6 @@
                         <select id="deployment-select"></select>
                     </div>
                 </div>
-                <div class="chips" id="deployment-chips"></div>
             </section>
 
             <section class="panel">
@@ -464,7 +439,7 @@
             <div class="grid two">
                 <section class="panel">
                     <h2>Deployment detail</h2>
-                    <p id="detail-copy">Exact timestamps for the selected deployment with hour-of-day on the vertical axis. Hover marks for details, then zoom and drag inside the chart.</p>
+                    <p id="detail-copy">Exact timestamps in one shared chart, with days on the horizontal axis and minute-of-day on the vertical axis. Still images are nudged slightly up-left and videos down-right for readability.</p>
                     <div class="chart-frame" id="detail-frame">
                         <div class="placeholder">Upload a CSV to render the detail event plot.</div>
                     </div>
@@ -500,7 +475,6 @@
         const controlsPanel = document.getElementById("controls-panel");
         const bucketSelect = document.getElementById("bucket-select");
         const deploymentSelect = document.getElementById("deployment-select");
-        const chipsEl = document.getElementById("deployment-chips");
         const overviewFrame = document.getElementById("overview-frame");
         const detailFrame = document.getElementById("detail-frame");
         const hourFrame = document.getElementById("hour-frame");
@@ -510,6 +484,7 @@
         const fullscreenFrame = document.getElementById("fullscreen-frame");
         const MIN_ZOOM = 1;
         const MAX_ZOOM = 8;
+        let svgNamespaceCounter = 0;
 
         function deploymentNames() {
             return new Set((metadata?.deployment_options || []).map((option) => option.deployment));
@@ -533,30 +508,6 @@
             document.getElementById(id).textContent = value;
         }
 
-        function renderChips() {
-            chipsEl.innerHTML = "";
-            for (const option of metadata.deployment_options.slice(0, 16)) {
-                const chip = document.createElement("button");
-                chip.type = "button";
-                chip.className = "chip";
-                chip.textContent = `${option.deployment} · ${option.event_count_display}`;
-                chip.dataset.deployment = option.deployment;
-                chip.addEventListener("click", async () => {
-                    deploymentSelect.value = option.deployment;
-                    syncChipState();
-                    await renderDetail();
-                });
-                chipsEl.appendChild(chip);
-            }
-            syncChipState();
-        }
-
-        function syncChipState() {
-            for (const chip of chipsEl.querySelectorAll(".chip")) {
-                chip.classList.toggle("is-active", chip.dataset.deployment === deploymentSelect.value);
-            }
-        }
-
         function populateControls() {
             deploymentSelect.innerHTML = "";
             for (const option of metadata.deployment_options) {
@@ -568,7 +519,6 @@
 
             bucketSelect.value = metadata.default_bucket;
             deploymentSelect.value = metadata.default_deployment;
-            renderChips();
             controlsPanel.classList.remove("hidden");
         }
 
@@ -805,7 +755,6 @@
                     }
 
                     deploymentSelect.value = label;
-                    syncChipState();
                     try {
                         setStatus(`Focusing deployment ${label} from chart interaction...`);
                         await renderDetail();
@@ -829,7 +778,6 @@
 
                             toggleDeploymentRowHighlight(frame, deployment);
                             deploymentSelect.value = deployment;
-                            syncChipState();
                             try {
                                 setStatus(`Focusing deployment ${deployment} from chart interaction...`);
                                 await renderDetail();
@@ -971,6 +919,43 @@
             });
         }
 
+        function namespaceSvgDefinitions(svg) {
+            const nodesWithIds = Array.from(svg.querySelectorAll("[id]"));
+            if (!nodesWithIds.length) {
+                return;
+            }
+
+            const prefix = `svg${++svgNamespaceCounter}_`;
+            const idMap = new Map();
+
+            for (const node of nodesWithIds) {
+                const oldId = node.id;
+                const newId = `${prefix}${oldId}`;
+                idMap.set(oldId, newId);
+                node.id = newId;
+            }
+
+            for (const node of svg.querySelectorAll("*")) {
+                for (const attribute of Array.from(node.attributes)) {
+                    let next = attribute.value;
+
+                    for (const [oldId, newId] of idMap) {
+                        next = next.split(`url(#${oldId})`).join(`url(#${newId})`);
+                        next = next.split(`url('#${oldId}')`).join(`url(#${newId})`);
+                        next = next.split(`url("#${oldId}")`).join(`url(#${newId})`);
+
+                        if ((attribute.name === "href" || attribute.name === "xlink:href") && next === `#${oldId}`) {
+                            next = `#${newId}`;
+                        }
+                    }
+
+                    if (next !== attribute.value) {
+                        node.setAttribute(attribute.name, next);
+                    }
+                }
+            }
+        }
+
         function mountSvg(frame, svgMarkup, options = {}) {
             frame.classList.remove("is-zoomable", "is-zoomed", "is-panning");
             delete frame._heatmapRowCache;
@@ -989,6 +974,8 @@
                 frame.innerHTML = `<div class="placeholder">Chart rendering returned no SVG.</div>`;
                 return;
             }
+
+            namespaceSvgDefinitions(svg);
 
             if (options.deploymentAxis) {
                 decorateDeploymentAxis(frame, options);
@@ -1024,15 +1011,14 @@
                 fullscreenable: true,
                 onFullscreen: () => openFullscreen({
                     title: `Deployment detail: ${deployment}`,
-                    subtitle: "Exact timestamps on X and hour-of-day on Y in a larger workspace.",
+                    subtitle: "One shared chart with days on X, minute-of-day on Y, and a small diagonal nudge separating still images from videos.",
                     svgMarkup,
                     deploymentAxis: false,
                     rowHighlight: false,
                 }),
             });
             detailCaption.textContent = explorer.detail_caption(deployment);
-            detailCopy.textContent = `Exact timestamps for ${deployment} with hour-of-day on the vertical axis. Use Shift + wheel or drag to inspect dense periods, or open the chart full screen.`;
-            syncChipState();
+            detailCopy.textContent = `Exact timestamps for ${deployment} in one shared chart, with days on the horizontal axis and minute-of-day on the vertical axis. Still images are nudged slightly up-left and videos down-right. Use Shift + wheel or drag to inspect dense periods, or open the chart full screen.`;
         }
 
         async function renderHour() {
@@ -1040,13 +1026,14 @@
             mountSvg(hourFrame, svgMarkup, {
                 zoomable: true,
                 deploymentAxis: true,
+                rowHighlight: true,
                 fullscreenable: true,
                 onFullscreen: () => openFullscreen({
                     title: "Hour-of-day heatmap",
                     subtitle: "Compact activity fingerprint with the same deployment-axis interactions.",
                     svgMarkup,
                     deploymentAxis: true,
-                    rowHighlight: false,
+                    rowHighlight: true,
                 }),
             });
         }

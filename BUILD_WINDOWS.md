@@ -119,16 +119,17 @@ The uploaded CSV must contain:
 
 - `deployment`
 - `datetime`
+- `path`
 
 The `datetime` format must be:
 
 `yyyy-mm-dd hh:mm:ss`
 
-If a `path` column is present, the detail chart can still separate media types consistently with the native exporter.
+If a `media_type` column is present, the detail chart uses it to classify rows into `image` and `video`. If it is missing, the app falls back to path-based inference.
 
 ## Notes
 
-- The native executable embeds the current `web/index.html`, `web/demo.csv`, and `web/pkg/*` files at compile time.
+- The native executable embeds the current `web/index.html`, the main demo dataset under `data/`, and `web/pkg/*` at compile time.
 - Rebuild `web/pkg` first, then rebuild the executable.
 - The browser page is local-only; there is no remote backend.
 - Large datasets may still make the browser-side WASM app feel heavy. That affects runtime performance, not installation.

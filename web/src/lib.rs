@@ -76,16 +76,16 @@ impl WasmExplorer {
 
     pub fn render_overview(&self, bucket: String) -> Result<String, JsValue> {
         let bucket = parse_bucket(&bucket)?;
-        render::overview_svg(&self.data, bucket).map_err(to_js_error)
+        render::overview_web_svg(&self.data, bucket).map_err(to_js_error)
     }
 
     pub fn render_detail(&self, deployment: String) -> Result<String, JsValue> {
         let deployment = normalize_deployment(&self.data, &deployment)?;
-        render::detail_svg(&self.data, &deployment).map_err(to_js_error)
+        render::detail_web_svg(&self.data, &deployment).map_err(to_js_error)
     }
 
     pub fn render_hour_heatmap(&self) -> Result<String, JsValue> {
-        render::hour_heatmap_svg(&self.data).map_err(to_js_error)
+        render::hour_heatmap_web_svg(&self.data).map_err(to_js_error)
     }
 
     pub fn detail_caption(&self, deployment: String) -> Result<String, JsValue> {

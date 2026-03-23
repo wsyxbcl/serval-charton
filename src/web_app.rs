@@ -6,12 +6,12 @@ use std::process::Command;
 use anyhow::{Context, Result};
 
 const INDEX_HTML: &[u8] = include_bytes!("../web/index.html");
-const DEMO_CSV: &[u8] = include_bytes!("../web/demo.csv");
+const DEMO_CSV: &[u8] =
+    include_bytes!("../data/tags_mazev11_xmp-s-m_20260312103320.csv");
 const PKG_WASM: &[u8] = include_bytes!("../web/pkg/datetime_plot_demo_web_bg.wasm");
 const PKG_JS: &[u8] = include_bytes!("../web/pkg/datetime_plot_demo_web.js");
 const PKG_WASM_D_TS: &[u8] = include_bytes!("../web/pkg/datetime_plot_demo_web_bg.wasm.d.ts");
 const PKG_D_TS: &[u8] = include_bytes!("../web/pkg/datetime_plot_demo_web.d.ts");
-const PKG_PACKAGE_JSON: &[u8] = include_bytes!("../web/pkg/package.json");
 
 pub fn serve(bind: SocketAddr, open_browser: bool) -> Result<()> {
     let listener = TcpListener::bind(bind)
@@ -78,7 +78,6 @@ fn route(path: &str) -> Response<'_> {
             Response::ok("text/plain; charset=utf-8", PKG_WASM_D_TS)
         }
         "/pkg/datetime_plot_demo_web.d.ts" => Response::ok("text/plain; charset=utf-8", PKG_D_TS),
-        "/pkg/package.json" => Response::ok("application/json; charset=utf-8", PKG_PACKAGE_JSON),
         _ => Response::not_found(),
     }
 }
