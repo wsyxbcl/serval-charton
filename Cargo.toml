@@ -8,5 +8,5 @@ anyhow = "1.0"
 charton = "0.4"
 chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
 clap = { version = "4.5", features = ["derive"] }
-csv = "1.3"
 polars = { version = "0.49", default-features = false, features = ["dtype-date", "dtype-datetime", "fmt", "strings", "temporal"] }
+polars-io = { version = "0.49", default-features = false, features = ["csv"] }

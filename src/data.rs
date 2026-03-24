@@ -1,21 +1,24 @@
 use std::collections::{BTreeMap, HashMap};
 #[cfg(not(target_arch = "wasm32"))]
 use std::fs::File;
-use std::io::{Cursor, Read};
+use std::io::{BufRead, BufReader, Cursor, Read, Seek, SeekFrom};
 #[cfg(not(target_arch = "wasm32"))]
 use std::path::Path;
 use std::path::PathBuf;
+use std::sync::Arc;
 
 use anyhow::{Context, Result, anyhow, bail};
 use chrono::{Datelike, Duration, NaiveDate, NaiveDateTime, Timelike};
 #[cfg(not(target_arch = "wasm32"))]
 use clap::ValueEnum;
-use csv::StringRecord;
 use polars::prelude::*;
+use polars_io::mmap::MmapBytesReader;
+use polars_io::prelude::{CsvParseOptions, CsvReadOptions, SerReader};
 
 #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 pub const DEFAULT_CSV_PATH: &str =
     "data/tags_mazev11_xmp-s-m_20260312103320.csv";
+const CSV_INFER_SCHEMA_LENGTH: usize = 1_000;
 
 #[cfg_attr(not(target_arch = "wasm32"), derive(ValueEnum))]
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash)]
@@ -108,26 +111,26 @@ impl PreparedData {
         )
     }
 
-    fn from_reader<R>(reader: R, csv_path: PathBuf) -> Result<Self>
+    fn from_reader<R>(mut reader: R, csv_path: PathBuf) -> Result<Self>
     where
-        R: Read,
+        R: Read + Seek + Send + Sync + MmapBytesReader,
     {
-        let mut reader = csv::ReaderBuilder::new()
-            .trim(csv::Trim::All)
-            .from_reader(reader);
+        let headers = inspect_csv_headers(&mut reader)?;
+        let frame = CsvReadOptions::default()
+            .with_has_header(true)
+            .with_infer_schema_length(Some(CSV_INFER_SCHEMA_LENGTH))
+            .with_parse_options(CsvParseOptions::default().with_try_parse_dates(true))
+            .with_schema_overwrite(headers.schema_overwrite())
+            .into_reader_with_file_handle(reader)
+            .finish()
+            .context("failed to read CSV with Polars")?;
+        let frame = normalize_frame_headers(frame, &headers)?;
 
-        let headers = reader
-            .headers()
-            .context("failed to read CSV headers")?
-            .clone();
+        let indices = ColumnIndices::from_dataframe(&frame)?;
+        let mut rows = Vec::with_capacity(frame.height());
 
-        let indices = ColumnIndices::from_headers(&headers)?;
-        let mut rows = Vec::new();
-
-        for (row_offset, record) in reader.records().enumerate() {
-            let record =
-                record.with_context(|| format!("failed to read CSV row {}", row_offset + 2))?;
-            rows.push(EventRow::from_record(&record, &indices, row_offset + 2)?);
+        for row_index in 0..frame.height() {
+            rows.push(EventRow::from_dataframe_row(&frame, &indices, row_index)?);
         }
 
         if rows.is_empty() {
@@ -224,37 +227,23 @@ struct EventRow {
 }
 
 impl EventRow {
-    fn from_record(
-        record: &StringRecord,
+    fn from_dataframe_row(
+        frame: &DataFrame,
         indices: &ColumnIndices,
-        row_number: usize,
+        row_index: usize,
     ) -> Result<Self> {
-        let deployment = record
-            .get(indices.deployment)
-            .map(str::trim)
-            .filter(|value| !value.is_empty())
-            .ok_or_else(|| anyhow!("missing deployment at row {row_number}"))?
-            .to_string();
+        let row_number = row_index + 2;
 
-        let timestamp_str = record
-            .get(indices.datetime)
-            .map(str::trim)
-            .filter(|value| !value.is_empty())
-            .ok_or_else(|| anyhow!("missing datetime at row {row_number}"))?;
-
-        let timestamp = NaiveDateTime::parse_from_str(timestamp_str, "%Y-%m-%d %H:%M:%S")
-            .with_context(|| format!("invalid datetime '{timestamp_str}' at row {row_number}"))?;
-
-        let path = record
-            .get(indices.path)
-            .map(str::trim)
-            .unwrap_or_default()
-            .to_string();
+        let deployment =
+            required_trimmed_string(frame, indices.deployment, row_index, "deployment", row_number)?;
+        let timestamp = parse_timestamp(frame, indices.datetime, row_index, row_number)?;
+        let path = optional_trimmed_string(frame, indices.path, row_index)?.unwrap_or_default();
         let media_type = indices
             .media_type
-            .and_then(|index| record.get(index))
-            .map(str::trim)
-            .filter(|value| !value.is_empty())
+            .map(|index| optional_trimmed_string(frame, index, row_index))
+            .transpose()?
+            .flatten()
+            .as_deref()
             .map(normalize_media_type)
             .unwrap_or_else(|| infer_media_type_from_path(&path));
         let media_family = media_family(&media_type, &path).to_string();
@@ -313,20 +302,17 @@ struct ColumnIndices {
 }
 
 impl ColumnIndices {
-    fn from_headers(headers: &StringRecord) -> Result<Self> {
-        let path = headers
-            .iter()
-            .position(|header| header == "path")
+    fn from_dataframe(frame: &DataFrame) -> Result<Self> {
+        let path = frame
+            .get_column_index("path")
             .context("missing required column 'path'")?;
-        let deployment = headers
-            .iter()
-            .position(|header| header == "deployment")
+        let deployment = frame
+            .get_column_index("deployment")
             .context("missing required column 'deployment'")?;
-        let datetime = headers
-            .iter()
-            .position(|header| header == "datetime")
+        let datetime = frame
+            .get_column_index("datetime")
             .context("missing required column 'datetime'")?;
-        let media_type = headers.iter().position(|header| header == "media_type");
+        let media_type = frame.get_column_index("media_type");
 
         Ok(Self {
             path,
@@ -335,6 +321,191 @@ impl ColumnIndices {
             media_type,
         })
     }
+}
+
+#[derive(Clone, Debug)]
+struct CsvHeaders {
+    raw_headers: Vec<String>,
+    normalized_headers: Vec<String>,
+}
+
+impl CsvHeaders {
+    fn schema_overwrite(&self) -> Option<SchemaRef> {
+        let fields = self
+            .raw_headers
+            .iter()
+            .zip(self.normalized_headers.iter())
+            .filter_map(|(raw, normalized)| match normalized.as_str() {
+                "path" | "deployment" | "media_type" => {
+                    Some(Field::new(raw.as_str().into(), DataType::String))
+                }
+                _ => None,
+            })
+            .collect::<Vec<_>>();
+
+        (!fields.is_empty()).then(|| Arc::new(Schema::from_iter(fields)))
+    }
+}
+
+fn inspect_csv_headers<R>(reader: &mut R) -> Result<CsvHeaders>
+where
+    R: Read + Seek,
+{
+    let mut header_line = String::new();
+    {
+        let mut buffered = BufReader::new(&mut *reader);
+        buffered
+            .read_line(&mut header_line)
+            .context("failed to read CSV headers")?;
+    }
+
+    if header_line.is_empty() {
+        bail!("the input CSV is empty");
+    }
+
+    reader
+        .seek(SeekFrom::Start(0))
+        .context("failed to rewind CSV reader after header scan")?;
+
+    let raw_headers = parse_csv_header_line(&header_line);
+    let normalized_headers = raw_headers
+        .iter()
+        .map(|header| normalize_header_name(header))
+        .collect::<Vec<_>>();
+
+    Ok(CsvHeaders {
+        raw_headers,
+        normalized_headers,
+    })
+}
+
+fn parse_csv_header_line(line: &str) -> Vec<String> {
+    line.trim_end_matches(['\r', '\n'])
+        .split(',')
+        .map(|header| header.trim().trim_matches('"').to_string())
+        .collect()
+}
+
+fn normalize_header_name(header: &str) -> String {
+    header.trim().trim_start_matches('\u{feff}').to_string()
+}
+
+fn normalize_frame_headers(mut frame: DataFrame, headers: &CsvHeaders) -> Result<DataFrame> {
+    for (raw, normalized) in headers.raw_headers.iter().zip(headers.normalized_headers.iter()) {
+        if raw != normalized
+            && frame.get_column_index(raw).is_some()
+            && frame.get_column_index(normalized).is_none()
+        {
+            frame
+                .rename(raw, normalized.as_str().into())
+                .with_context(|| format!("failed to normalize CSV header '{raw}'"))?;
+        }
+    }
+
+    Ok(frame)
+}
+
+fn required_trimmed_string(
+    frame: &DataFrame,
+    column_index: usize,
+    row_index: usize,
+    column_name: &str,
+    row_number: usize,
+) -> Result<String> {
+    optional_trimmed_string(frame, column_index, row_index)?
+        .filter(|value| !value.is_empty())
+        .ok_or_else(|| anyhow!("missing {column_name} at row {row_number}"))
+}
+
+fn optional_trimmed_string(
+    frame: &DataFrame,
+    column_index: usize,
+    row_index: usize,
+) -> Result<Option<String>> {
+    let value = frame
+        .get_columns()
+        .get(column_index)
+        .ok_or_else(|| anyhow!("column index {column_index} is out of bounds"))?
+        .get(row_index)
+        .with_context(|| format!("failed to read row {}", row_index + 2))?;
+
+    match value {
+        AnyValue::Null => Ok(None),
+        other => Ok(Some(other.str_value().trim().to_string())),
+    }
+}
+
+fn parse_timestamp(
+    frame: &DataFrame,
+    column_index: usize,
+    row_index: usize,
+    row_number: usize,
+) -> Result<NaiveDateTime> {
+    let column = frame
+        .get_columns()
+        .get(column_index)
+        .ok_or_else(|| anyhow!("column index {column_index} is out of bounds"))?;
+    let value = column
+        .get(row_index)
+        .with_context(|| format!("failed to read datetime at row {row_number}"))?;
+
+    match value {
+        AnyValue::Null => bail!("missing datetime at row {row_number}"),
+        AnyValue::Date(days) => date_days_to_naive_datetime(days, row_number),
+        AnyValue::Datetime(value, unit, _) => timestamp_from_unit(value, unit, row_number),
+        AnyValue::DatetimeOwned(value, unit, _) => timestamp_from_unit(value, unit, row_number),
+        AnyValue::String(raw) => bail!(
+            "datetime column was not inferred as a date/datetime type by Polars; got string '{}' at row {} (column dtype: {})",
+            raw.trim(),
+            row_number,
+            column.dtype()
+        ),
+        AnyValue::StringOwned(raw) => bail!(
+            "datetime column was not inferred as a date/datetime type by Polars; got string '{}' at row {} (column dtype: {})",
+            raw.as_str().trim(),
+            row_number,
+            column.dtype()
+        ),
+        other => bail!(
+            "datetime column was inferred as unsupported dtype {} at row {} (value: {})",
+            column.dtype(),
+            row_number,
+            other.str_value()
+        ),
+    }
+}
+
+fn date_days_to_naive_datetime(days: i32, row_number: usize) -> Result<NaiveDateTime> {
+    NaiveDate::from_ymd_opt(1970, 1, 1)
+        .expect("valid unix epoch")
+        .checked_add_signed(Duration::days(days as i64))
+        .and_then(|date| date.and_hms_opt(0, 0, 0))
+        .ok_or_else(|| anyhow!("datetime is out of range at row {row_number}"))
+}
+
+fn timestamp_from_unit(value: i64, unit: TimeUnit, row_number: usize) -> Result<NaiveDateTime> {
+    let (seconds, nanoseconds) = match unit {
+        TimeUnit::Nanoseconds => split_timestamp(value, 1_000_000_000),
+        TimeUnit::Microseconds => {
+            let (seconds, micros) = split_timestamp(value, 1_000_000);
+            (seconds, micros * 1_000)
+        }
+        TimeUnit::Milliseconds => {
+            let (seconds, millis) = split_timestamp(value, 1_000);
+            (seconds, millis * 1_000_000)
+        }
+    };
+
+    chrono::DateTime::from_timestamp(seconds, nanoseconds as u32)
+        .map(|value| value.naive_utc())
+        .ok_or_else(|| anyhow!("datetime is out of range at row {row_number}"))
+}
+
+fn split_timestamp(value: i64, units_per_second: i64) -> (i64, i64) {
+    (
+        value.div_euclid(units_per_second),
+        value.rem_euclid(units_per_second),
+    )
 }
 
 #[derive(Clone, Debug)]
