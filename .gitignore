@@ -1,4 +1,6 @@
-/target
-/.venv
-/web/target
-/web/pkg
+/target/
+/.venv/
+/web/target/
+/web/pkg/
+/output/
+/dist/

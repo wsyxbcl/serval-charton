@@ -1,5 +1,0 @@
-rows=12,828
-deployments=44
-overview=output/static/overview_month.svg
-detail=output/static/detail_6089_gps1_diq202504_202509.svg
-hour=output/static/hour_heatmap.svg
