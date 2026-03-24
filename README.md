@@ -71,7 +71,7 @@ wasm-pack build --release --target web --out-dir pkg
 Then preview through the native local server:
 
 ```bash
-cargo run -- serve-wasm
+cargo run
 ```
 
 Then open `http://127.0.0.1:8787/`.
@@ -79,7 +79,8 @@ Then open `http://127.0.0.1:8787/`.
 Notes:
 
 - The browser demo expects `path`, `deployment`, and `datetime`, with datetimes in `yyyy-mm-dd hh:mm:ss` format. A `media_type` column is preferred and used for image/video classification.
-- The "Load bundled demo CSV" button served by `cargo run -- serve-wasm` now uses the main dataset under `data/`.
+- Running the binary with no subcommand now starts the local WASM server directly. `serve-wasm` is still available when you want to override `--bind` or `--open`.
+- The "Load bundled demo CSV" button served by `cargo run` now uses the main dataset under `data/`.
 - The `Deployment inventory` panel can export a `trap_info_template.xlsx` workbook with the legacy column layout and dropdown validations, auto-filling `deploymentName`, `deploymentStart`, and `deploymentEnd`.
 - The current WASM package was built successfully on this machine after trimming the browser-side `polars` feature set and keeping `dtype-categorical` enabled for Charton compatibility.
 - The optimized `web/pkg/datetime_plot_demo_web_bg.wasm` is currently about `8.7 MB`, so this is a viable experiment path but still heavier than the static native CLI.

@@ -17,14 +17,14 @@ use crate::util::{format_count, slugify};
 #[derive(Parser, Debug)]
 #[command(
     version,
-    about = "Generate static media timestamp plots by deployment with Polars + Charton"
+    about = "Run the local WASM timestamp explorer or export static timestamp plots"
 )]
 struct Cli {
     #[arg(long, global = true, default_value = DEFAULT_CSV_PATH)]
     csv: PathBuf,
 
     #[command(subcommand)]
-    command: Command,
+    command: Option<Command>,
 }
 
 #[derive(Subcommand, Debug)]
@@ -76,6 +76,15 @@ struct ServeWasmArgs {
     open: bool,
 }
 
+impl Default for ServeWasmArgs {
+    fn default() -> Self {
+        Self {
+            bind: "127.0.0.1:8787".parse().expect("default bind must parse"),
+            open: false,
+        }
+    }
+}
+
 #[derive(Clone, Copy, Debug, Eq, PartialEq, ValueEnum)]
 enum OutputFormat {
     Svg,
@@ -94,7 +103,7 @@ impl OutputFormat {
 fn main() -> Result<()> {
     let cli = Cli::parse();
 
-    match cli.command {
+    match cli.command.unwrap_or(Command::ServeWasm(ServeWasmArgs::default())) {
         Command::ExportStatic(args) => {
             let data = PreparedData::load(&cli.csv)?;
             export_static(&data, args)

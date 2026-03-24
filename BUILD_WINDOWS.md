@@ -100,13 +100,19 @@ The executable will be:
 From the project root:
 
 ```powershell
-target\release\datetime_plot_demo.exe serve-wasm --open
+target\release\datetime_plot_demo.exe
 ```
 
-If automatic browser opening does not work, run:
+That starts the local WASM server directly. To change the bind address manually, run:
 
 ```powershell
 target\release\datetime_plot_demo.exe serve-wasm
+```
+
+To force browser auto-open:
+
+```powershell
+target\release\datetime_plot_demo.exe serve-wasm --open
 ```
 
 Then open this URL manually:
@@ -143,5 +149,5 @@ cd web
 wasm-pack build --release --target web --out-dir pkg
 cd ..
 cargo build --release
-target\release\datetime_plot_demo.exe serve-wasm --open
+target\release\datetime_plot_demo.exe
 ```
