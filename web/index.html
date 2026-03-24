@@ -466,7 +466,6 @@
                         <input type="file" id="csv-upload" accept=".csv,text/csv" />
                     </div>
                     <button id="open-local-csv" type="button">Open local CSV</button>
-                    <button id="render-demo" class="secondary" type="button">Load bundled demo CSV</button>
                     <button id="reload-source" class="secondary" type="button" disabled>Reload current source</button>
                 </div>
                 <div class="status" id="status">Initialize WASM runtime, then upload a CSV to render the explorer.</div>
@@ -556,7 +555,6 @@
         const uploadCopy = document.getElementById("upload-copy");
         const csvUploadInput = document.getElementById("csv-upload");
         const openLocalCsvButton = document.getElementById("open-local-csv");
-        const renderDemoButton = document.getElementById("render-demo");
         const reloadSourceButton = document.getElementById("reload-source");
         const bucketSelect = document.getElementById("bucket-select");
         const deploymentSelect = document.getElementById("deployment-select");
@@ -1233,18 +1231,6 @@
             setStatus(`Rendered overview, detail, and hour heatmap from ${sourceLabel}.`);
         }
 
-        async function loadBundledDemo() {
-            const response = await fetch("./demo.csv");
-            if (!response.ok) {
-                throw new Error(`Failed to load bundled demo CSV: ${response.status}`);
-            }
-            const csvText = await response.text();
-            await loadExplorer(csvText, "bundled demo.csv", {
-                kind: "demo",
-                label: "bundled demo.csv",
-            });
-        }
-
         async function openLocalCsvFromDisk() {
             if (!supportsFilePicker) {
                 csvUploadInput.click();
@@ -1284,12 +1270,6 @@
             }
 
             clearError();
-
-            if (lastSource.kind === "demo") {
-                setStatus("Reloading bundled demo CSV...");
-                await loadBundledDemo();
-                return;
-            }
 
             if (lastSource.kind === "file-handle") {
                 setStatus(`Reloading ${lastSource.label} from disk...`);
@@ -1337,15 +1317,6 @@
                 }
                 showError(error && error.message ? error.message : String(error));
                 setStatus("Local CSV failed to load.");
-            }
-        });
-
-        renderDemoButton.addEventListener("click", async () => {
-            try {
-                await loadBundledDemo();
-            } catch (error) {
-                showError(error && error.message ? error.message : String(error));
-                setStatus("Bundled demo failed to load.");
             }
         });
 
@@ -1400,7 +1371,7 @@
             await init();
             wasmReady = true;
             updateSourceControls();
-            setStatus("WASM runtime ready. Upload a CSV or load the bundled demo file.");
+            setStatus("WASM runtime ready. Upload a CSV to render the explorer.");
         } catch (error) {
             showError(error && error.message ? error.message : String(error));
             setStatus("WASM initialization failed.");

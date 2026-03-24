@@ -7,8 +7,6 @@ use anyhow::{Context, Result};
 
 const INDEX_HTML: &[u8] = include_bytes!("../web/index.html");
 const TRAP_INFO_EXPORT_JS: &[u8] = include_bytes!("../web/trap_info_export.js");
-const DEMO_CSV: &[u8] =
-    include_bytes!("../data/tags_mazev11_xmp-s-m_20260312103320.csv");
 const PKG_WASM: &[u8] = include_bytes!("../web/pkg/datetime_plot_demo_web_bg.wasm");
 const PKG_JS: &[u8] = include_bytes!("../web/pkg/datetime_plot_demo_web.js");
 const PKG_WASM_D_TS: &[u8] = include_bytes!("../web/pkg/datetime_plot_demo_web_bg.wasm.d.ts");
@@ -75,7 +73,6 @@ fn route(path: &str) -> Response<'_> {
         "/trap_info_export.js" => {
             Response::ok("text/javascript; charset=utf-8", TRAP_INFO_EXPORT_JS)
         }
-        "/demo.csv" => Response::ok("text/csv; charset=utf-8", DEMO_CSV),
         "/pkg/datetime_plot_demo_web_bg.wasm" => Response::ok("application/wasm", PKG_WASM),
         "/pkg/datetime_plot_demo_web.js" => Response::ok("text/javascript; charset=utf-8", PKG_JS),
         "/pkg/datetime_plot_demo_web_bg.wasm.d.ts" => {
