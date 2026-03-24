@@ -1,3 +1,4 @@
+use std::cmp::Ordering;
 use std::collections::{BTreeMap, HashMap};
 #[cfg(not(target_arch = "wasm32"))]
 use std::fs::File;
@@ -280,10 +281,7 @@ fn summarize_rows(rows: &[EventRow]) -> Vec<DeploymentSummary> {
         .collect::<Vec<_>>();
 
     deployments.sort_by(|left, right| {
-        right
-            .event_count
-            .cmp(&left.event_count)
-            .then_with(|| left.deployment.cmp(&right.deployment))
+        compare_deployment_names(&left.deployment, &right.deployment)
     });
 
     for (order, deployment) in deployments.iter_mut().enumerate() {
@@ -508,6 +506,72 @@ fn split_timestamp(value: i64, units_per_second: i64) -> (i64, i64) {
     )
 }
 
+fn compare_deployment_names(left: &str, right: &str) -> Ordering {
+    let mut left_index = 0;
+    let mut right_index = 0;
+    let left_bytes = left.as_bytes();
+    let right_bytes = right.as_bytes();
+
+    while left_index < left.len() && right_index < right.len() {
+        let left_digit = left_bytes[left_index].is_ascii_digit();
+        let right_digit = right_bytes[right_index].is_ascii_digit();
+
+        if left_digit && right_digit {
+            let left_end = advance_ascii_digits(left_bytes, left_index);
+            let right_end = advance_ascii_digits(right_bytes, right_index);
+            let ordering = compare_numeric_chunks(&left[left_index..left_end], &right[right_index..right_end]);
+            if ordering != Ordering::Equal {
+                return ordering;
+            }
+            left_index = left_end;
+            right_index = right_end;
+            continue;
+        }
+
+        let left_char = left[left_index..]
+            .chars()
+            .next()
+            .expect("left_index checked against len");
+        let right_char = right[right_index..]
+            .chars()
+            .next()
+            .expect("right_index checked against len");
+
+        let ordering = left_char
+            .to_ascii_lowercase()
+            .cmp(&right_char.to_ascii_lowercase());
+        if ordering != Ordering::Equal {
+            return ordering;
+        }
+
+        left_index += left_char.len_utf8();
+        right_index += right_char.len_utf8();
+    }
+
+    left.len().cmp(&right.len())
+}
+
+fn advance_ascii_digits(bytes: &[u8], start: usize) -> usize {
+    let mut end = start;
+    while end < bytes.len() && bytes[end].is_ascii_digit() {
+        end += 1;
+    }
+    end
+}
+
+fn compare_numeric_chunks(left: &str, right: &str) -> Ordering {
+    let left_trimmed = left.trim_start_matches('0');
+    let right_trimmed = right.trim_start_matches('0');
+    let left_normalized = if left_trimmed.is_empty() { "0" } else { left_trimmed };
+    let right_normalized = if right_trimmed.is_empty() { "0" } else { right_trimmed };
+
+    left_normalized
+        .len()
+        .cmp(&right_normalized.len())
+        .then_with(|| left_normalized.cmp(right_normalized))
+        .then_with(|| left.len().cmp(&right.len()))
+}
+
 #[derive(Clone, Debug)]
 struct DeploymentAccumulator {
     event_count: usize,
@@ -700,7 +764,7 @@ fn build_overview_table(
     let mut bucket_label_col = Vec::with_capacity(total_cells);
     let mut count_col = Vec::with_capacity(total_cells);
 
-    for deployment in deployments {
+    for deployment in deployments.iter().rev() {
         for bucket_start in &bucket_starts {
             let bucket_ns = timestamp_to_ns(*bucket_start)?;
             deployment_col.push(deployment.deployment.clone());
@@ -745,7 +809,7 @@ fn build_hour_heatmap(
     let mut hour_label_col = Vec::with_capacity(total_cells);
     let mut count_col = Vec::with_capacity(total_cells);
 
-    for deployment in deployments {
+    for deployment in deployments.iter().rev() {
         for hour in 0..24_u32 {
             deployment_col.push(deployment.deployment.clone());
             order_col.push(deployment.order as i32);

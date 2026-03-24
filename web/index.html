@@ -459,13 +459,15 @@
         <div class="stack">
             <section class="panel">
                 <h2>Upload CSV</h2>
-                <p>The CSV must include `deployment` and `datetime` columns in `yyyy-mm-dd hh:mm:ss` format. If `path` is present, media type styling will match the native static export.</p>
+                <p id="upload-copy">The CSV must include `deployment` and `datetime` columns. On Chromium-based browsers, `Open local CSV` is the preferred workflow because it enables true one-click reloads from disk after you edit the file.</p>
                 <div class="toolbar">
                     <div class="control" style="min-width: 320px;">
                         <label for="csv-upload">CSV file</label>
                         <input type="file" id="csv-upload" accept=".csv,text/csv" />
                     </div>
+                    <button id="open-local-csv" type="button">Open local CSV</button>
                     <button id="render-demo" class="secondary" type="button">Load bundled demo CSV</button>
+                    <button id="reload-source" class="secondary" type="button" disabled>Reload current source</button>
                 </div>
                 <div class="status" id="status">Initialize WASM runtime, then upload a CSV to render the explorer.</div>
                 <div class="error" id="error"></div>
@@ -551,6 +553,11 @@
         const statusEl = document.getElementById("status");
         const errorEl = document.getElementById("error");
         const controlsPanel = document.getElementById("controls-panel");
+        const uploadCopy = document.getElementById("upload-copy");
+        const csvUploadInput = document.getElementById("csv-upload");
+        const openLocalCsvButton = document.getElementById("open-local-csv");
+        const renderDemoButton = document.getElementById("render-demo");
+        const reloadSourceButton = document.getElementById("reload-source");
         const bucketSelect = document.getElementById("bucket-select");
         const deploymentSelect = document.getElementById("deployment-select");
         const overviewFrame = document.getElementById("overview-frame");
@@ -562,9 +569,11 @@
         const detailCopy = document.getElementById("detail-copy");
         const fullscreenShell = document.getElementById("fullscreen-shell");
         const fullscreenFrame = document.getElementById("fullscreen-frame");
+        const supportsFilePicker = typeof window.showOpenFilePicker === "function";
         const MIN_ZOOM = 1;
         const MAX_ZOOM = 8;
         let svgNamespaceCounter = 0;
+        let lastSource = null;
 
         function deploymentNames() {
             return new Set((metadata?.deployment_options || []).map((option) => option.deployment));
@@ -582,6 +591,21 @@
         function showError(message) {
             errorEl.style.display = "block";
             errorEl.textContent = message;
+        }
+
+        function updateSourceControls() {
+            reloadSourceButton.disabled = !lastSource;
+            if (supportsFilePicker) {
+                openLocalCsvButton.classList.remove("secondary");
+                csvUploadInput.parentElement.querySelector("label").textContent = "CSV file (fallback)";
+                uploadCopy.textContent =
+                    "The CSV must include `deployment` and `datetime` columns. `Open local CSV` is recommended because it keeps a live file handle for one-click reloads after local edits. Plain uploads remain available as a fallback.";
+            } else {
+                openLocalCsvButton.hidden = true;
+                csvUploadInput.parentElement.querySelector("label").textContent = "CSV file";
+                uploadCopy.textContent =
+                    "The CSV must include `deployment` and `datetime` columns. This browser does not support direct local file handles, so use the standard upload flow.";
+            }
         }
 
         function setMetric(id, value) {
@@ -1181,7 +1205,7 @@
             renderInventory();
         }
 
-        async function loadExplorer(csvText, sourceLabel) {
+        async function loadExplorer(csvText, sourceLabel, source = null) {
             if (!wasmReady) {
                 throw new Error("WASM runtime is not ready yet.");
             }
@@ -1189,8 +1213,15 @@
             clearError();
             setStatus(`Parsing ${sourceLabel} and building prepared tables...`);
 
-            explorer = new WasmExplorer(csvText);
-            metadata = JSON.parse(explorer.metadata_json());
+            const nextExplorer = new WasmExplorer(csvText);
+            const nextMetadata = JSON.parse(nextExplorer.metadata_json());
+
+            explorer = nextExplorer;
+            metadata = nextMetadata;
+            if (source) {
+                lastSource = source;
+                updateSourceControls();
+            }
 
             setMetric("metric-rows", metadata.rows_display);
             setMetric("metric-deployments", metadata.deployments_display);
@@ -1208,10 +1239,75 @@
                 throw new Error(`Failed to load bundled demo CSV: ${response.status}`);
             }
             const csvText = await response.text();
-            await loadExplorer(csvText, "bundled demo.csv");
+            await loadExplorer(csvText, "bundled demo.csv", {
+                kind: "demo",
+                label: "bundled demo.csv",
+            });
         }
 
-        document.getElementById("csv-upload").addEventListener("change", async (event) => {
+        async function openLocalCsvFromDisk() {
+            if (!supportsFilePicker) {
+                csvUploadInput.click();
+                return;
+            }
+
+            const [handle] = await window.showOpenFilePicker({
+                multiple: false,
+                types: [
+                    {
+                        description: "CSV files",
+                        accept: {
+                            "text/csv": [".csv"],
+                            "text/plain": [".csv"],
+                        },
+                    },
+                ],
+            });
+
+            if (!handle) {
+                return;
+            }
+
+            const file = await handle.getFile();
+            const csvText = await file.text();
+            await loadExplorer(csvText, file.name, {
+                kind: "file-handle",
+                label: file.name,
+                handle,
+            });
+        }
+
+        async function reloadCurrentSource() {
+            if (!lastSource) {
+                showError("Load a CSV before trying to reload it.");
+                return;
+            }
+
+            clearError();
+
+            if (lastSource.kind === "demo") {
+                setStatus("Reloading bundled demo CSV...");
+                await loadBundledDemo();
+                return;
+            }
+
+            if (lastSource.kind === "file-handle") {
+                setStatus(`Reloading ${lastSource.label} from disk...`);
+                const file = await lastSource.handle.getFile();
+                const csvText = await file.text();
+                await loadExplorer(csvText, file.name, {
+                    kind: "file-handle",
+                    label: file.name,
+                    handle: lastSource.handle,
+                });
+                return;
+            }
+
+            setStatus(`Re-select ${lastSource.label} to load the updated CSV. Plain file uploads cannot be re-read from disk automatically.`);
+            csvUploadInput.click();
+        }
+
+        csvUploadInput.addEventListener("change", async (event) => {
             const file = event.target.files?.[0];
             if (!file) {
                 return;
@@ -1219,19 +1315,46 @@
 
             try {
                 const csvText = await file.text();
-                await loadExplorer(csvText, file.name);
+                await loadExplorer(csvText, file.name, {
+                    kind: "upload",
+                    label: file.name,
+                });
             } catch (error) {
                 showError(error && error.message ? error.message : String(error));
                 setStatus("Upload failed.");
+            } finally {
+                event.target.value = "";
             }
         });
 
-        document.getElementById("render-demo").addEventListener("click", async () => {
+        openLocalCsvButton.addEventListener("click", async () => {
+            try {
+                await openLocalCsvFromDisk();
+            } catch (error) {
+                if (error && error.name === "AbortError") {
+                    setStatus("Local CSV selection cancelled.");
+                    return;
+                }
+                showError(error && error.message ? error.message : String(error));
+                setStatus("Local CSV failed to load.");
+            }
+        });
+
+        renderDemoButton.addEventListener("click", async () => {
             try {
                 await loadBundledDemo();
             } catch (error) {
                 showError(error && error.message ? error.message : String(error));
                 setStatus("Bundled demo failed to load.");
+            }
+        });
+
+        reloadSourceButton.addEventListener("click", async () => {
+            try {
+                await reloadCurrentSource();
+            } catch (error) {
+                showError(error && error.message ? error.message : String(error));
+                setStatus("Reload failed.");
             }
         });
 
@@ -1276,6 +1399,7 @@
             setStatus("Initializing WebAssembly module...");
             await init();
             wasmReady = true;
+            updateSourceControls();
             setStatus("WASM runtime ready. Upload a CSV or load the bundled demo file.");
         } catch (error) {
             showError(error && error.message ? error.message : String(error));
