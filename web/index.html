@@ -149,6 +149,30 @@
             font-size: 1.5rem;
         }
 
+        .panel-head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: start;
+            gap: 12px;
+        }
+
+        .panel-head .panel-copy {
+            min-width: 0;
+            flex: 1 1 360px;
+        }
+
+        .panel-head .panel-copy p {
+            margin-bottom: 0;
+        }
+
+        .panel-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex: 0 0 auto;
+        }
+
         .toolbar {
             display: flex;
             flex-wrap: wrap;
@@ -494,8 +518,15 @@
             </div>
 
             <section class="panel">
-                <h2>Deployment inventory</h2>
-                <p>The same prepared deployment summaries used by the report export are also available here for quick review.</p>
+                <div class="panel-head">
+                    <div class="panel-copy">
+                        <h2>Deployment inventory</h2>
+                        <p>The same prepared deployment summaries used by the report export are also available here for quick review and Excel template export.</p>
+                    </div>
+                    <div class="panel-actions">
+                        <button id="export-inventory-xlsx" class="secondary" type="button" disabled>Export Excel template</button>
+                    </div>
+                </div>
                 <div class="table-wrap" id="inventory-frame">
                     <div class="placeholder">Upload a CSV to populate the deployment inventory.</div>
                 </div>
@@ -511,6 +542,7 @@
 
     <script type="module">
         import init, { WasmExplorer } from "./pkg/datetime_plot_demo_web.js";
+        import { downloadTrapInfoTemplate, sortDeploymentOptions } from "./trap_info_export.js";
 
         let wasmReady = false;
         let explorer = null;
@@ -525,6 +557,7 @@
         const detailFrame = document.getElementById("detail-frame");
         const hourFrame = document.getElementById("hour-frame");
         const inventoryFrame = document.getElementById("inventory-frame");
+        const exportInventoryButton = document.getElementById("export-inventory-xlsx");
         const detailCaption = document.getElementById("detail-caption");
         const detailCopy = document.getElementById("detail-copy");
         const fullscreenShell = document.getElementById("fullscreen-shell");
@@ -555,11 +588,18 @@
             document.getElementById(id).textContent = value;
         }
 
+        function sortedDeploymentOptions() {
+            return sortDeploymentOptions(metadata?.deployment_options || []);
+        }
+
         function renderInventory() {
             if (!metadata?.deployment_options?.length) {
                 inventoryFrame.innerHTML = `<div class="placeholder">No deployment summaries available.</div>`;
+                exportInventoryButton.disabled = true;
                 return;
             }
+
+            exportInventoryButton.disabled = false;
 
             const table = document.createElement("table");
             const thead = document.createElement("thead");
@@ -573,7 +613,7 @@
             table.appendChild(thead);
 
             const tbody = document.createElement("tbody");
-            for (const option of metadata.deployment_options) {
+            for (const option of sortedDeploymentOptions()) {
                 const row = document.createElement("tr");
 
                 const deployment = document.createElement("td");
@@ -1193,6 +1233,17 @@
                 showError(error && error.message ? error.message : String(error));
                 setStatus("Bundled demo failed to load.");
             }
+        });
+
+        exportInventoryButton.addEventListener("click", () => {
+            if (!metadata?.deployment_options?.length) {
+                showError("Load a CSV before exporting the Excel template.");
+                return;
+            }
+
+            clearError();
+            downloadTrapInfoTemplate(sortedDeploymentOptions());
+            setStatus(`Downloaded trap_info_template.xlsx for ${sortedDeploymentOptions().length} deployments.`);
         });
 
         bucketSelect.addEventListener("change", async () => {
