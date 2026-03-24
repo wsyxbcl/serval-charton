@@ -15,7 +15,7 @@ use polars::prelude::*;
 
 #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 pub const DEFAULT_CSV_PATH: &str =
-    "/home/wsyxbcl/scripts/datetime_plot_demo/data/tags_mazev11_xmp-s-m_20260312103320.csv";
+    "data/tags_mazev11_xmp-s-m_20260312103320.csv";
 
 #[cfg_attr(not(target_arch = "wasm32"), derive(ValueEnum))]
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash)]
@@ -710,3 +710,4 @@ fn minute_of_day(timestamp: NaiveDateTime) -> f64 {
 fn day_label(timestamp: NaiveDateTime) -> String {
     timestamp.format("%Y-%m-%d").to_string()
 }
+
