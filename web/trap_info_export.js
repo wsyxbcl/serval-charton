@@ -47,11 +47,11 @@ const TRAP_INFO_VALIDATIONS = [
     },
     {
         field: "otherProblem1",
-        options: ["照片损坏", "未有效工作", "相机位置移动", "其它(在备注中注明)"],
+        options: ["照片损坏", "未有效工作", "其它(在备注中注明)"],
     },
     {
         field: "otherProblem2",
-        options: ["照片损坏", "未有效工作", "相机位置移动", "其它(在备注中注明)"],
+        options: ["照片损坏", "未有效工作", "其它(在备注中注明)"],
     },
 ];
 
