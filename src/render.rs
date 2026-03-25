@@ -238,6 +238,7 @@ pub fn hour_heatmap_web_chart_from_table(table: &DataFrame) -> Result<LayeredCha
 #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 pub fn overview_svg(data: &PreparedData, bucket: OverviewBucket) -> Result<String> {
     let svg = overview_chart(data, bucket)?.to_svg()?;
+    let svg = relabel_legend_titles(&svg, &[("event_count", "media_count")]);
     let svg = thin_rotated_bottom_axis_labels(&svg, target_overview_label_count(bucket));
     let svg = annotate_overview_svg(&svg, data.overview_table(bucket)?)?;
     let svg = force_zero_event_cells_white(&svg);
@@ -247,6 +248,7 @@ pub fn overview_svg(data: &PreparedData, bucket: OverviewBucket) -> Result<Strin
 #[cfg_attr(not(target_arch = "wasm32"), allow(dead_code))]
 pub fn overview_web_svg(data: &PreparedData, bucket: OverviewBucket) -> Result<String> {
     let svg = overview_web_chart(data, bucket)?.to_svg()?;
+    let svg = relabel_legend_titles(&svg, &[("event_count", "media_count")]);
     let svg = thin_rotated_bottom_axis_labels(&svg, target_overview_label_count(bucket));
     let svg = strip_svg_background(&svg);
     let svg = annotate_overview_svg(&svg, data.overview_table(bucket)?)?;
@@ -258,6 +260,7 @@ pub fn overview_web_svg(data: &PreparedData, bucket: OverviewBucket) -> Result<S
 pub fn detail_svg(data: &PreparedData, deployment: &str) -> Result<String> {
     let table = data.detail_table(deployment)?;
     let svg = detail_chart(data, deployment)?.to_svg()?;
+    let svg = relabel_legend_titles(&svg, &[("media_family", "media")]);
     let svg = thin_rotated_bottom_axis_labels(&svg, target_detail_day_label_count(false));
     let svg = rewrite_detail_minute_axis(&svg)?;
     let svg = offset_detail_mark_positions(
@@ -273,6 +276,7 @@ pub fn detail_svg(data: &PreparedData, deployment: &str) -> Result<String> {
 pub fn detail_web_svg(data: &PreparedData, deployment: &str) -> Result<String> {
     let table = data.detail_table(deployment)?;
     let svg = detail_web_chart(data, deployment)?.to_svg()?;
+    let svg = relabel_legend_titles(&svg, &[("media_family", "media")]);
     let svg = thin_rotated_bottom_axis_labels(&svg, target_detail_day_label_count(true));
     let svg = rewrite_detail_minute_axis(&svg)?;
     let svg = offset_detail_mark_positions(
@@ -288,6 +292,7 @@ pub fn detail_web_svg(data: &PreparedData, deployment: &str) -> Result<String> {
 #[cfg_attr(target_arch = "wasm32", allow(dead_code))]
 pub fn hour_heatmap_svg(data: &PreparedData) -> Result<String> {
     let svg = hour_heatmap_chart(data)?.to_svg()?;
+    let svg = relabel_legend_titles(&svg, &[("event_count", "media_count")]);
     let svg = annotate_hour_heatmap_svg(&svg, &data.hour_heatmap)?;
     let svg = boost_low_positive_event_cells(&svg, 3, HEATMAP_LOW_POSITIVE_FILL_GN_BU);
     let svg = force_zero_event_cells_white(&svg);
@@ -297,6 +302,7 @@ pub fn hour_heatmap_svg(data: &PreparedData) -> Result<String> {
 #[cfg_attr(not(target_arch = "wasm32"), allow(dead_code))]
 pub fn hour_heatmap_web_svg(data: &PreparedData) -> Result<String> {
     let svg = hour_heatmap_web_chart(data)?.to_svg()?;
+    let svg = relabel_legend_titles(&svg, &[("event_count", "media_count")]);
     let svg = strip_svg_background(&svg);
     let svg = annotate_hour_heatmap_svg(&svg, &data.hour_heatmap)?;
     let svg = boost_low_positive_event_cells(&svg, 3, HEATMAP_LOW_POSITIVE_FILL_GN_BU);
@@ -325,7 +331,7 @@ pub fn resolve_deployment<'a>(
 
 pub fn detail_caption_from_summary(summary: &DeploymentSummary) -> String {
     format!(
-        "{} events from {} through {}. Media types: {}.",
+        "{} media items from {} through {}. Media types: {}.",
         format_count(summary.event_count),
         format_date(summary.first_seen),
         format_date(summary.last_seen),
@@ -672,7 +678,7 @@ fn annotate_overview_svg(svg: &str, table: &DataFrame) -> Result<String> {
         let bucket_label = bucket_labels.get(index).unwrap_or("");
         let event_count = event_counts.get(index).unwrap_or_default().max(0) as usize;
         titles.push(format!(
-            "Deployment: {deployment}\nBucket: {bucket_label}\nEvents: {}",
+            "Deployment: {deployment}\nBucket: {bucket_label}\nMedia count: {}",
             format_count(event_count)
         ));
     }
@@ -716,7 +722,7 @@ fn annotate_hour_heatmap_svg(svg: &str, table: &DataFrame) -> Result<String> {
         let hour_label = hour_labels.get(index).unwrap_or("");
         let event_count = event_counts.get(index).unwrap_or_default().max(0) as usize;
         titles.push(format!(
-            "Deployment: {deployment}\nHour: {hour_label}\nEvents: {}",
+            "Deployment: {deployment}\nHour: {hour_label}\nMedia count: {}",
             format_count(event_count)
         ));
     }
@@ -819,7 +825,7 @@ fn force_zero_event_cells_white(svg: &str) -> String {
         let rect_end = rect_start + relative_rect_end + "</rect>".len();
         let rect = &svg[rect_start..rect_end];
 
-        if rect.contains("<title>") && rect.contains("\nEvents: 0</title>") {
+        if rect.contains("<title>") && rect.contains("\nMedia count: 0</title>") {
             output.push_str(&replace_rect_fill(rect, HEATMAP_ZERO_FILL_WHITE));
         } else {
             output.push_str(rect);
@@ -879,7 +885,7 @@ fn replace_rect_fill(rect: &str, fill: &str) -> String {
 }
 
 fn extract_event_count(rect: &str) -> Option<usize> {
-    let marker = "\nEvents: ";
+    let marker = "\nMedia count: ";
     let value_start = rect.find(marker)? + marker.len();
     let value_end_relative = rect[value_start..]
         .find('<')
@@ -915,6 +921,17 @@ fn force_zero_legend_stop_white(svg: &str) -> String {
     output.push_str(&svg[..stop_start]);
     output.push_str(HEATMAP_ZERO_FILL_WHITE);
     output.push_str(&svg[stop_end..]);
+    output
+}
+
+fn relabel_legend_titles(svg: &str, replacements: &[(&str, &str)]) -> String {
+    let mut output = svg.to_string();
+    for (from, to) in replacements {
+        output = output.replace(
+            &format!(">{from}</text>"),
+            &format!(">{to}</text>"),
+        );
+    }
     output
 }
 

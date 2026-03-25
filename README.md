@@ -5,7 +5,7 @@ Rust exploration project for static media timestamp distributions using `polars`
 ## What it builds
 
 - Overview deployment × time heatmap
-- Single-deployment detail event plot
+- Single-deployment detail media plot
 - Hour-of-day heatmap
 - Pure-Rust static file export
 - Pure-Rust report-style HTML export
@@ -51,9 +51,9 @@ cargo run -- export-report --overview-bucket month --top-details 6
 ## Notes
 
 - Overview buckets support `day`, `week`, and `month`.
-- SVG-based outputs thin crowded rotated date labels after Charton renders, so both the overview heatmap and detail event plot stay readable in `export-static --format svg` and the HTML report.
+- SVG-based outputs thin crowded rotated date labels after Charton renders, so both the overview heatmap and detail media plot stay readable in `export-static --format svg` and the HTML report.
 - The detail plot uses days on the X axis and minute-of-day on the Y axis, while hover still shows the exact timestamp and file path.
-- Heatmap cells with `0` events are forced to white in SVG output so empty regions stand out immediately.
+- Heatmap cells with `0` media items are forced to white in SVG output so empty regions stand out immediately.
 - The detail plot groups media into `image` and `video` from the CSV `media_type` column when present, with a fallback to `path` inference for older CSVs.
 - The current tool intentionally stays on a pure-Rust path: static export, report export, and a local `serve-wasm` preview app.
 
@@ -80,6 +80,6 @@ Notes:
 
 - The browser demo expects `path`, `deployment`, and `datetime`, with datetimes in `yyyy-mm-dd hh:mm:ss` format. A `media_type` column is preferred and used for image/video classification.
 - Running the binary with no subcommand now starts the local WASM server directly. `serve-wasm` is still available when you want to override `--bind` or `--open`.
-- The `Deployment inventory` panel can export a `trap_info_template.xlsx` workbook with the legacy column layout and dropdown validations, auto-filling `deploymentName`, `deploymentStart`, and `deploymentEnd`.
+- The `Deployment inventory` panel can export a `trap_info` template workbook (`trap_info_template.xlsx`) with the legacy column layout and dropdown validations, auto-filling `deploymentName`, `deploymentStart`, and `deploymentEnd`.
 - The current WASM package was built successfully on this machine after trimming the browser-side `polars` feature set and keeping `dtype-categorical` enabled for Charton compatibility.
 - The optimized `web/pkg/datetime_plot_demo_web_bg.wasm` is currently about `8.7 MB`, so this is a viable experiment path but still heavier than the static native CLI.

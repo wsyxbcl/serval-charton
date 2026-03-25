@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Charton WASM Timestamp Explorer</title>
+    <title>Deployment Timestamp Visualizer</title>
     <style>
         :root {
             --bg: #f5efe5;
@@ -56,6 +56,14 @@
             position: relative;
         }
 
+        .hero-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: start;
+            gap: 14px;
+        }
+
         .hero::after {
             content: "";
             position: absolute;
@@ -75,6 +83,20 @@
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
+        }
+
+        .language-control {
+            min-width: 148px;
+            display: grid;
+            gap: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .language-control label {
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: 0.76rem;
         }
 
         h1,
@@ -433,36 +455,45 @@
 <body>
     <main>
         <section class="hero">
-            <div class="eyebrow">Charton + Polars + WASM</div>
-            <h1>Interactive timestamp explorer</h1>
-            <p>This demo keeps the timestamp aggregation and Charton SVG generation inside Rust/WASM. Upload a CSV, then switch overview bucket or deployment focus to trigger browser-side rerendering without a Python runtime.</p>
+            <div class="hero-top">
+                <div class="eyebrow" id="eyebrow">Charton + Polars + WASM</div>
+                <div class="language-control">
+                    <label for="lang-select" id="lang-label">Language</label>
+                    <select id="lang-select">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                    </select>
+                </div>
+            </div>
+            <h1 id="hero-title">Deployment Timestamp Visualizer</h1>
+            <p id="hero-copy"></p>
             <div class="metrics" id="metrics">
                 <div class="metric">
-                    <span class="label">Rows</span>
+                    <span class="label" id="metric-label-rows">Rows</span>
                     <span class="value" id="metric-rows">-</span>
                 </div>
                 <div class="metric">
-                    <span class="label">Deployments</span>
+                    <span class="label" id="metric-label-deployments">Deployments</span>
                     <span class="value" id="metric-deployments">-</span>
                 </div>
                 <div class="metric">
-                    <span class="label">Range</span>
+                    <span class="label" id="metric-label-range">Range</span>
                     <span class="value" id="metric-range">-</span>
                 </div>
                 <div class="metric">
-                    <span class="label">Runtime</span>
-                    <span class="value">Rust/WASM</span>
+                    <span class="label" id="metric-label-runtime">Runtime</span>
+                    <span class="value" id="metric-runtime-value">Rust/WASM</span>
                 </div>
             </div>
         </section>
 
         <div class="stack">
             <section class="panel">
-                <h2>Upload CSV</h2>
+                <h2 id="upload-title">Upload CSV</h2>
                 <p id="upload-copy">The CSV must include `deployment` and `datetime` columns. On Chromium-based browsers, `Open local CSV` is the preferred workflow because it enables true one-click reloads from disk after you edit the file.</p>
                 <div class="toolbar">
                     <div class="control" style="min-width: 320px;">
-                        <label for="csv-upload">CSV file</label>
+                        <label for="csv-upload" id="csv-upload-label">CSV file</label>
                         <input type="file" id="csv-upload" accept=".csv,text/csv" />
                     </div>
                     <button id="open-local-csv" type="button">Open local CSV</button>
@@ -473,11 +504,11 @@
             </section>
 
             <section class="panel hidden" id="controls-panel">
-                <h2>Controls</h2>
-                <p>These controls rerun the Rust aggregation and Charton rendering inside the WASM module, then swap in fresh SVG output.</p>
+                <h2 id="controls-title">Controls</h2>
+                <p id="controls-copy">These controls rerun the Rust aggregation and Charton rendering inside the WASM module, then swap in fresh SVG output.</p>
                 <div class="toolbar">
                     <div class="control">
-                        <label for="bucket-select">Overview bucket</label>
+                        <label for="bucket-select" id="bucket-select-label">Overview bucket</label>
                         <select id="bucket-select">
                             <option value="day">day</option>
                             <option value="week">week</option>
@@ -485,35 +516,35 @@
                         </select>
                     </div>
                     <div class="control" style="min-width: 360px;">
-                        <label for="deployment-select">Detail deployment</label>
+                        <label for="deployment-select" id="deployment-select-label">Detail deployment</label>
                         <select id="deployment-select"></select>
                     </div>
                 </div>
             </section>
 
             <section class="panel">
-                <h2>Overview heatmap</h2>
-                <p>Deployment × time overview. Empty cells are forced to white, and the crowded date axis is thinned after SVG generation.</p>
+                <h2 id="overview-title">Overview heatmap</h2>
+                <p id="overview-copy">Deployment × time overview. Empty cells are forced to white, and the crowded date axis is thinned after SVG generation.</p>
                 <div class="chart-frame" id="overview-frame">
-                    <div class="placeholder">Upload a CSV to render the overview heatmap.</div>
+                    <div class="placeholder" id="overview-placeholder">Upload a CSV to render the overview heatmap.</div>
                 </div>
             </section>
 
             <div class="grid two">
                 <section class="panel">
-                    <h2>Deployment detail</h2>
+                    <h2 id="detail-title">Deployment detail</h2>
                     <p id="detail-copy">Exact timestamps in one shared chart, with days on the horizontal axis and minute-of-day on the vertical axis. Still images are nudged slightly up-left and videos down-right for readability.</p>
                     <div class="chart-frame" id="detail-frame">
-                        <div class="placeholder">Upload a CSV to render the detail event plot.</div>
+                        <div class="placeholder" id="detail-placeholder">Upload a CSV to render the detail media plot.</div>
                     </div>
                     <div class="caption" id="detail-caption"></div>
                 </section>
 
                 <section class="panel">
-                    <h2>Hour-of-day heatmap</h2>
-                    <p>Compact activity fingerprint across all deployments.</p>
+                    <h2 id="hour-title">Hour-of-day heatmap</h2>
+                    <p id="hour-copy">Compact activity fingerprint across all deployments.</p>
                     <div class="chart-frame" id="hour-frame">
-                        <div class="placeholder">Upload a CSV to render the hour-of-day heatmap.</div>
+                        <div class="placeholder" id="hour-placeholder">Upload a CSV to render the hour-of-day heatmap.</div>
                     </div>
                 </section>
             </div>
@@ -521,15 +552,15 @@
             <section class="panel">
                 <div class="panel-head">
                     <div class="panel-copy">
-                        <h2>Deployment inventory</h2>
-                        <p>The same prepared deployment summaries used by the report export are also available here for quick review and Excel template export.</p>
+                        <h2 id="inventory-title">Deployment inventory</h2>
+                        <p id="inventory-copy">The same prepared deployment summaries used by the report export are also available here for quick review and trap_info template export.</p>
                     </div>
                     <div class="panel-actions">
-                        <button id="export-inventory-xlsx" class="secondary" type="button" disabled>Export Excel template</button>
+                        <button id="export-inventory-xlsx" class="secondary" type="button" disabled>Export trap_info template</button>
                     </div>
                 </div>
                 <div class="table-wrap" id="inventory-frame">
-                    <div class="placeholder">Upload a CSV to populate the deployment inventory.</div>
+                    <div class="placeholder" id="inventory-placeholder">Upload a CSV to populate the deployment inventory.</div>
                 </div>
             </section>
         </div>
@@ -548,20 +579,51 @@
         let wasmReady = false;
         let explorer = null;
         let metadata = null;
+        const LANGUAGE_STORAGE_KEY = "datetime_plot_demo.lang";
+        let currentLang = detectInitialLanguage();
+        let lastStatusState = null;
+        let lastErrorState = null;
 
         const statusEl = document.getElementById("status");
         const errorEl = document.getElementById("error");
+        const langSelect = document.getElementById("lang-select");
+        const langLabel = document.getElementById("lang-label");
+        const eyebrowEl = document.getElementById("eyebrow");
+        const heroTitle = document.getElementById("hero-title");
+        const heroCopy = document.getElementById("hero-copy");
+        const metricLabelRows = document.getElementById("metric-label-rows");
+        const metricLabelDeployments = document.getElementById("metric-label-deployments");
+        const metricLabelRange = document.getElementById("metric-label-range");
+        const metricLabelRuntime = document.getElementById("metric-label-runtime");
+        const metricRuntimeValue = document.getElementById("metric-runtime-value");
+        const uploadTitle = document.getElementById("upload-title");
         const controlsPanel = document.getElementById("controls-panel");
         const uploadCopy = document.getElementById("upload-copy");
+        const csvUploadLabel = document.getElementById("csv-upload-label");
         const csvUploadInput = document.getElementById("csv-upload");
         const openLocalCsvButton = document.getElementById("open-local-csv");
         const reloadSourceButton = document.getElementById("reload-source");
+        const controlsTitle = document.getElementById("controls-title");
+        const controlsCopy = document.getElementById("controls-copy");
+        const bucketSelectLabel = document.getElementById("bucket-select-label");
         const bucketSelect = document.getElementById("bucket-select");
+        const deploymentSelectLabel = document.getElementById("deployment-select-label");
         const deploymentSelect = document.getElementById("deployment-select");
+        const overviewTitle = document.getElementById("overview-title");
+        const overviewCopy = document.getElementById("overview-copy");
         const overviewFrame = document.getElementById("overview-frame");
+        const overviewPlaceholder = document.getElementById("overview-placeholder");
+        const detailTitle = document.getElementById("detail-title");
         const detailFrame = document.getElementById("detail-frame");
+        const detailPlaceholder = document.getElementById("detail-placeholder");
+        const hourTitle = document.getElementById("hour-title");
+        const hourCopy = document.getElementById("hour-copy");
         const hourFrame = document.getElementById("hour-frame");
+        const hourPlaceholder = document.getElementById("hour-placeholder");
+        const inventoryTitle = document.getElementById("inventory-title");
+        const inventoryCopy = document.getElementById("inventory-copy");
         const inventoryFrame = document.getElementById("inventory-frame");
+        const inventoryPlaceholder = document.getElementById("inventory-placeholder");
         const exportInventoryButton = document.getElementById("export-inventory-xlsx");
         const detailCaption = document.getElementById("detail-caption");
         const detailCopy = document.getElementById("detail-copy");
@@ -572,42 +634,384 @@
         const MAX_ZOOM = 8;
         let svgNamespaceCounter = 0;
         let lastSource = null;
+        const I18N = {
+            en: {
+                static: {
+                    page_title: "Deployment Timestamp Visualizer",
+                    eyebrow: "Charton + Polars + WASM",
+                    lang_label: "Language",
+                    hero_title: "Deployment Timestamp Visualizer",
+                    hero_copy: "",
+                    metric_rows: "Rows",
+                    metric_deployments: "Deployments",
+                    metric_range: "Range",
+                    metric_runtime: "Runtime",
+                    metric_runtime_value: "Rust/WASM",
+                    upload_title: "Upload CSV",
+                    upload_label: "CSV file",
+                    upload_label_fallback: "CSV file (fallback)",
+                    open_local_csv: "Open local CSV",
+                    reload_source: "Reload current source",
+                    controls_title: "Controls",
+                    controls_copy: "These controls rerun the Rust aggregation and Charton rendering inside the WASM module, then swap in fresh SVG output.",
+                    bucket_label: "Overview bucket",
+                    deployment_label: "Detail deployment",
+                    overview_title: "Overview heatmap",
+                    overview_copy: "Deployment × time overview. Empty cells are forced to white, and the crowded date axis is thinned after SVG generation.",
+                    overview_placeholder: "Upload a CSV to render the overview heatmap.",
+                    detail_title: "Deployment detail",
+                    detail_copy_base: "Exact timestamps in one shared chart, with days on the horizontal axis and minute-of-day on the vertical axis. Still images are nudged slightly up-left and videos down-right for readability.",
+                    detail_placeholder: "Upload a CSV to render the detail media plot.",
+                    hour_title: "Hour-of-day heatmap",
+                    hour_copy: "Compact activity fingerprint across all deployments.",
+                    hour_placeholder: "Upload a CSV to render the hour-of-day heatmap.",
+                    inventory_title: "Deployment inventory",
+                    inventory_copy: "The same prepared deployment summaries used by the report export are also available here for quick review and trap_info template export.",
+                    inventory_placeholder: "Upload a CSV to populate the deployment inventory.",
+                    inventory_empty: "No deployment summaries available.",
+                    inventory_export: "Export trap_info template",
+                    inventory_header_deployment: "Deployment",
+                    inventory_header_media_count: "Media count",
+                    inventory_header_first_seen: "First seen",
+                    inventory_header_last_seen: "Last seen",
+                    inventory_header_media_types: "Media types",
+                    upload_copy_picker: "The CSV must include `deployment` and `datetime` columns. `Open local CSV` is recommended because it keeps a live file handle for one-click reloads after local edits. Plain uploads remain available as a fallback.",
+                    upload_copy_basic: "The CSV must include `deployment` and `datetime` columns. This browser does not support direct local file handles, so use the standard upload flow."
+                },
+                bucket: {
+                    day: "day",
+                    week: "week",
+                    month: "month"
+                },
+                status: {
+                    init: "Initialize WASM runtime, then upload a CSV to render the explorer.",
+                    initializing: "Initializing WebAssembly module...",
+                    ready: "WASM runtime ready. Upload a CSV to render the explorer.",
+                    init_failed: "WASM initialization failed.",
+                    parsing: "Parsing {sourceLabel} and building prepared tables...",
+                    loaded: "Loaded {rows} rows from {sourceLabel}. Rendering charts...",
+                    rendered: "Rendered overview, detail, and hour heatmap from {sourceLabel}.",
+                    reload_disk: "Reloading {label} from disk...",
+                    reselect: "Re-select {label} to load the updated CSV. Plain file uploads cannot be re-read from disk automatically.",
+                    upload_failed: "Upload failed.",
+                    local_cancelled: "Local CSV selection cancelled.",
+                    local_failed: "Local CSV failed to load.",
+                    reload_failed: "Reload failed.",
+                    export_xlsx: "Downloaded trap_info_template.xlsx for {count} deployments.",
+                    rerender_overview: "Re-rendering overview in WASM...",
+                    overview_updated: "Overview updated.",
+                    rerender_detail: "Re-rendering deployment detail in WASM...",
+                    detail_updated: "Detail updated.",
+                    focus_deployment: "Focusing deployment {deployment} from chart interaction...",
+                    detail_focused: "Detail focused on {deployment}."
+                },
+                error: {
+                    no_svg: "Chart rendering returned no SVG.",
+                    wasm_not_ready: "WASM runtime is not ready yet.",
+                    reload_without_source: "Load a CSV before trying to reload it.",
+                    export_without_data: "Load a CSV before exporting the trap_info template."
+                },
+                chart: {
+                    chart: "Chart",
+                    reset: "Reset",
+                    fullscreen: "Full screen",
+                    close: "Close",
+                    zoom_workspace: "Zoom and pan in a larger workspace.",
+                    zoom_level: "Zoom <strong data-role=\"zoom-label\">100%</strong>.",
+                    zoom_hint: "Zoom <strong data-role=\"zoom-label\">100%</strong>. Use Shift + wheel to zoom, then Shift + drag or middle-drag to pan.",
+                    overview_title: "Overview heatmap",
+                    overview_subtitle: "Deployment × {bucket} overview with click-to-select row highlighting.",
+                    detail_title: "Deployment detail: {deployment}",
+                    detail_subtitle: "One shared chart with days on X, minute-of-day on Y, and a small diagonal nudge separating still images from videos.",
+                    hour_title: "Hour-of-day heatmap",
+                    hour_subtitle: "Compact activity fingerprint with the same deployment-axis interactions."
+                },
+                dynamic: {
+                    detail_copy_selected: "Exact timestamps for {deployment} in one shared chart, with days on the horizontal axis and minute-of-day on the vertical axis. Still images are nudged slightly up-left and videos down-right. Use Shift + wheel or drag to inspect dense periods, or open the chart full screen.",
+                    detail_caption: "{count} media items from {start} through {end}. Media types: {media_breakdown}.",
+                    range: "{start} to {end}"
+                }
+            },
+            zh: {
+                static: {
+                    page_title: "Deployment Timestamp Visualizer",
+                    eyebrow: "Charton + Polars + WASM",
+                    lang_label: "语言",
+                    hero_title: "Deployment Timestamp Visualizer",
+                    hero_copy: "",
+                    metric_rows: "记录数",
+                    metric_deployments: "Deployment 数",
+                    metric_range: "时间范围",
+                    metric_runtime: "运行时",
+                    metric_runtime_value: "Rust/WASM",
+                    upload_title: "上传 CSV",
+                    upload_label: "CSV 文件",
+                    upload_label_fallback: "CSV 文件（备用）",
+                    open_local_csv: "打开本地 CSV",
+                    reload_source: "重新加载当前数据源",
+                    controls_title: "控制面板",
+                    controls_copy: "这些控件会在 WASM 模块中重新执行 Rust 聚合和 Charton 渲染，并替换页面中的 SVG 结果。",
+                    bucket_label: "概览时间粒度",
+                    deployment_label: "明细 deployment",
+                    overview_title: "概览热力图",
+                    overview_copy: "deployment × 时间概览。空白单元格会被强制显示为白色，过密的日期轴标签会在 SVG 生成后做稀疏化处理。",
+                    overview_placeholder: "上传 CSV 后显示概览热力图。",
+                    detail_title: "Deployment 明细",
+                    detail_copy_base: "所有精确时间点绘制在同一张图中，横轴为日期，纵轴为一天中的分钟。静态图片会略微向左上偏移，视频会略微向右下偏移，以提高可读性。",
+                    detail_placeholder: "上传 CSV 后显示明细 media 图。",
+                    hour_title: "小时热力图",
+                    hour_copy: "所有 deployment 的紧凑活动指纹。",
+                    hour_placeholder: "上传 CSV 后显示小时热力图。",
+                    inventory_title: "Deployment 清单",
+                    inventory_copy: "这里复用了 report 导出中的 deployment 汇总结果，便于快速查看并导出 trap_info 模板。",
+                    inventory_placeholder: "上传 CSV 后显示 deployment 清单。",
+                    inventory_empty: "没有可用的 deployment 汇总信息。",
+                    inventory_export: "导出 trap_info 模板",
+                    inventory_header_deployment: "Deployment",
+                    inventory_header_media_count: "媒体数量",
+                    inventory_header_first_seen: "开始时间",
+                    inventory_header_last_seen: "结束时间",
+                    inventory_header_media_types: "媒体类型",
+                    upload_copy_picker: "CSV 需要包含 `deployment` 和 `datetime` 列。推荐使用“打开本地 CSV”，这样在本地编辑文件后可以一键重新加载；普通上传仍作为备用方式保留。",
+                    upload_copy_basic: "CSV 需要包含 `deployment` 和 `datetime` 列。当前浏览器不支持直接持有本地文件句柄，请使用普通上传方式。"
+                },
+                bucket: {
+                    day: "天",
+                    week: "周",
+                    month: "月"
+                },
+                status: {
+                    init: "初始化 WASM 运行时后，上传 CSV 即可渲染探索界面。",
+                    initializing: "正在初始化 WebAssembly 模块...",
+                    ready: "WASM 运行时已就绪，上传 CSV 即可渲染探索界面。",
+                    init_failed: "WASM 初始化失败。",
+                    parsing: "正在解析 {sourceLabel} 并构建预处理数据表...",
+                    loaded: "已从 {sourceLabel} 读取 {rows} 行，正在渲染图表...",
+                    rendered: "已完成 {sourceLabel} 的概览图、明细图和小时热力图渲染。",
+                    reload_disk: "正在从磁盘重新加载 {label}...",
+                    reselect: "请重新选择 {label} 以加载更新后的 CSV。普通上传方式无法自动重新读取磁盘上的文件。",
+                    upload_failed: "上传失败。",
+                    local_cancelled: "已取消本地 CSV 选择。",
+                    local_failed: "本地 CSV 加载失败。",
+                    reload_failed: "重新加载失败。",
+                    export_xlsx: "已为 {count} 个 deployment 下载 trap_info_template.xlsx。",
+                    rerender_overview: "正在 WASM 中重新渲染概览图...",
+                    overview_updated: "概览图已更新。",
+                    rerender_detail: "正在 WASM 中重新渲染 deployment 明细图...",
+                    detail_updated: "明细图已更新。",
+                    focus_deployment: "正在通过图表交互聚焦 deployment {deployment}...",
+                    detail_focused: "明细已聚焦到 {deployment}。"
+                },
+                error: {
+                    no_svg: "图表渲染后未返回 SVG。",
+                    wasm_not_ready: "WASM 运行时尚未就绪。",
+                    reload_without_source: "请先加载 CSV，再执行重新加载。",
+                    export_without_data: "请先加载 CSV，再导出 Excel 模板。"
+                },
+                chart: {
+                    chart: "图表",
+                    reset: "重置",
+                    fullscreen: "全屏",
+                    close: "关闭",
+                    zoom_workspace: "可在更大的视图中缩放和平移。",
+                    zoom_level: "缩放 <strong data-role=\"zoom-label\">100%</strong>。",
+                    zoom_hint: "缩放 <strong data-role=\"zoom-label\">100%</strong>。使用 Shift + 滚轮缩放，再用 Shift + 拖拽或中键拖拽平移。",
+                    overview_title: "概览热力图",
+                    overview_subtitle: "deployment × {bucket} 概览，支持点击选择行并高亮。",
+                    detail_title: "Deployment 明细：{deployment}",
+                    detail_subtitle: "单图共享坐标，横轴为日期，纵轴为一天中的分钟，并通过轻微对角偏移区分静态图片和视频。",
+                    hour_title: "小时热力图",
+                    hour_subtitle: "紧凑的活动指纹图，并保留相同的 deployment 轴交互。"
+                },
+                dynamic: {
+                    detail_copy_selected: "{deployment} 的精确时间点绘制在同一张图中，横轴为日期，纵轴为一天中的分钟。静态图片略微向左上偏移，视频略微向右下偏移。可使用 Shift + 滚轮或拖拽查看密集区域，也可以全屏打开图表。",
+                    detail_caption: "{start} 至 {end} 共 {count} 个 media。媒体类型：{media_breakdown}。",
+                    range: "{start} 至 {end}"
+                }
+            }
+        };
 
-        function deploymentNames() {
-            return new Set((metadata?.deployment_options || []).map((option) => option.deployment));
+        function detectInitialLanguage() {
+            const saved = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+            if (saved === "en" || saved === "zh") {
+                return saved;
+            }
+
+            return navigator.language?.toLowerCase().startsWith("zh") ? "zh" : "en";
+        }
+
+        function formatMessage(template, params = {}) {
+            return Object.entries(params).reduce(
+                (text, [key, value]) => text.replaceAll(`{${key}}`, String(value)),
+                template
+            );
+        }
+
+        function t(section, key, params = {}) {
+            const template =
+                I18N[currentLang]?.[section]?.[key] ??
+                I18N.en?.[section]?.[key] ??
+                key;
+            return formatMessage(template, params);
+        }
+
+        function bucketLabel(value) {
+            return I18N[currentLang]?.bucket?.[value] ?? I18N.en.bucket[value] ?? value;
         }
 
         function setStatus(message) {
+            lastStatusState = { kind: "text", message };
             statusEl.textContent = message;
         }
 
+        function setStatusKey(key, params = {}) {
+            lastStatusState = { kind: "key", key, params };
+            statusEl.textContent = t("status", key, params);
+        }
+
         function clearError() {
+            lastErrorState = null;
             errorEl.style.display = "none";
             errorEl.textContent = "";
         }
 
         function showError(message) {
+            lastErrorState = { kind: "text", message };
             errorEl.style.display = "block";
             errorEl.textContent = message;
+        }
+
+        function showErrorKey(key, params = {}) {
+            lastErrorState = { kind: "key", key, params };
+            errorEl.style.display = "block";
+            errorEl.textContent = t("error", key, params);
+        }
+
+        function refreshStatusAndError() {
+            if (lastStatusState?.kind === "key") {
+                statusEl.textContent = t("status", lastStatusState.key, lastStatusState.params);
+            }
+
+            if (lastErrorState?.kind === "key") {
+                errorEl.textContent = t("error", lastErrorState.key, lastErrorState.params);
+            }
+        }
+
+        function deploymentNames() {
+            return new Set((metadata?.deployment_options || []).map((option) => option.deployment));
         }
 
         function updateSourceControls() {
             reloadSourceButton.disabled = !lastSource;
             if (supportsFilePicker) {
                 openLocalCsvButton.classList.remove("secondary");
-                csvUploadInput.parentElement.querySelector("label").textContent = "CSV file (fallback)";
-                uploadCopy.textContent =
-                    "The CSV must include `deployment` and `datetime` columns. `Open local CSV` is recommended because it keeps a live file handle for one-click reloads after local edits. Plain uploads remain available as a fallback.";
+                openLocalCsvButton.hidden = false;
+                csvUploadLabel.textContent = t("static", "upload_label_fallback");
+                uploadCopy.textContent = t("static", "upload_copy_picker");
             } else {
                 openLocalCsvButton.hidden = true;
-                csvUploadInput.parentElement.querySelector("label").textContent = "CSV file";
-                uploadCopy.textContent =
-                    "The CSV must include `deployment` and `datetime` columns. This browser does not support direct local file handles, so use the standard upload flow.";
+                csvUploadLabel.textContent = t("static", "upload_label");
+                uploadCopy.textContent = t("static", "upload_copy_basic");
             }
         }
 
         function setMetric(id, value) {
             document.getElementById(id).textContent = value;
+        }
+
+        function formatRange(start, end) {
+            return t("dynamic", "range", { start, end });
+        }
+
+        function deploymentOption(deployment) {
+            return (metadata?.deployment_options || []).find((option) => option.deployment === deployment) || null;
+        }
+
+        function updateDetailText() {
+            if (!metadata || !deploymentSelect.value) {
+                detailCopy.textContent = t("static", "detail_copy_base");
+                detailCaption.textContent = "";
+                return;
+            }
+
+            const option = deploymentOption(deploymentSelect.value);
+            if (!option) {
+                detailCopy.textContent = t("static", "detail_copy_base");
+                detailCaption.textContent = "";
+                return;
+            }
+
+            detailCopy.textContent = t("dynamic", "detail_copy_selected", {
+                deployment: option.deployment,
+            });
+            detailCaption.textContent = t("dynamic", "detail_caption", {
+                count: option.event_count_display,
+                start: option.first_seen,
+                end: option.last_seen,
+                media_breakdown: option.media_breakdown,
+            });
+        }
+
+        function applyStaticText() {
+            document.documentElement.lang = currentLang;
+            document.title = t("static", "page_title");
+            langSelect.value = currentLang;
+            langLabel.textContent = t("static", "lang_label");
+            eyebrowEl.textContent = t("static", "eyebrow");
+            heroTitle.textContent = t("static", "hero_title");
+            heroCopy.textContent = t("static", "hero_copy");
+            heroCopy.hidden = !heroCopy.textContent.trim();
+            metricLabelRows.textContent = t("static", "metric_rows");
+            metricLabelDeployments.textContent = t("static", "metric_deployments");
+            metricLabelRange.textContent = t("static", "metric_range");
+            metricLabelRuntime.textContent = t("static", "metric_runtime");
+            metricRuntimeValue.textContent = t("static", "metric_runtime_value");
+            uploadTitle.textContent = t("static", "upload_title");
+            openLocalCsvButton.textContent = t("static", "open_local_csv");
+            reloadSourceButton.textContent = t("static", "reload_source");
+            controlsTitle.textContent = t("static", "controls_title");
+            controlsCopy.textContent = t("static", "controls_copy");
+            bucketSelectLabel.textContent = t("static", "bucket_label");
+            deploymentSelectLabel.textContent = t("static", "deployment_label");
+            overviewTitle.textContent = t("static", "overview_title");
+            overviewCopy.textContent = t("static", "overview_copy");
+            if (overviewPlaceholder) {
+                overviewPlaceholder.textContent = t("static", "overview_placeholder");
+            }
+            detailTitle.textContent = t("static", "detail_title");
+            detailCopy.textContent = t("static", "detail_copy_base");
+            if (detailPlaceholder) {
+                detailPlaceholder.textContent = t("static", "detail_placeholder");
+            }
+            hourTitle.textContent = t("static", "hour_title");
+            hourCopy.textContent = t("static", "hour_copy");
+            if (hourPlaceholder) {
+                hourPlaceholder.textContent = t("static", "hour_placeholder");
+            }
+            inventoryTitle.textContent = t("static", "inventory_title");
+            inventoryCopy.textContent = t("static", "inventory_copy");
+            exportInventoryButton.textContent = t("static", "inventory_export");
+            if (inventoryPlaceholder) {
+                inventoryPlaceholder.textContent = t("static", "inventory_placeholder");
+            }
+
+            for (const option of bucketSelect.options) {
+                option.textContent = bucketLabel(option.value);
+            }
+        }
+
+        function applyLanguage() {
+            window.localStorage.setItem(LANGUAGE_STORAGE_KEY, currentLang);
+            applyStaticText();
+            updateSourceControls();
+            refreshStatusAndError();
+            if (metadata) {
+                setMetric("metric-range", formatRange(metadata.range_start, metadata.range_end));
+            }
+            updateDetailText();
+            if (metadata) {
+                renderInventory();
+            }
         }
 
         function sortedDeploymentOptions() {
@@ -616,7 +1020,7 @@
 
         function renderInventory() {
             if (!metadata?.deployment_options?.length) {
-                inventoryFrame.innerHTML = `<div class="placeholder">No deployment summaries available.</div>`;
+                inventoryFrame.innerHTML = `<div class="placeholder">${t("static", "inventory_empty")}</div>`;
                 exportInventoryButton.disabled = true;
                 return;
             }
@@ -626,7 +1030,13 @@
             const table = document.createElement("table");
             const thead = document.createElement("thead");
             const headerRow = document.createElement("tr");
-            for (const title of ["Deployment", "Events", "First seen", "Last seen", "Media types"]) {
+            for (const title of [
+                t("static", "inventory_header_deployment"),
+                t("static", "inventory_header_media_count"),
+                t("static", "inventory_header_first_seen"),
+                t("static", "inventory_header_last_seen"),
+                t("static", "inventory_header_media_types"),
+            ]) {
                 const th = document.createElement("th");
                 th.textContent = title;
                 headerRow.appendChild(th);
@@ -643,9 +1053,9 @@
                 deployment.textContent = option.deployment;
                 row.appendChild(deployment);
 
-                const events = document.createElement("td");
-                events.textContent = option.event_count_display;
-                row.appendChild(events);
+                const mediaCount = document.createElement("td");
+                mediaCount.textContent = option.event_count_display;
+                row.appendChild(mediaCount);
 
                 const firstSeen = document.createElement("td");
                 firstSeen.textContent = option.first_seen;
@@ -914,9 +1324,9 @@
 
                     deploymentSelect.value = label;
                     try {
-                        setStatus(`Focusing deployment ${label} from chart interaction...`);
+                        setStatusKey("focus_deployment", { deployment: label });
                         await renderDetail();
-                        setStatus(`Detail focused on ${label}.`);
+                        setStatusKey("detail_focused", { deployment: label });
                     } catch (error) {
                         showError(error && error.message ? error.message : String(error));
                     }
@@ -937,9 +1347,9 @@
                             toggleDeploymentRowHighlight(frame, deployment);
                             deploymentSelect.value = deployment;
                             try {
-                                setStatus(`Focusing deployment ${deployment} from chart interaction...`);
+                                setStatusKey("focus_deployment", { deployment });
                                 await renderDetail();
-                                setStatus(`Detail focused on ${deployment}.`);
+                                setStatusKey("detail_focused", { deployment });
                             } catch (error) {
                                 showError(error && error.message ? error.message : String(error));
                             }
@@ -953,19 +1363,19 @@
             const toolbar = document.createElement("div");
             toolbar.className = `frame-tools${options.fullscreenMode ? " is-fullscreen" : ""}`;
             toolbar.innerHTML = options.fullscreenMode ? `
-                <span class="tool-heading">${options.title || "Chart"}</span>
+                <span class="tool-heading">${options.title || t("chart", "chart")}</span>
                 <button type="button" class="tool-button" data-role="zoom-out">-</button>
                 <button type="button" class="tool-button" data-role="zoom-in">+</button>
-                <button type="button" class="tool-button" data-role="zoom-reset">Reset</button>
-                <button type="button" class="tool-button" data-role="close">Close</button>
-                <span class="tool-label">${options.subtitle || "Zoom and pan in a larger workspace."}</span>
-                <span class="tool-label">Zoom <strong data-role="zoom-label">100%</strong>.</span>
+                <button type="button" class="tool-button" data-role="zoom-reset">${t("chart", "reset")}</button>
+                <button type="button" class="tool-button" data-role="close">${t("chart", "close")}</button>
+                <span class="tool-label">${options.subtitle || t("chart", "zoom_workspace")}</span>
+                <span class="tool-label">${t("chart", "zoom_level")}</span>
             ` : `
                 <button type="button" class="tool-button" data-role="zoom-out">-</button>
                 <button type="button" class="tool-button" data-role="zoom-in">+</button>
-                <button type="button" class="tool-button" data-role="zoom-reset">Reset</button>
-                ${options.fullscreenable ? '<button type="button" class="tool-button" data-role="fullscreen">Full screen</button>' : ""}
-                <span class="tool-label">Zoom <strong data-role="zoom-label">100%</strong>. Use Shift + wheel to zoom, then Shift + drag or middle-drag to pan.</span>
+                <button type="button" class="tool-button" data-role="zoom-reset">${t("chart", "reset")}</button>
+                ${options.fullscreenable ? `<button type="button" class="tool-button" data-role="fullscreen">${t("chart", "fullscreen")}</button>` : ""}
+                <span class="tool-label">${t("chart", "zoom_hint")}</span>
             `;
 
             toolbar.querySelector("[data-role='zoom-out']").addEventListener("click", () => {
@@ -1114,6 +1524,33 @@
             }
         }
 
+        function localizeSvgTitles(svg) {
+            if (currentLang === "zh") {
+                for (const title of svg.querySelectorAll("title")) {
+                    const value = title.textContent || "";
+                    title.textContent = value
+                        .replaceAll("Deployment: ", "Deployment：")
+                        .replaceAll("\nBucket: ", "\n时间桶：")
+                        .replaceAll("\nMedia count: ", "\n媒体数量：")
+                        .replaceAll("Timestamp: ", "时间：")
+                        .replaceAll("\nHour: ", "\n小时：")
+                        .replaceAll("\nMedia: image", "\n媒体：图片")
+                        .replaceAll("\nMedia: video", "\n媒体：视频")
+                        .replaceAll("\nMedia type: ", "\n媒体类型：")
+                        .replaceAll("\nPath: ", "\n路径：");
+                }
+
+                for (const textNode of svg.querySelectorAll("text")) {
+                    const value = textNode.textContent?.trim();
+                    if (value === "media_count") {
+                        textNode.textContent = "媒体数量";
+                    } else if (value === "media") {
+                        textNode.textContent = "媒体";
+                    }
+                }
+            }
+        }
+
         function mountSvg(frame, svgMarkup, options = {}) {
             frame.classList.remove("is-zoomable", "is-zoomed", "is-panning");
             delete frame._heatmapRowCache;
@@ -1129,11 +1566,12 @@
 
             const svg = stage.querySelector("svg");
             if (!svg) {
-                frame.innerHTML = `<div class="placeholder">Chart rendering returned no SVG.</div>`;
+                frame.innerHTML = `<div class="placeholder">${t("error", "no_svg")}</div>`;
                 return;
             }
 
             namespaceSvgDefinitions(svg);
+            localizeSvgTitles(svg);
 
             if (options.deploymentAxis) {
                 decorateDeploymentAxis(frame, options);
@@ -1152,8 +1590,8 @@
                 rowHighlight: true,
                 fullscreenable: true,
                 onFullscreen: () => openFullscreen({
-                    title: "Overview heatmap",
-                    subtitle: `Deployment × ${bucketSelect.value} overview with click-to-select row highlighting.`,
+                    title: t("chart", "overview_title"),
+                    subtitle: t("chart", "overview_subtitle", { bucket: bucketLabel(bucketSelect.value) }),
                     svgMarkup,
                     deploymentAxis: true,
                     rowHighlight: true,
@@ -1168,15 +1606,14 @@
                 zoomable: true,
                 fullscreenable: true,
                 onFullscreen: () => openFullscreen({
-                    title: `Deployment detail: ${deployment}`,
-                    subtitle: "One shared chart with days on X, minute-of-day on Y, and a small diagonal nudge separating still images from videos.",
+                    title: t("chart", "detail_title", { deployment }),
+                    subtitle: t("chart", "detail_subtitle"),
                     svgMarkup,
                     deploymentAxis: false,
                     rowHighlight: false,
                 }),
             });
-            detailCaption.textContent = explorer.detail_caption(deployment);
-            detailCopy.textContent = `Exact timestamps for ${deployment} in one shared chart, with days on the horizontal axis and minute-of-day on the vertical axis. Still images are nudged slightly up-left and videos down-right. Use Shift + wheel or drag to inspect dense periods, or open the chart full screen.`;
+            updateDetailText();
         }
 
         async function renderHour() {
@@ -1187,8 +1624,8 @@
                 rowHighlight: true,
                 fullscreenable: true,
                 onFullscreen: () => openFullscreen({
-                    title: "Hour-of-day heatmap",
-                    subtitle: "Compact activity fingerprint with the same deployment-axis interactions.",
+                    title: t("chart", "hour_title"),
+                    subtitle: t("chart", "hour_subtitle"),
                     svgMarkup,
                     deploymentAxis: true,
                     rowHighlight: true,
@@ -1205,11 +1642,11 @@
 
         async function loadExplorer(csvText, sourceLabel, source = null) {
             if (!wasmReady) {
-                throw new Error("WASM runtime is not ready yet.");
+                throw new Error(t("error", "wasm_not_ready"));
             }
 
             clearError();
-            setStatus(`Parsing ${sourceLabel} and building prepared tables...`);
+            setStatusKey("parsing", { sourceLabel });
 
             const nextExplorer = new WasmExplorer(csvText);
             const nextMetadata = JSON.parse(nextExplorer.metadata_json());
@@ -1223,12 +1660,15 @@
 
             setMetric("metric-rows", metadata.rows_display);
             setMetric("metric-deployments", metadata.deployments_display);
-            setMetric("metric-range", `${metadata.range_start} to ${metadata.range_end}`);
+            setMetric("metric-range", formatRange(metadata.range_start, metadata.range_end));
 
             populateControls();
-            setStatus(`Loaded ${metadata.rows_display} rows from ${sourceLabel}. Rendering charts...`);
+            setStatusKey("loaded", {
+                rows: metadata.rows_display,
+                sourceLabel,
+            });
             await renderAll();
-            setStatus(`Rendered overview, detail, and hour heatmap from ${sourceLabel}.`);
+            setStatusKey("rendered", { sourceLabel });
         }
 
         async function openLocalCsvFromDisk() {
@@ -1241,7 +1681,7 @@
                 multiple: false,
                 types: [
                     {
-                        description: "CSV files",
+                        description: currentLang === "zh" ? "CSV 文件" : "CSV files",
                         accept: {
                             "text/csv": [".csv"],
                             "text/plain": [".csv"],
@@ -1265,14 +1705,14 @@
 
         async function reloadCurrentSource() {
             if (!lastSource) {
-                showError("Load a CSV before trying to reload it.");
+                showErrorKey("reload_without_source");
                 return;
             }
 
             clearError();
 
             if (lastSource.kind === "file-handle") {
-                setStatus(`Reloading ${lastSource.label} from disk...`);
+                setStatusKey("reload_disk", { label: lastSource.label });
                 const file = await lastSource.handle.getFile();
                 const csvText = await file.text();
                 await loadExplorer(csvText, file.name, {
@@ -1283,7 +1723,7 @@
                 return;
             }
 
-            setStatus(`Re-select ${lastSource.label} to load the updated CSV. Plain file uploads cannot be re-read from disk automatically.`);
+            setStatusKey("reselect", { label: lastSource.label });
             csvUploadInput.click();
         }
 
@@ -1301,7 +1741,7 @@
                 });
             } catch (error) {
                 showError(error && error.message ? error.message : String(error));
-                setStatus("Upload failed.");
+                setStatusKey("upload_failed");
             } finally {
                 event.target.value = "";
             }
@@ -1312,11 +1752,11 @@
                 await openLocalCsvFromDisk();
             } catch (error) {
                 if (error && error.name === "AbortError") {
-                    setStatus("Local CSV selection cancelled.");
+                    setStatusKey("local_cancelled");
                     return;
                 }
                 showError(error && error.message ? error.message : String(error));
-                setStatus("Local CSV failed to load.");
+                setStatusKey("local_failed");
             }
         });
 
@@ -1325,19 +1765,19 @@
                 await reloadCurrentSource();
             } catch (error) {
                 showError(error && error.message ? error.message : String(error));
-                setStatus("Reload failed.");
+                setStatusKey("reload_failed");
             }
         });
 
         exportInventoryButton.addEventListener("click", () => {
             if (!metadata?.deployment_options?.length) {
-                showError("Load a CSV before exporting the Excel template.");
+                showErrorKey("export_without_data");
                 return;
             }
 
             clearError();
             downloadTrapInfoTemplate(sortedDeploymentOptions());
-            setStatus(`Downloaded trap_info_template.xlsx for ${sortedDeploymentOptions().length} deployments.`);
+            setStatusKey("export_xlsx", { count: sortedDeploymentOptions().length });
         });
 
         bucketSelect.addEventListener("change", async () => {
@@ -1345,9 +1785,9 @@
                 return;
             }
             try {
-                setStatus("Re-rendering overview in WASM...");
+                setStatusKey("rerender_overview");
                 await renderOverview();
-                setStatus("Overview updated.");
+                setStatusKey("overview_updated");
             } catch (error) {
                 showError(error && error.message ? error.message : String(error));
             }
@@ -1358,23 +1798,44 @@
                 return;
             }
             try {
-                setStatus("Re-rendering deployment detail in WASM...");
+                setStatusKey("rerender_detail");
                 await renderDetail();
-                setStatus("Detail updated.");
+                setStatusKey("detail_updated");
+            } catch (error) {
+                showError(error && error.message ? error.message : String(error));
+            }
+        });
+
+        langSelect.addEventListener("change", async () => {
+            const nextLang = langSelect.value === "zh" ? "zh" : "en";
+            if (nextLang === currentLang) {
+                return;
+            }
+
+            try {
+                currentLang = nextLang;
+                applyLanguage();
+                if (fullscreenShell.classList.contains("is-open")) {
+                    closeFullscreen();
+                }
+                if (explorer) {
+                    await renderAll();
+                }
             } catch (error) {
                 showError(error && error.message ? error.message : String(error));
             }
         });
 
         try {
-            setStatus("Initializing WebAssembly module...");
+            applyLanguage();
+            setStatusKey("initializing");
             await init();
             wasmReady = true;
             updateSourceControls();
-            setStatus("WASM runtime ready. Upload a CSV to render the explorer.");
+            setStatusKey("ready");
         } catch (error) {
             showError(error && error.message ? error.message : String(error));
-            setStatus("WASM initialization failed.");
+            setStatusKey("init_failed");
         }
 
         fullscreenShell.addEventListener("click", (event) => {

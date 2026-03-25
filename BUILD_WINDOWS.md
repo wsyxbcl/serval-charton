@@ -181,7 +181,7 @@ If a `media_type` column is present, the detail chart uses it to classify rows i
 ## Notes
 
 - The native executable embeds the current `web/index.html`, the main demo dataset under `data/`, and `web/pkg/*` at compile time.
-- The `Deployment inventory` panel can export `trap_info_template.xlsx` directly in the browser, with deployment name and start/end time prefilled.
+- The `Deployment inventory` panel can export the `trap_info` template workbook (`trap_info_template.xlsx`) directly in the browser, with deployment name and start/end time prefilled.
 - Rebuild `web/pkg` first, then rebuild the executable.
 - `cargo build --release` from `web` builds the frontend crate only; use the project root to build `datetime_plot_demo.exe`.
 - The browser page is local-only; there is no remote backend.

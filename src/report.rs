@@ -48,7 +48,7 @@ fn build_report_html(
             r#"
                 <section class="panel">
                     <h3>{}</h3>
-                    <p>Detailed event view for one deployment from the prepared event table.</p>
+                    <p>Detailed media view for one deployment from the prepared media table.</p>
                     <div class="chart-frame">{}</div>
                     <div class="caption">{}</div>
                 </section>
@@ -94,7 +94,7 @@ fn build_report_html(
         <section class="hero">
             <div class="eyebrow">Polars + Charton report</div>
             <h1>Media timestamp distributions by deployment</h1>
-            <p>This report reuses one prepared set of Polars tables across a static overview heatmap, a focus deployment event plot, and an hour-of-day comparison view. The overview bucket in this export is <strong>{}</strong>.</p>
+            <p>This report reuses one prepared set of Polars tables across a static overview heatmap, a focus deployment media plot, and an hour-of-day comparison view. The overview bucket in this export is <strong>{}</strong>.</p>
             <div class="metrics">
                 <div class="metric">
                     <span class="label">CSV source</span>
@@ -118,14 +118,14 @@ fn build_report_html(
         <div class="stack">
             <section class="panel">
                 <h2>Overview heatmap</h2>
-                <p>Counts are aggregated to {} buckets and laid out across deployments in descending event volume order. The SVG export thins X-axis labels after Charton renders so long ranges stay readable without dropping any heatmap cells.</p>
+                <p>Counts are aggregated to {} buckets and laid out across deployments in descending media volume order. The SVG export thins X-axis labels after Charton renders so long ranges stay readable without dropping any heatmap cells.</p>
                 <div class="chart-frame">{}</div>
             </section>
 
             <div class="grid two">
                 <section class="panel">
                     <h2>Focus deployment</h2>
-                    <p>The event plot uses exact timestamps on the X axis and hour-of-day on the Y axis, with media type mapped to both color and shape.</p>
+                    <p>The media plot uses exact timestamps on the X axis and hour-of-day on the Y axis, with media type mapped to both color and shape.</p>
                     <div class="chart-frame">{}</div>
                     <div class="caption">{}</div>
                 </section>
@@ -145,7 +145,7 @@ fn build_report_html(
                         <thead>
                             <tr>
                                 <th>Deployment</th>
-                                <th>Events</th>
+                                <th>Media count</th>
                                 <th>First seen</th>
                                 <th>Last seen</th>
                                 <th>Media types</th>
