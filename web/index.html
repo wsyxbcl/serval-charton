@@ -553,7 +553,7 @@
                 <div class="panel-head">
                     <div class="panel-copy">
                         <h2 id="inventory-title">Deployment inventory</h2>
-                        <p id="inventory-copy">The same prepared deployment summaries used by the report export are also available here for quick review and trap_info template export.</p>
+                        <p id="inventory-copy">Deployment info table. Export trap_info template.</p>
                     </div>
                     <div class="panel-actions">
                         <button id="export-inventory-xlsx" class="secondary" type="button" disabled>Export trap_info template</button>
@@ -653,21 +653,21 @@
                     open_local_csv: "Open local CSV",
                     reload_source: "Reload current source",
                     controls_title: "Controls",
-                    controls_copy: "These controls rerun the Rust aggregation and Charton rendering inside the WASM module, then swap in fresh SVG output.",
+                    controls_copy: "",
                     bucket_label: "Overview bucket",
                     deployment_label: "Detail deployment",
                     overview_title: "Overview heatmap",
-                    overview_copy: "Deployment × time overview. Empty cells are forced to white, and the crowded date axis is thinned after SVG generation.",
-                    overview_placeholder: "Upload a CSV to render the overview heatmap.",
+                    overview_copy: "Compare deployments over time. Click a row to focus that deployment in the detail chart.",
+                    overview_placeholder: "Upload a CSV to render the Overview heatmap.",
                     detail_title: "Deployment detail",
-                    detail_copy_base: "Exact timestamps in one shared chart, with days on the horizontal axis and minute-of-day on the vertical axis. Still images are nudged slightly up-left and videos down-right for readability.",
-                    detail_placeholder: "Upload a CSV to render the detail media plot.",
+                    detail_copy_base: "Each point is one media item. Images are nudged up-left and videos down-right.",
+                    detail_placeholder: "Upload a CSV to render the Deployment detail.",
                     hour_title: "Hour-of-day heatmap",
-                    hour_copy: "Compact activity fingerprint across all deployments.",
-                    hour_placeholder: "Upload a CSV to render the hour-of-day heatmap.",
+                    hour_copy: "Compare active hours across deployments. Click a row to focus that deployment in the detail chart on the left.",
+                    hour_placeholder: "Upload a CSV to render the Hour-of-day heatmap.",
                     inventory_title: "Deployment inventory",
-                    inventory_copy: "The same prepared deployment summaries used by the report export are also available here for quick review and trap_info template export.",
-                    inventory_placeholder: "Upload a CSV to populate the deployment inventory.",
+                    inventory_copy: "Deployment info table. Export trap_info template.",
+                    inventory_placeholder: "Upload a CSV to populate the Deployment inventory.",
                     inventory_empty: "No deployment summaries available.",
                     inventory_export: "Export trap_info template",
                     inventory_header_deployment: "Deployment",
@@ -675,8 +675,8 @@
                     inventory_header_first_seen: "First seen",
                     inventory_header_last_seen: "Last seen",
                     inventory_header_media_types: "Media types",
-                    upload_copy_picker: "The CSV must include `deployment` and `datetime` columns. `Open local CSV` is recommended because it keeps a live file handle for one-click reloads after local edits. Plain uploads remain available as a fallback.",
-                    upload_copy_basic: "The CSV must include `deployment` and `datetime` columns. This browser does not support direct local file handles, so use the standard upload flow."
+                    upload_copy_picker: "The CSV should include `deployment`, `path`, `media_type`, and `datetime`. It is usually generated during `serval xmp init`. `Open local CSV` is recommended because it supports one-click reload after local edits.",
+                    upload_copy_basic: "The CSV should include `deployment`, `path`, `media_type`, and `datetime`. It is usually generated during `serval xmp init`. This browser does not support direct local file handles, so use the standard upload flow."
                 },
                 bucket: {
                     day: "day",
@@ -686,7 +686,7 @@
                 status: {
                     init: "Initialize WASM runtime, then upload a CSV to render the explorer.",
                     initializing: "Initializing WebAssembly module...",
-                    ready: "WASM runtime ready. Upload a CSV to render the explorer.",
+                    ready: "WASM Runtime ready. Upload a CSV to render the explorer.",
                     init_failed: "WASM initialization failed.",
                     parsing: "Parsing {sourceLabel} and building prepared tables...",
                     loaded: "Loaded {rows} rows from {sourceLabel}. Rendering charts...",
@@ -720,14 +720,14 @@
                     zoom_level: "Zoom <strong data-role=\"zoom-label\">100%</strong>.",
                     zoom_hint: "Zoom <strong data-role=\"zoom-label\">100%</strong>. Use Shift + wheel to zoom, then Shift + drag or middle-drag to pan.",
                     overview_title: "Overview heatmap",
-                    overview_subtitle: "Deployment × {bucket} overview with click-to-select row highlighting.",
+                    overview_subtitle: "Compare deployments over time. Click a row to focus that deployment.",
                     detail_title: "Deployment detail: {deployment}",
-                    detail_subtitle: "One shared chart with days on X, minute-of-day on Y, and a small diagonal nudge separating still images from videos.",
+                    detail_subtitle: "Images are nudged up-left and videos down-right.",
                     hour_title: "Hour-of-day heatmap",
-                    hour_subtitle: "Compact activity fingerprint with the same deployment-axis interactions."
+                    hour_subtitle: "Compare active hours across deployments. Click a row to focus that deployment in the detail chart on the left."
                 },
                 dynamic: {
-                    detail_copy_selected: "Exact timestamps for {deployment} in one shared chart, with days on the horizontal axis and minute-of-day on the vertical axis. Still images are nudged slightly up-left and videos down-right. Use Shift + wheel or drag to inspect dense periods, or open the chart full screen.",
+                    detail_copy_selected: "Each point is one media item for {deployment}. Images are nudged up-left and videos down-right.",
                     detail_caption: "{count} media items from {start} through {end}. Media types: {media_breakdown}.",
                     range: "{start} to {end}"
                 }
@@ -740,9 +740,9 @@
                     hero_title: "Deployment Timestamp Visualizer",
                     hero_copy: "",
                     metric_rows: "记录数",
-                    metric_deployments: "Deployment 数",
+                    metric_deployments: "位点数",
                     metric_range: "时间范围",
-                    metric_runtime: "运行时",
+                    metric_runtime: "Runtime",
                     metric_runtime_value: "Rust/WASM",
                     upload_title: "上传 CSV",
                     upload_label: "CSV 文件",
@@ -750,30 +750,30 @@
                     open_local_csv: "打开本地 CSV",
                     reload_source: "重新加载当前数据源",
                     controls_title: "控制面板",
-                    controls_copy: "这些控件会在 WASM 模块中重新执行 Rust 聚合和 Charton 渲染，并替换页面中的 SVG 结果。",
-                    bucket_label: "概览时间粒度",
-                    deployment_label: "明细 deployment",
-                    overview_title: "概览热力图",
-                    overview_copy: "deployment × 时间概览。空白单元格会被强制显示为白色，过密的日期轴标签会在 SVG 生成后做稀疏化处理。",
-                    overview_placeholder: "上传 CSV 后显示概览热力图。",
-                    detail_title: "Deployment 明细",
-                    detail_copy_base: "所有精确时间点绘制在同一张图中，横轴为日期，纵轴为一天中的分钟。静态图片会略微向左上偏移，视频会略微向右下偏移，以提高可读性。",
-                    detail_placeholder: "上传 CSV 后显示明细 media 图。",
-                    hour_title: "小时热力图",
-                    hour_copy: "所有 deployment 的紧凑活动指纹。",
-                    hour_placeholder: "上传 CSV 后显示小时热力图。",
-                    inventory_title: "Deployment 清单",
-                    inventory_copy: "这里复用了 report 导出中的 deployment 汇总结果，便于快速查看并导出 trap_info 模板。",
-                    inventory_placeholder: "上传 CSV 后显示 deployment 清单。",
+                    controls_copy: "",
+                    bucket_label: "总览图时间尺度",
+                    deployment_label: "明细图位点",
+                    overview_title: "位点时间总览",
+                    overview_copy: "用于比较不同位点在时间上的分布。点击某一行可聚焦到下方明细图。",
+                    overview_placeholder: "上传 CSV 后显示位点时间总览。",
+                    detail_title: "位点媒体明细图",
+                    detail_copy_base: "每个点代表一个媒体。图片会略微向左上偏移，视频会略微向右下偏移。",
+                    detail_placeholder: "上传 CSV 后显示位点媒体明细图。",
+                    hour_title: "时段热力图",
+                    hour_copy: "用于比较不同位点的活跃时段。点击某一行可聚焦到左侧明细图。",
+                    hour_placeholder: "上传 CSV 后显示时段热力图。",
+                    inventory_title: "位点信息表",
+                    inventory_copy: "位点信息表，可导出 trap_info 模板。",
+                    inventory_placeholder: "上传 CSV 后显示位点信息表。",
                     inventory_empty: "没有可用的 deployment 汇总信息。",
                     inventory_export: "导出 trap_info 模板",
-                    inventory_header_deployment: "Deployment",
+                    inventory_header_deployment: "位点",
                     inventory_header_media_count: "媒体数量",
                     inventory_header_first_seen: "开始时间",
                     inventory_header_last_seen: "结束时间",
                     inventory_header_media_types: "媒体类型",
-                    upload_copy_picker: "CSV 需要包含 `deployment` 和 `datetime` 列。推荐使用“打开本地 CSV”，这样在本地编辑文件后可以一键重新加载；普通上传仍作为备用方式保留。",
-                    upload_copy_basic: "CSV 需要包含 `deployment` 和 `datetime` 列。当前浏览器不支持直接持有本地文件句柄，请使用普通上传方式。"
+                    upload_copy_picker: "CSV 一般包含 `deployment`、`path`、`media_type` 和 `datetime` 列，通常由 `serval xmp init` 时生成。推荐使用“打开本地 CSV”，这样在本地编辑文件后可以一键重新加载。",
+                    upload_copy_basic: "CSV 一般包含 `deployment`、`path`、`media_type` 和 `datetime` 列，通常由 `serval xmp init` 时生成。当前浏览器不支持直接持有本地文件句柄，请使用普通上传方式。"
                 },
                 bucket: {
                     day: "天",
@@ -783,7 +783,7 @@
                 status: {
                     init: "初始化 WASM 运行时后，上传 CSV 即可渲染探索界面。",
                     initializing: "正在初始化 WebAssembly 模块...",
-                    ready: "WASM 运行时已就绪，上传 CSV 即可渲染探索界面。",
+                    ready: "WASM Runtime 已就绪，上传 CSV 即可",
                     init_failed: "WASM 初始化失败。",
                     parsing: "正在解析 {sourceLabel} 并构建预处理数据表...",
                     loaded: "已从 {sourceLabel} 读取 {rows} 行，正在渲染图表...",
@@ -794,19 +794,19 @@
                     local_cancelled: "已取消本地 CSV 选择。",
                     local_failed: "本地 CSV 加载失败。",
                     reload_failed: "重新加载失败。",
-                    export_xlsx: "已为 {count} 个 deployment 下载 trap_info_template.xlsx。",
+                    export_xlsx: "已为 {count} 个位点下载 trap_info_template.xlsx。",
                     rerender_overview: "正在 WASM 中重新渲染概览图...",
                     overview_updated: "概览图已更新。",
-                    rerender_detail: "正在 WASM 中重新渲染 deployment 明细图...",
+                    rerender_detail: "正在 WASM 中重新渲染位点明细图...",
                     detail_updated: "明细图已更新。",
-                    focus_deployment: "正在通过图表交互聚焦 deployment {deployment}...",
-                    detail_focused: "明细已聚焦到 {deployment}。"
+                    focus_deployment: "正在通过图表交互聚焦位点 {deployment}...",
+                    detail_focused: "明细已聚焦到位点 {deployment}。"
                 },
                 error: {
                     no_svg: "图表渲染后未返回 SVG。",
                     wasm_not_ready: "WASM 运行时尚未就绪。",
                     reload_without_source: "请先加载 CSV，再执行重新加载。",
-                    export_without_data: "请先加载 CSV，再导出 Excel 模板。"
+                    export_without_data: "请先加载 CSV，再导出 trap_info 模板。"
                 },
                 chart: {
                     chart: "图表",
@@ -817,15 +817,15 @@
                     zoom_level: "缩放 <strong data-role=\"zoom-label\">100%</strong>。",
                     zoom_hint: "缩放 <strong data-role=\"zoom-label\">100%</strong>。使用 Shift + 滚轮缩放，再用 Shift + 拖拽或中键拖拽平移。",
                     overview_title: "概览热力图",
-                    overview_subtitle: "deployment × {bucket} 概览，支持点击选择行并高亮。",
-                    detail_title: "Deployment 明细：{deployment}",
-                    detail_subtitle: "单图共享坐标，横轴为日期，纵轴为一天中的分钟，并通过轻微对角偏移区分静态图片和视频。",
-                    hour_title: "小时热力图",
-                    hour_subtitle: "紧凑的活动指纹图，并保留相同的 deployment 轴交互。"
+                    overview_subtitle: "用于比较不同位点在时间上的分布。点击某一行可聚焦到该位点。",
+                    detail_title: "位点媒体明细图：{deployment}",
+                    detail_subtitle: "图片会略微向左上偏移，视频会略微向右下偏移。",
+                    hour_title: "时段热力图",
+                    hour_subtitle: "用于比较不同位点的活跃时段。点击某一行可聚焦到左侧明细图。"
                 },
                 dynamic: {
-                    detail_copy_selected: "{deployment} 的精确时间点绘制在同一张图中，横轴为日期，纵轴为一天中的分钟。静态图片略微向左上偏移，视频略微向右下偏移。可使用 Shift + 滚轮或拖拽查看密集区域，也可以全屏打开图表。",
-                    detail_caption: "{start} 至 {end} 共 {count} 个 media。媒体类型：{media_breakdown}。",
+                    detail_copy_selected: "{deployment} 的每个点代表一个媒体。图片会略微向左上偏移，视频会略微向右下偏移。",
+                    detail_caption: "{start} 至 {end} 共 {count} 个媒体。媒体类型：{media_breakdown}。",
                     range: "{start} 至 {end}"
                 }
             }
@@ -971,6 +971,7 @@
             reloadSourceButton.textContent = t("static", "reload_source");
             controlsTitle.textContent = t("static", "controls_title");
             controlsCopy.textContent = t("static", "controls_copy");
+            controlsCopy.hidden = !controlsCopy.textContent.trim();
             bucketSelectLabel.textContent = t("static", "bucket_label");
             deploymentSelectLabel.textContent = t("static", "deployment_label");
             overviewTitle.textContent = t("static", "overview_title");
@@ -990,6 +991,7 @@
             }
             inventoryTitle.textContent = t("static", "inventory_title");
             inventoryCopy.textContent = t("static", "inventory_copy");
+            inventoryCopy.hidden = !inventoryCopy.textContent.trim();
             exportInventoryButton.textContent = t("static", "inventory_export");
             if (inventoryPlaceholder) {
                 inventoryPlaceholder.textContent = t("static", "inventory_placeholder");
@@ -1529,7 +1531,7 @@
                 for (const title of svg.querySelectorAll("title")) {
                     const value = title.textContent || "";
                     title.textContent = value
-                        .replaceAll("Deployment: ", "Deployment：")
+                        .replaceAll("Deployment: ", "位点：")
                         .replaceAll("\nBucket: ", "\n时间桶：")
                         .replaceAll("\nMedia count: ", "\n媒体数量：")
                         .replaceAll("Timestamp: ", "时间：")
