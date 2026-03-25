@@ -21,6 +21,8 @@ pub fn serve(bind: SocketAddr, open_browser: bool) -> Result<()> {
     let url = format!("http://{local_addr}/");
 
     println!("WASM explorer available at {url}");
+    println!("Open this URL in your browser, or Ctrl-click the link to open it quickly.");
+    println!("请在浏览器中打开这个地址，或按住 Ctrl 点击链接快速打开。");
     println!("Press Ctrl-C to stop the local server.");
 
     if open_browser {
