@@ -1,85 +1,48 @@
-# Datetime Plot Demo
+# Deployment Timestamp Visualizer
 
-Rust exploration project for static media timestamp distributions using `polars` for prepared data tables and `charton` for rendering.
+Media timeline explorer built with `polars`, `charton`, and `wasm-bindgen`.
 
-## What it builds
+## Overview
 
-- Overview deployment × time heatmap
-- Single-deployment detail media plot
+This project ships as a local WASM web app by default. Running the binary starts a local server and opens an interactive browser interface for exploring media timestamp distributions by deployment.
+
+Core views:
+
+- Deployment-over-time overview heatmap
+- Single-deployment media detail plot
 - Hour-of-day heatmap
-- Pure-Rust static file export
-- Pure-Rust report-style HTML export
-- Browser-side WASM explorer
+- Deployment inventory with `trap_info` template export
 
-Both export modes reuse the same prepared tables built once from the source CSV.
+## Screenshot
 
-## Default dataset
+![Deployment Timestamp Visualizer](docs/screenshot.png)
 
-The CLI defaults to:
+## Default Run Mode
 
-`/home/wsyxbcl/scripts/datetime_plot_demo/data/tags_mazev11_xmp-s-m_20260312103320.csv`
-
-## Commands
-
-Minimal static export:
+Start the local WASM server:
 
 ```bash
-cargo run -- export-static --overview-bucket week --format svg
+cargo run
 ```
 
-Static export with all deployment details:
+Or explicitly:
 
 ```bash
-cargo run -- export-static --all-details --format png
+cargo run -- serve-wasm --bind 127.0.0.1:8787
 ```
 
-Report export:
+## Build
 
-```bash
-cargo run -- export-report --overview-bucket month --top-details 6
-```
-
-## Structure
-
-- `src/data.rs`: CSV parsing and reusable Polars table preparation
-- `src/render.rs`: Charton chart construction plus lightweight SVG post-processing
-- `src/report.rs`: report-style HTML export
-- `src/web_app.rs`: local HTTP wrapper that serves the embedded WASM explorer
-- `src/main.rs`: CLI entry point
-- `web/`: `wasm-bindgen` browser app that reuses the prepared-table and SVG rendering code
-
-## Notes
-
-- Overview buckets support `day`, `week`, and `month`.
-- SVG-based outputs thin crowded rotated date labels after Charton renders, so both the overview heatmap and detail media plot stay readable in `export-static --format svg` and the HTML report.
-- The detail plot uses days on the X axis and minute-of-day on the Y axis, while hover still shows the exact timestamp and file path.
-- Heatmap cells with `0` media items are forced to white in SVG output so empty regions stand out immediately.
-- The detail plot groups media into `image` and `video` from the CSV `media_type` column when present, with a fallback to `path` inference for older CSVs.
-- The current tool intentionally stays on a pure-Rust path: static export, report export, and a local `serve-wasm` preview app.
-
-## Experimental WASM Demo
-
-The `web/` subproject compiles Charton + Polars + the existing data preparation/rendering modules to WebAssembly. It lets a user upload a CSV in the browser and rerender the overview, detail, and hour heatmap entirely inside Rust/WASM.
-
-Rebuild the WASM package:
+Rebuild the browser bundle:
 
 ```bash
 cd web
 wasm-pack build --release --target web --out-dir pkg
 ```
 
-Then preview through the native local server:
+Build the native binary:
 
 ```bash
-cargo run
+cd ..
+cargo build --release
 ```
-
-Then open `http://127.0.0.1:8787/`.
-
-Notes:
-
-- The browser demo expects `path`, `deployment`, and `datetime`, with datetimes in `yyyy-mm-dd hh:mm:ss` format. A `media_type` column is preferred and used for image/video classification.
-- Running the binary with no subcommand now starts the local WASM server directly. `serve-wasm` is still available when you want to override `--bind` or `--open`.
-- The `Deployment inventory` panel can export a `trap_info` template workbook (`trap_info_template.xlsx`) with the legacy column layout and dropdown validations, auto-filling `deploymentName`, `deploymentStart`, and `deploymentEnd`.
-- The current WASM package was built successfully on this machine after trimming the browser-side `polars` feature set and keeping `dtype-categorical` enabled for Charton compatibility.
-- The optimized `web/pkg/datetime_plot_demo_web_bg.wasm` is currently about `8.7 MB`, so this is a viable experiment path but still heavier than the static native CLI.

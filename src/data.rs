@@ -16,9 +16,6 @@ use polars::prelude::*;
 use polars_io::mmap::MmapBytesReader;
 use polars_io::prelude::{CsvParseOptions, CsvReadOptions, SerReader};
 
-#[cfg_attr(target_arch = "wasm32", allow(dead_code))]
-pub const DEFAULT_CSV_PATH: &str =
-    "data/tags_mazev11_xmp-s-m_20260312103320.csv";
 const CSV_INFER_SCHEMA_LENGTH: usize = 1_000;
 
 #[cfg_attr(not(target_arch = "wasm32"), derive(ValueEnum))]

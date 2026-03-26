@@ -139,7 +139,6 @@ Recommended package contents:
 
 - `datetime_plot_demo.exe`
 - `start_datetime_plot_demo.bat` for double-click startup
-- `data\tags_mazev11_xmp-s-m_20260312103320.csv` if you want the sample CLI export commands to work without passing `--csv`
 - optional: `datetime_plot_demo.pdb` for debugging symbols
 
 Example packaging commands from the project root:
@@ -147,9 +146,7 @@ Example packaging commands from the project root:
 ```powershell
 $dist = "dist\datetime_plot_demo-windows-x86_64"
 New-Item -ItemType Directory -Force -Path $dist | Out-Null
-New-Item -ItemType Directory -Force -Path "$dist\data" | Out-Null
 Copy-Item "target\release\datetime_plot_demo.exe" "$dist\"
-Copy-Item "data\tags_mazev11_xmp-s-m_20260312103320.csv" "$dist\data\"
 Set-Content -Path "$dist\start_datetime_plot_demo.bat" -Value "@echo off`r`ncd /d `"%~dp0`"`r`nstart `"datetime_plot_demo server`" `"%~dp0datetime_plot_demo.exe`"`r`ntimeout /t 2 /nobreak >nul`r`nstart `"`" http://127.0.0.1:8787/ >nul 2>&1`r`n"
 Compress-Archive -Path "$dist\*" -DestinationPath "dist\datetime_plot_demo-windows-x86_64.zip" -Force
 ```
@@ -164,23 +161,9 @@ Or by double-clicking:
 
 `start_datetime_plot_demo.bat`
 
-## CSV Requirements
-
-The uploaded CSV must contain:
-
-- `deployment`
-- `datetime`
-- `path`
-
-The `datetime` format must be:
-
-`yyyy-mm-dd hh:mm:ss`
-
-If a `media_type` column is present, the detail chart uses it to classify rows into `image` and `video`. If it is missing, the app falls back to path-based inference.
-
 ## Notes
 
-- The native executable embeds the current `web/index.html`, the main demo dataset under `data/`, and `web/pkg/*` at compile time.
+- The native executable embeds the current `web/index.html` and `web/pkg/*` at compile time.
 - The `Deployment inventory` panel can export the `trap_info` template workbook (`trap_info_template.xlsx`) directly in the browser, with deployment name and start/end time prefilled.
 - Rebuild `web/pkg` first, then rebuild the executable.
 - `cargo build --release` from `web` builds the frontend crate only; use the project root to build `datetime_plot_demo.exe`.

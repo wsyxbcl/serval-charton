@@ -8,20 +8,20 @@ use std::fs;
 use std::net::SocketAddr;
 use std::path::PathBuf;
 
-use anyhow::{Context, Result};
+use anyhow::{Context, Result, bail};
 use clap::{Args, Parser, Subcommand, ValueEnum};
 
-use crate::data::{DEFAULT_CSV_PATH, OverviewBucket, PreparedData};
+use crate::data::{OverviewBucket, PreparedData};
 use crate::util::{format_count, slugify};
 
 #[derive(Parser, Debug)]
 #[command(
     version,
-    about = "Run the local WASM timestamp explorer or export static timestamp plots"
+    about = "Run the local WASM deployment timestamp visualizer or export static visuals"
 )]
 struct Cli {
-    #[arg(long, global = true, default_value = DEFAULT_CSV_PATH)]
-    csv: PathBuf,
+    #[arg(long, global = true)]
+    csv: Option<PathBuf>,
 
     #[command(subcommand)]
     command: Option<Command>,
@@ -105,15 +105,22 @@ fn main() -> Result<()> {
 
     match cli.command.unwrap_or(Command::ServeWasm(ServeWasmArgs::default())) {
         Command::ExportStatic(args) => {
-            let data = PreparedData::load(&cli.csv)?;
+            let data = PreparedData::load(require_csv(&cli.csv)?)?;
             export_static(&data, args)
         }
         Command::ExportReport(args) => {
-            let data = PreparedData::load(&cli.csv)?;
+            let data = PreparedData::load(require_csv(&cli.csv)?)?;
             export_report(&data, args)
         }
         Command::ServeWasm(args) => web_app::serve(args.bind, args.open),
     }
+}
+
+fn require_csv(csv: &Option<PathBuf>) -> Result<&std::path::Path> {
+    let Some(path) = csv.as_deref() else {
+        bail!("`--csv <PATH>` is required for export commands");
+    };
+    Ok(path)
 }
 
 fn export_static(data: &PreparedData, args: ExportStaticArgs) -> Result<()> {
