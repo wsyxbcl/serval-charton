@@ -3,21 +3,15 @@
 Media timeline explorer built with `polars`, `charton`, and `wasm-bindgen`.
 
 ## Overview
+This project ships as a local WASM web app by default. Running the binary starts a local server and opens an interactive browser interface for exploring media timestamp distributions by deployment.  
 
-This project ships as a local WASM web app by default. Running the binary starts a local server and opens an interactive browser interface for exploring media timestamp distributions by deployment.
-
-Core views:
-
-- Deployment-over-time overview heatmap
-- Single-deployment media detail plot
-- Hour-of-day heatmap
-- Deployment inventory with `trap_info` template export
+It is part of the [Serval](https://github.com/wsyxbcl/Serval) workflow where users review timestamps and deployments.
 
 ## Screenshot
 
 ![Deployment Timestamp Visualizer](docs/screenshot.png)
 
-## Default Run Mode
+## Run 
 
 Start the local WASM server:
 
