@@ -12,6 +12,7 @@ use anyhow::{Context, Result, anyhow, bail};
 use chrono::{Datelike, Duration, NaiveDate, NaiveDateTime, Timelike};
 #[cfg(not(target_arch = "wasm32"))]
 use clap::ValueEnum;
+use polars::lazy::dsl::{coalesce, col, lit};
 use polars::prelude::*;
 use polars_io::mmap::MmapBytesReader;
 use polars_io::prelude::{CsvParseOptions, CsvReadOptions, SerReader};
@@ -123,6 +124,7 @@ impl PreparedData {
             .finish()
             .context("failed to read CSV with Polars")?;
         let frame = normalize_frame_headers(frame, &headers)?;
+        let frame = prepare_datetime_columns(frame)?;
 
         let indices = ColumnIndices::from_dataframe(&frame)?;
         let mut rows = Vec::with_capacity(frame.height());
@@ -234,7 +236,7 @@ impl EventRow {
 
         let deployment =
             required_trimmed_string(frame, indices.deployment, row_index, "deployment", row_number)?;
-        let timestamp = parse_timestamp(frame, indices.datetime, row_index, row_number)?;
+        let timestamp = parse_timestamp(frame, indices.effective_datetime, row_index, row_number)?;
         let path = optional_trimmed_string(frame, indices.path, row_index)?.unwrap_or_default();
         let media_type = indices
             .media_type
@@ -292,7 +294,7 @@ fn summarize_rows(rows: &[EventRow]) -> Vec<DeploymentSummary> {
 struct ColumnIndices {
     path: usize,
     deployment: usize,
-    datetime: usize,
+    effective_datetime: usize,
     media_type: Option<usize>,
 }
 
@@ -304,15 +306,15 @@ impl ColumnIndices {
         let deployment = frame
             .get_column_index("deployment")
             .context("missing required column 'deployment'")?;
-        let datetime = frame
-            .get_column_index("datetime")
-            .context("missing required column 'datetime'")?;
+        let effective_datetime = frame
+            .get_column_index("__effective_datetime")
+            .context("missing effective datetime column '__effective_datetime'")?;
         let media_type = frame.get_column_index("media_type");
 
         Ok(Self {
             path,
             deployment,
-            datetime,
+            effective_datetime,
             media_type,
         })
     }
@@ -331,7 +333,7 @@ impl CsvHeaders {
             .iter()
             .zip(self.normalized_headers.iter())
             .filter_map(|(raw, normalized)| match normalized.as_str() {
-                "path" | "deployment" | "media_type" => {
+                "path" | "deployment" | "media_type" | "xmp_update_datetime" => {
                     Some(Field::new(raw.as_str().into(), DataType::String))
                 }
                 _ => None,
@@ -398,6 +400,35 @@ fn normalize_frame_headers(mut frame: DataFrame, headers: &CsvHeaders) -> Result
     }
 
     Ok(frame)
+}
+
+fn prepare_datetime_columns(frame: DataFrame) -> Result<DataFrame> {
+    let has_update_column = frame.get_column_index("xmp_update_datetime").is_some();
+
+    let update_options = StrptimeOptions {
+        format: None,
+        strict: false,
+        exact: true,
+        cache: true,
+    };
+
+    let effective_datetime = if has_update_column {
+        coalesce(&[
+            col("xmp_update_datetime")
+                .str()
+                .to_datetime(None, None, update_options, lit("raise")),
+            col("datetime"),
+        ])
+        .alias("__effective_datetime")
+    } else {
+        col("datetime").alias("__effective_datetime")
+    };
+
+    frame
+        .lazy()
+        .with_column(effective_datetime)
+        .collect()
+        .context("failed to prepare effective datetime column")
 }
 
 fn required_trimmed_string(
