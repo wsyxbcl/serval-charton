@@ -1184,6 +1184,11 @@
             }
         }
 
+        function extractDeploymentFromTitle(title) {
+            const match = title.match(/^(?:Deployment|位点)[:：]\s*(.+)$/m);
+            return match ? match[1].trim() : null;
+        }
+
         function buildHeatmapRowCache(frame) {
             if (frame._heatmapRowCache) {
                 return frame._heatmapRowCache;
@@ -1196,12 +1201,11 @@
             const rows = new Map();
             for (const rect of frame.querySelectorAll("svg rect")) {
                 const title = rect.querySelector("title")?.textContent || "";
-                const match = title.match(/^Deployment: (.+)$/m);
-                if (!match) {
+                const deployment = extractDeploymentFromTitle(title);
+                if (!deployment) {
                     continue;
                 }
 
-                const deployment = match[1];
                 if (!rows.has(deployment)) {
                     rows.set(deployment, {
                         rects: [],
@@ -1223,8 +1227,7 @@
 
         function deploymentFromHeatmapCell(cell) {
             const title = cell?.querySelector("title")?.textContent || "";
-            const match = title.match(/^Deployment: (.+)$/m);
-            return match ? match[1] : null;
+            return extractDeploymentFromTitle(title);
         }
 
         function ensureRowHighlightRect(frame) {
