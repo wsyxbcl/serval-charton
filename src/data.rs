@@ -12,7 +12,7 @@ use anyhow::{Context, Result, anyhow, bail};
 use chrono::{Datelike, Duration, NaiveDate, NaiveDateTime, Timelike};
 #[cfg(not(target_arch = "wasm32"))]
 use clap::ValueEnum;
-use polars::lazy::dsl::{coalesce, col, lit};
+use polars::lazy::dsl::{coalesce, col, lit, when};
 use polars::prelude::*;
 use polars_io::mmap::MmapBytesReader;
 use polars_io::prelude::{CsvParseOptions, CsvReadOptions, SerReader};
@@ -413,10 +413,21 @@ fn prepare_datetime_columns(frame: DataFrame) -> Result<DataFrame> {
     };
 
     let effective_datetime = if has_update_column {
-        coalesce(&[
+        let normalized_update_datetime = when(
             col("xmp_update_datetime")
                 .str()
-                .to_datetime(None, None, update_options, lit("raise")),
+                .strip_chars(lit(" \t\r\n"))
+                .eq(lit("")),
+        )
+        .then(Expr::Literal(LiteralValue::Scalar(Scalar::null(
+            DataType::String,
+        ))))
+        .otherwise(col("xmp_update_datetime"))
+        .str()
+        .to_datetime(None, None, update_options, lit("raise"));
+
+        coalesce(&[
+            normalized_update_datetime,
             col("datetime"),
         ])
         .alias("__effective_datetime")
