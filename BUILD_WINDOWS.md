@@ -4,7 +4,7 @@ This guide builds the packaged desktop-style launcher for the Charton + Polars +
 
 The final executable is:
 
-`target\release\datetime_plot_demo.exe`
+`target\release\serval-charton.exe`
 
 It serves the embedded web UI on `127.0.0.1` and can open it in the browser when requested.
 
@@ -87,7 +87,7 @@ cd ..
 
 If you run `cargo build --release` inside `web`, the output will be a frontend crate artifact such as:
 
-`web\target\release\datetime_plot_demo_web.dll`
+`web\target\release\serval_charton_web.dll`
 
 That is expected, but it is not the desktop executable.
 
@@ -101,7 +101,7 @@ cargo build --release
 
 The executable will be:
 
-`target\release\datetime_plot_demo.exe`
+`target\release\serval-charton.exe`
 
 This command must be run from the project root, not from `web`.
 
@@ -110,7 +110,7 @@ This command must be run from the project root, not from `web`.
 From the project root:
 
 ```powershell
-target\release\datetime_plot_demo.exe
+target\release\serval-charton.exe
 ```
 
 That starts the local WASM server directly.
@@ -118,13 +118,13 @@ That starts the local WASM server directly.
 To change the bind address manually, run:
 
 ```powershell
-target\release\datetime_plot_demo.exe serve-wasm
+target\release\serval-charton.exe serve-wasm
 ```
 
 To force browser auto-open:
 
 ```powershell
-target\release\datetime_plot_demo.exe serve-wasm --open
+target\release\serval-charton.exe serve-wasm --open
 ```
 
 Then open this URL manually if needed:
@@ -133,40 +133,40 @@ Then open this URL manually if needed:
 
 ## Create A Distributable Package
 
-The web assets are embedded into `datetime_plot_demo.exe` at compile time, so you do not need to ship `web\index.html` or `web\pkg\*` separately.
+The web assets are embedded into `serval-charton.exe` at compile time, so you do not need to ship `web\index.html` or `web\pkg\*` separately.
 
 Recommended package contents:
 
-- `datetime_plot_demo.exe`
-- `start_datetime_plot_demo.bat` for double-click startup
-- optional: `datetime_plot_demo.pdb` for debugging symbols
+- `serval-charton.exe`
+- `start_serval_charton.bat` for double-click startup
+- optional: `serval-charton.pdb` for debugging symbols
 
 Example packaging commands from the project root:
 
 ```powershell
-$dist = "dist\datetime_plot_demo-windows-x86_64"
+$dist = "dist\serval-charton-windows-x86_64"
 New-Item -ItemType Directory -Force -Path $dist | Out-Null
-Copy-Item "target\release\datetime_plot_demo.exe" "$dist\"
-Set-Content -Path "$dist\start_datetime_plot_demo.bat" -Value "@echo off`r`ncd /d `"%~dp0`"`r`nstart `"datetime_plot_demo server`" `"%~dp0datetime_plot_demo.exe`"`r`ntimeout /t 2 /nobreak >nul`r`nstart `"`" http://127.0.0.1:8787/ >nul 2>&1`r`n"
-Compress-Archive -Path "$dist\*" -DestinationPath "dist\datetime_plot_demo-windows-x86_64.zip" -Force
+Copy-Item "target\release\serval-charton.exe" "$dist\"
+Set-Content -Path "$dist\start_serval_charton.bat" -Value "@echo off`r`ncd /d `"%~dp0`"`r`nstart `"serval-charton server`" `"%~dp0serval-charton.exe`"`r`ntimeout /t 2 /nobreak >nul`r`nstart `"`" http://127.0.0.1:8787/ >nul 2>&1`r`n"
+Compress-Archive -Path "$dist\*" -DestinationPath "dist\serval-charton-windows-x86_64.zip" -Force
 ```
 
 The resulting zip can be unpacked on another Windows machine and run directly:
 
 ```powershell
-datetime_plot_demo.exe
+serval-charton.exe
 ```
 
 Or by double-clicking:
 
-`start_datetime_plot_demo.bat`
+`start_serval_charton.bat`
 
 ## Notes
 
 - The native executable embeds the current `web/index.html` and `web/pkg/*` at compile time.
 - The `Deployment inventory` panel can export the `trap_info` template workbook (`trap_info_template.xlsx`) directly in the browser, with deployment name and start/end time prefilled.
 - Rebuild `web/pkg` first, then rebuild the executable.
-- `cargo build --release` from `web` builds the frontend crate only; use the project root to build `datetime_plot_demo.exe`.
+- `cargo build --release` from `web` builds the frontend crate only; use the project root to build `serval-charton.exe`.
 - The browser page is local-only; there is no remote backend.
 - Large datasets may still make the browser-side WASM app feel heavy. That affects runtime performance, not installation.
 - If `wasm-pack` fails specifically during `wasm-opt`, check whether `web/pkg` was already produced. In many cases the bundle is still usable, just larger.
@@ -178,5 +178,5 @@ cd web
 wasm-pack build --release --target web --out-dir pkg
 cd ..
 cargo build --release
-target\release\datetime_plot_demo.exe
+target\release\serval-charton.exe
 ```

@@ -164,7 +164,7 @@ function buildAppPropertiesXml() {
         XML_HEADER +
         `<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" ` +
         `xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">` +
-        `<Application>datetime_plot_demo</Application>` +
+        `<Application>serval-charton</Application>` +
         `<DocSecurity>0</DocSecurity>` +
         `<ScaleCrop>false</ScaleCrop>` +
         `<HeadingPairs><vt:vector size="2" baseType="variant">` +
@@ -192,8 +192,8 @@ function buildCorePropertiesXml(timestamp) {
         `xmlns:dcterms="http://purl.org/dc/terms/" ` +
         `xmlns:dcmitype="http://purl.org/dc/dcmitype/" ` +
         `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">` +
-        `<dc:creator>datetime_plot_demo</dc:creator>` +
-        `<cp:lastModifiedBy>datetime_plot_demo</cp:lastModifiedBy>` +
+        `<dc:creator>serval-charton</dc:creator>` +
+        `<cp:lastModifiedBy>serval-charton</cp:lastModifiedBy>` +
         `<dcterms:created xsi:type="dcterms:W3CDTF">${escapedTimestamp}</dcterms:created>` +
         `<dcterms:modified xsi:type="dcterms:W3CDTF">${escapedTimestamp}</dcterms:modified>` +
         `</cp:coreProperties>`

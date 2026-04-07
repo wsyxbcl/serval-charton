@@ -1,6 +1,6 @@
 [package]
-name = "datetime_plot_demo_web"
-version = "0.1.0"
+name = "serval-charton-web"
+version = "1.0.0"
 edition = "2021"
 
 [lib]

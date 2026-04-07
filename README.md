@@ -1,4 +1,4 @@
-# Deployment Timestamp Visualizer
+# serval-charton
 
 Media timeline explorer built with `polars`, `charton`, and `wasm-bindgen`.
 

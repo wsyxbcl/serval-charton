@@ -573,13 +573,13 @@
     </div>
 
     <script type="module">
-        import init, { WasmExplorer } from "./pkg/datetime_plot_demo_web.js";
+        import init, { WasmExplorer } from "./pkg/serval_charton_web.js";
         import { downloadTrapInfoTemplate, sortDeploymentOptions } from "./trap_info_export.js";
 
         let wasmReady = false;
         let explorer = null;
         let metadata = null;
-        const LANGUAGE_STORAGE_KEY = "datetime_plot_demo.lang";
+        const LANGUAGE_STORAGE_KEY = "serval_charton.lang";
         let currentLang = detectInitialLanguage();
         let lastStatusState = null;
         let lastErrorState = null;
